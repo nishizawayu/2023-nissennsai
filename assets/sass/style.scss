@@ -1,0 +1,310 @@
+$breakpoint: (
+  sp: 'screen and (max-width: 767px)',
+  tab: 'screen and (min-width: 768px)',
+  pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+.conteiner{
+    @include mq(pc){
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+}
+
+h2{
+    @include mq(pc){
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+    }
+   
+}
+
+h3{
+    @include mq(pc){
+        font-size: 42px;
+    }
+    
+}
+
+li{
+    list-style: none;
+}
+
+// キャッチコピー
+.catch{
+    &-main{
+        @include mq(pc){
+            width: 70%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 130px;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
+
+// 開催情報
+.info{
+    margin-top: 60px;
+    &-title{
+        padding-bottom: 120px;
+    }
+    &-box{
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+    &-flex{
+        @include mq(pc){
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            font-size: 40px;
+            text-align: left;
+            margin-left: 30px;
+        }
+        &--center{
+            text-align: center;
+        }
+        span{
+            @include mq(pc){
+                font-size: 36px;
+            }   
+        }
+    }
+    // 悩みポイント
+    &-map{
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
+
+.shop{
+    @include mq(pc){
+        width: 70%;
+        margin: 60px auto;
+    }
+    
+    &-text{
+        @include mq(pc){
+            margin-top: 140px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 56px;
+        }
+    }
+
+    &-tab{
+        display: flex;
+        justify-content: space-between;
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    .Department-flex{
+        @include mq(pc){
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        
+    }
+    .Department-item{
+        @include mq(pc){
+            width: 25%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            border: 5px solid black;
+            border-radius: 12px;
+            font-size: 16px;
+            img{
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+    }   
+}
+
+.messege{
+    @include mq(pc){
+        width: 70%;
+        margin: 120px auto;
+    }
+    &-title{
+        @include mq(pc){
+            padding-bottom: 120px;
+        }
+    }
+    &-h3{
+        @include mq(pc){
+            font-size: 42px;
+            font-weight: 400;
+        }
+        span{
+            @include mq(pc){
+                font-weight: 700;
+                margin-left: 120px;
+            }
+        }
+    }
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+        &--else{
+            flex-direction: row-reverse;
+        }
+    }
+    &-text{
+        background-color: #BAF5FF;
+        @include mq(pc){
+            width: 90%;
+            border: 5px solid black;
+            padding: 30px;
+            font-size: 32px;
+            line-height: 56px;
+        }   
+    }
+}
+
+.poster{
+    @include mq(pc){
+        width: 70%;
+        margin: 60px auto;
+    }
+    &-title{
+        @include mq(pc){
+            margin-top: 100px;
+            margin-bottom: 235px;
+        }
+    }
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-No1{
+        @include mq(pc){
+            width: 45%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 450px;
+        }
+    }
+    &-No2{
+        @include mq(pc){
+            width: 45%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 450px;
+        }
+    }
+    &-img{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+        }
+    }
+    &-textbox{
+        width: 100%;
+        border: 5px solid black;
+        padding: 30px;
+        background-color: #FFF3D2;
+    }
+    &-text{
+        @include mq(pc){
+            font-size: 24px;
+        }
+    }
+}
+
+.jumper{
+    @include mq(pc){
+        width: 70%;
+        margin: 60px auto;
+    }
+    &-title{
+        @include mq(pc){
+            padding-bottom: 190px;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
+
+.event{
+    @include mq(pc){
+        width: 70%;
+        margin: 60px auto;
+    }
+    &-title{
+        @include mq(pc){
+            padding-bottom: 190px;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
+
+.schoolplan{
+    @include mq(pc){
+        width: 70%;
+        margin: 60px auto;
+    }
+    &-title{
+        @include mq(pc){
+            padding-bottom: 190px;
+        }
+    }
+    &-logo{
+        @include mq(pc){
+            width: 80%;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
