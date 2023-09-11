@@ -10,6 +10,16 @@ $breakpoint: (
   }
 }
 
+body{
+    margin: 0;
+    background-color: #57D9EE;
+}
+
+// .main-bg{
+//     width: 100%;
+//     background-color: #57D9EE;
+// }
+
 .conteiner{
     @include mq(pc){
         width: 90%;
@@ -38,19 +48,66 @@ li{
     list-style: none;
 }
 
+.ham{
+    @include mq(pc){
+        display: none;
+    }
+    @include mq(tab){
+        display: none;
+    }
+    @include mq(sp){
+        display: block;
+    }
+}
+
+// ファーストビュー
+.fv{
+    background-color: #FFF3D2;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    &-logo{
+        position: relative;
+        width: 100%;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    &-logo1{
+        position: absolute;
+        left: 0;
+    }
+    &-logo2{
+        position: absolute;
+        left: 0;
+    }
+    &-logo3{
+        position: relative;
+    }
+}
+
 // キャッチコピー
 .catch{
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 240px;
+            background-color: #FFF3D2;
+        }
+    }
+    &-title{
+        margin-top: 90px;
+    }
     &-main{
         @include mq(pc){
             width: 70%;
             text-align: center;
             margin: 0 auto;
-            margin-top: 130px;
+            margin-top: 100px;
         }
     }
     &-text{
         @include mq(pc){
-            margin-top: 40px;
+            margin-top: 60px;
             font-size: 24px;
             text-align: center;
         }
@@ -59,9 +116,19 @@ li{
 
 // 開催情報
 .info{
-    margin-top: 60px;
     &-title{
-        padding-bottom: 120px;
+        @include mq(pc){
+            margin-top: 90px;
+            padding-bottom: 120px;
+        }
+    }
+    &-border{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: #FFF3D2;
+        }
     }
     &-box{
         @include mq(pc){
@@ -100,8 +167,27 @@ li{
 
 .shop{
     @include mq(pc){
-        width: 70%;
         margin: 60px auto;
+    }
+
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: #FFF3D2;
+        }
+    }
+
+    &-title{
+        margin-top: 90px;
+    }
+
+    &-flexbox{
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
     }
     
     &-text{
@@ -153,11 +239,25 @@ li{
 
 .messege{
     @include mq(pc){
-        width: 70%;
-        margin: 120px auto;
+        margin: 60px auto;
+    }
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: #FFF466;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
     }
     &-title{
         @include mq(pc){
+            margin-top: 90px;
             padding-bottom: 120px;
         }
     }
@@ -193,9 +293,20 @@ li{
 }
 
 .poster{
-    @include mq(pc){
-        width: 70%;
-        margin: 60px auto;
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            padding-bottom: 100px;
+            margin-top: 60px;
+            background-color: #FFF466;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
     }
     &-title{
         @include mq(pc){
@@ -245,12 +356,24 @@ li{
 }
 
 .jumper{
-    @include mq(pc){
-        width: 70%;
-        margin: 60px auto;
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            padding-bottom: 100px;
+            margin-top: 60px;
+            background-color: #FFF466;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
     }
     &-title{
         @include mq(pc){
+            margin-top: 90px;
             padding-bottom: 190px;
         }
     }
@@ -264,12 +387,24 @@ li{
 }
 
 .event{
-    @include mq(pc){
-        width: 70%;
-        margin: 60px auto;
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            padding-bottom: 100px;
+            margin-top: 60px;
+            background-color: #5AF1DF;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
     }
     &-title{
         @include mq(pc){
+            margin-top: 90px;
             padding-bottom: 190px;
         }
     }
@@ -284,17 +419,33 @@ li{
 
 .schoolplan{
     @include mq(pc){
-        width: 70%;
-        margin: 60px auto;
+        text-align: center;
+    }
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            padding-bottom: 100px;
+            margin-top: 60px;
+            background-color: #FFF3D2;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
     }
     &-title{
         @include mq(pc){
+            margin-top: 90px;
             padding-bottom: 190px;
         }
     }
     &-logo{
         @include mq(pc){
             width: 80%;
+            margin: 0 auto;
         }
         img{
             width: 100%;
@@ -306,5 +457,72 @@ li{
             font-size: 24px;
             text-align: center;
         }
+    }
+}
+
+.caveat{
+    @include mq(pc){
+        width: 70%;
+        margin: 120px auto;
+    }
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 240px;
+            background-color: #E9FFFE;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+            
+            font-weight: 700;
+        }
+    }
+    &-list{
+        li{
+            list-style-type:disc;
+        };
+        
+    }
+}
+
+.Infection{
+    @include mq(pc){
+        width: 70%;
+        margin: 120px auto;
+        padding-bottom: 100px;
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+    &-box{
+        @include mq(pc){
+            border: 5px solid black;
+            padding: 20px;
+            margin-top: 240px;
+            background-color: #E9FFFE;
+        }
+    }
+    &-list{
+        li{
+            list-style-type:disc;
+        };
+        
+    }
+}
+
+.gototop{
+    width: 10%;
+    img{
+        width: 100%;
     }
 }
