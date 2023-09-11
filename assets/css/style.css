@@ -26,6 +26,11 @@ body {
 
 li {
   list-style: none;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 1025px) {
@@ -44,27 +49,63 @@ li {
   }
 }
 
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #FFF3D2;
+  border: 6px solid black;
+}
+.nav-logo {
+  margin-left: 5%;
+  width: 10%;
+}
+.nav-logo img {
+  width: 100%;
+}
+.nav-menu {
+  width: 90%;
+  display: flex;
+}
+.nav-menu li {
+  margin-left: 20px;
+}
+.nav-menu li a {
+  text-decoration: underline #FF00C7;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .fv {
+  margin-top: 60px;
   background-color: #FFF3D2;
   border-left: 5px solid black;
   border-right: 5px solid black;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 .fv-logo {
   position: relative;
   width: 100%;
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 .fv-logo1 {
   position: absolute;
-  left: 0;
+  top: -60px;
+  left: 10px;
 }
 .fv-logo2 {
-  position: absolute;
+  position: relative;
   left: 0;
 }
 .fv-logo3 {
   position: relative;
+}
+.fv-flex {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1025px) {
@@ -84,6 +125,9 @@ li {
     text-align: center;
     margin: 0 auto;
     margin-top: 100px;
+  }
+  .catch-main img {
+    width: 100%;
   }
 }
 @media screen and (min-width: 1025px) {

@@ -15,11 +15,6 @@ body{
     background-color: #57D9EE;
 }
 
-// .main-bg{
-//     width: 100%;
-//     background-color: #57D9EE;
-// }
-
 .conteiner{
     @include mq(pc){
         width: 90%;
@@ -46,6 +41,11 @@ h3{
 
 li{
     list-style: none;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
 }
 
 .ham{
@@ -60,27 +60,63 @@ li{
     }
 }
 
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #FFF3D2;
+    border: 6px solid black;
+    &-logo{
+        margin-left: 5%;
+        width: 10%;
+        img{
+            width: 100%;
+        }
+    }
+    &-menu{
+        width: 90%;
+        display: flex;
+        li{
+            margin-left: 20px;
+            a{
+                text-decoration:underline #FF00C7;
+                color: #000;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
 // ファーストビュー
 .fv{
+    margin-top: 60px;
     background-color: #FFF3D2;
     border-left: 5px solid black;
     border-right: 5px solid black;
+    padding-top: 120px;
+    padding-bottom: 120px;
     &-logo{
         position: relative;
         width: 100%;
-        padding-top: 120px;
-        padding-bottom: 120px;
     }
     &-logo1{
         position: absolute;
-        left: 0;
+        top: -60px;
+        left: 10px;
     }
     &-logo2{
-        position: absolute;
+        position: relative;
         left: 0;
     }
     &-logo3{
         position: relative;
+    }
+    &-flex{
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -103,6 +139,9 @@ li{
             text-align: center;
             margin: 0 auto;
             margin-top: 100px;
+            img{
+                width: 100%;
+            }
         }
     }
     &-text{
