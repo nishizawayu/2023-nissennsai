@@ -10,16 +10,22 @@ $breakpoint: (
   }
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     background-color: #57D9EE;
+    overflow-x: hidden;
+    // フォント
     font-family: fot-tsukuardgothic-std, sans-serif;
     font-style: normal;
     font-weight: 400;
-    overflow-x: hidden;
 }
 
 .conteiner{
+    position: relative;
     @include mq(pc){
         width: 90%;
         margin: 0 auto;
@@ -64,14 +70,51 @@ a{
     }
 }
 
+.grobalnav{
+    &-list{
+        width: 97%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    &-con{
+        // border: 8px solid #000;
+        // background-color: #FFED00;
+        padding: 30px 90px;
+        a{
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+    }
+    .ncon1{
+        background-image: url(../img/nav-img01.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .ncon2{
+        background-image: url(../img/nav-img02.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.header{
+    position: relative;
+}
+
 .nav{
     width: 100%;
+    position: fixed;
+    top: -100%;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     background-color: #FFF3D2;
-    border: 6px solid black;
+    border: 8px solid black;
+    box-sizing: border-box;
+    transition: all 0.5s;
     &-logo{
         margin-left: 5%;
         width: 10%;
@@ -82,6 +125,7 @@ a{
     &-menu{
         width: 90%;
         display: flex;
+        justify-content: space-evenly;
         li{
             margin-left: 20px;
             a{
@@ -92,13 +136,47 @@ a{
             }
         }
     }
+    &-bgimg01{
+        position: absolute;
+        width: 10%;
+        top: -20%;
+        right: 0;
+    }
+    &-bgimg02{
+        position: absolute;
+        width: 3%;
+        bottom: 5%;
+        left: 20%;
+    }
+    &-bgimg03{
+        position: absolute;
+        width: 5%;
+        top: 0;
+        left: 15%;
+    }
+    &-bgimg04{
+        position: absolute;
+        width: 3%;
+        top: 2%;
+        right: 35%;
+    }
+
 }
+
+.fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* 必要に応じて */
+  }
 
 // ファーストビュー
 .fv{
     position: relative;
     width: 100%;
-    margin-top: 60px;
+    margin-top: -3%;
     // レスポンシブ難あり　（森先生に相談）
     background-image: url(../img/PC-Top-KVbg.svg);
     background-size: contain;
@@ -1096,34 +1174,107 @@ a{
         top: 45%;
         right: 0;
     }
+    &-bgimg03{
+        width: 55%;
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+    &-bgimg04{
+        width: 30%;
+        position: absolute;
+        bottom: -20%;
+        right: -10%;
+        z-index: 3;
+    }
+
 }
 
 .schoolplan{
-    @include mq(pc){
-        text-align: center;
-    }
+    position: relative;
+    z-index: 1;
     &-box{
         @include mq(pc){
-            border: 5px solid black;
             padding: 20px;
             padding-bottom: 100px;
             margin-top: 60px;
             background-color: #FFF3D2;
+            background-image: url(../img/PC-plan-bg.svg);
+            background-size: cover;
+            border: 5px solid black;
         }
     }
     &-box2{
         @include mq(pc){
-            width: 90%;
+            width: 70%;
             margin: 0 auto;
         }
     }
-    &-title{
-        @include mq(pc){
-            margin-top: 90px;
-            padding-bottom: 190px;
+    &-textbox{
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 120px;
+        line-height: 48px;
+        p{
+            text-align: center;
+        }
+        li{
+            list-style-type:decimal;
         }
     }
+    &-flex{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+    }
+    .rule{
+        position: relative;
+        background-color: #fff;
+        padding-bottom: 60px;
+        border: 8px solid #000;
+        box-shadow: -20px 15px 0px #AB00E8;
+        &-bgimg01{
+            width: 20%;
+            position: absolute;
+            top: -30%;
+        }
+        &-bgimg02{
+            width: 35%;
+            position: absolute;
+            top: -10%;
+            right: 3%;
+        }
+        &-bgimg03{
+            width: 25%;
+            position: absolute;
+            bottom: -20%;
+            right: -3%;
+        }
+    }
+    &-h3{
+        text-align: left;
+        background-image: url(../img/3-subtitle.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left:5%;
+    }
+    &-title{
+        width: 50%;
+        @include mq(pc){
+            margin-top: 90px;
+            background-image: url(../img/PC-3belowTitle.svg);
+            background-repeat: no-repeat;
+            background-position-x: 50%;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    
     &-logo{
+        position: relative;
         @include mq(pc){
             width: 80%;
             margin: 0 auto;
@@ -1132,25 +1283,68 @@ a{
             width: 100%;
         }
     }
-    &-text{
-        @include mq(pc){
-            margin-top: 40px;
-            font-size: 24px;
-            text-align: center;
-        }
+    &-imgbox{
+        position: relative;
+    }
+    &-bgimg01{
+        width: 25%;
+        position: absolute;
+        top: 5%;
+        left: 3%;
+    }
+    &-bgimg02{
+        width: 25%;
+        position: absolute;
+        top: 10%;
+        right: 3%;
+    }
+    &-arrow{
+        width: 25%;
+        position: absolute;
+        left: -10%;
+        bottom: -30%;
+    }
+    &-bgimg03{
+        width: 20%;
+        position: absolute;
+        bottom: 3%;
+        left: 5%;
+    }
+    &-bgimg04{
+        width: 20%;
+        position: absolute;
+        bottom: 3%;
+        right: 5%;
     }
 }
 
+.pb-120{
+    padding-bottom: 120px;
+}
+
 .caveat{
+    position: relative;
     @include mq(pc){
         width: 70%;
         margin: 120px auto;
     }
+    &-title{
+        position: relative;
+        z-index: 33;
+        width: 60%;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 105%;
+        padding-bottom: 5%;
+    }
     &-box{
+        position: relative;
+        z-index: 3;
         @include mq(pc){
             border: 5px solid black;
             padding: 20px;
-            margin-top: 240px;
+            margin-top: 120px;
             background-color: #E9FFFE;
         }
     }
@@ -1159,24 +1353,43 @@ a{
             margin-top: 40px;
             font-size: 24px;
             text-align: center;
-            
             font-weight: 700;
         }
     }
     &-list{
         li{
             list-style-type:disc;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 48px;
         };
-        
+    }
+    &-bgimg01{
+        width: 60%;
+        position: absolute;
+        right: -25%;
+        top: 0;
+        z-index: 1;
     }
 }
 
 .Infection{
+    position: relative;
     @include mq(pc){
         width: 70%;
         margin: 120px auto;
         padding-bottom: 100px;
     }
+    &-title{
+        width: 60%;
+        position: relative;
+        z-index: 1;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 105%;
+        padding-bottom: 5%;
+    }
     &-text{
         @include mq(pc){
             margin-top: 40px;
@@ -1187,17 +1400,35 @@ a{
     }
     &-box{
         @include mq(pc){
+            position: relative;
+            z-index: 3;
             border: 5px solid black;
             padding: 20px;
-            margin-top: 240px;
+            margin-top: 120px;
             background-color: #E9FFFE;
         }
     }
     &-list{
         li{
             list-style-type:disc;
-        };
-        
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 48px;
+        };   
+    }
+    &-bgimg01{
+        width: 60%;
+        position: absolute;
+        left: -30%;
+        top: 0;
+        z-index: 1;
+    }
+    &-bgimg02{
+        width: 50%;
+        position: absolute;
+        right: -25%;
+        top: 0;
+        z-index: 1;
     }
 }
 
@@ -1206,4 +1437,62 @@ a{
     img{
         width: 100%;
     }
+}
+
+.footer{
+    width: 100%;
+    // background: #FFF500;
+    background-image: url(../img/PC-footer.svg);
+    background-size: contain;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    &-logo{
+        width: 15%;
+        img{
+            width: 100%;
+        }
+    }
+    &-flex{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-box{
+        position: relative;
+    }
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        z-index: 3;
+    }
+    ul{
+        li{
+            width: 45%;
+            font-size: 18px;
+            line-height: 32px;
+            a{
+                color: #000;
+            }
+        }
+    }
+    &-bgimg01{
+        position: absolute;
+        width: 10%;
+        left: -3%;
+        z-index: 1;
+    }
+    &-bgimg02{
+        position: absolute;
+        width: 10%;
+        bottom: 0;
+        right: 10%;
+        z-index: 1;
+    }
+    .copylight{
+        text-align: center;
+    }
+
 }

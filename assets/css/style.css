@@ -1,13 +1,20 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #57D9EE;
+  overflow-x: hidden;
   font-family: fot-tsukuardgothic-std, sans-serif;
   font-style: normal;
   font-weight: 400;
-  overflow-x: hidden;
 }
 
+.conteiner {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .conteiner {
     width: 90%;
@@ -54,14 +61,47 @@ a {
   }
 }
 
+.grobalnav-list {
+  width: 97%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.grobalnav-con {
+  padding: 30px 90px;
+}
+.grobalnav-con a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+.grobalnav .ncon1 {
+  background-image: url(../img/nav-img01.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.grobalnav .ncon2 {
+  background-image: url(../img/nav-img02.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: relative;
+}
+
 .nav {
   width: 100%;
+  position: fixed;
+  top: -100%;
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   background-color: #FFF3D2;
-  border: 6px solid black;
+  border: 8px solid black;
+  box-sizing: border-box;
+  transition: all 0.5s;
 }
 .nav-logo {
   margin-left: 5%;
@@ -73,6 +113,7 @@ a {
 .nav-menu {
   width: 90%;
   display: flex;
+  justify-content: space-evenly;
 }
 .nav-menu li {
   margin-left: 20px;
@@ -83,11 +124,44 @@ a {
   font-size: 24px;
   font-weight: 600;
 }
+.nav-bgimg01 {
+  position: absolute;
+  width: 10%;
+  top: -20%;
+  right: 0;
+}
+.nav-bgimg02 {
+  position: absolute;
+  width: 3%;
+  bottom: 5%;
+  left: 20%;
+}
+.nav-bgimg03 {
+  position: absolute;
+  width: 5%;
+  top: 0;
+  left: 15%;
+}
+.nav-bgimg04 {
+  position: absolute;
+  width: 3%;
+  top: 2%;
+  right: 35%;
+}
+
+.fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* 必要に応じて */
+}
 
 .fv {
   position: relative;
   width: 100%;
-  margin-top: 60px;
+  margin-top: -3%;
   background-image: url(../img/PC-Top-KVbg.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -1113,32 +1187,107 @@ a {
   top: 45%;
   right: 0;
 }
+.event-bgimg03 {
+  width: 55%;
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+.event-bgimg04 {
+  width: 30%;
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  z-index: 3;
+}
 
-@media screen and (min-width: 1025px) {
-  .schoolplan {
-    text-align: center;
-  }
+.schoolplan {
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 1025px) {
   .schoolplan-box {
-    border: 5px solid black;
     padding: 20px;
     padding-bottom: 100px;
     margin-top: 60px;
     background-color: #FFF3D2;
+    background-image: url(../img/PC-plan-bg.svg);
+    background-size: cover;
+    border: 5px solid black;
   }
 }
 @media screen and (min-width: 1025px) {
   .schoolplan-box2 {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
   }
+}
+.schoolplan-textbox {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 120px;
+  line-height: 48px;
+}
+.schoolplan-textbox p {
+  text-align: center;
+}
+.schoolplan-textbox li {
+  list-style-type: decimal;
+}
+.schoolplan-flex {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+.schoolplan .rule {
+  position: relative;
+  background-color: #fff;
+  padding-bottom: 60px;
+  border: 8px solid #000;
+  box-shadow: -20px 15px 0px #AB00E8;
+}
+.schoolplan .rule-bgimg01 {
+  width: 20%;
+  position: absolute;
+  top: -30%;
+}
+.schoolplan .rule-bgimg02 {
+  width: 35%;
+  position: absolute;
+  top: -10%;
+  right: 3%;
+}
+.schoolplan .rule-bgimg03 {
+  width: 25%;
+  position: absolute;
+  bottom: -20%;
+  right: -3%;
+}
+.schoolplan-h3 {
+  text-align: left;
+  background-image: url(../img/3-subtitle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 5%;
+}
+.schoolplan-title {
+  width: 50%;
 }
 @media screen and (min-width: 1025px) {
   .schoolplan-title {
     margin-top: 90px;
-    padding-bottom: 190px;
+    background-image: url(../img/PC-3belowTitle.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 105%;
+    padding-bottom: 5%;
   }
+}
+.schoolplan-title img {
+  width: 100%;
+}
+.schoolplan-logo {
+  position: relative;
 }
 @media screen and (min-width: 1025px) {
   .schoolplan-logo {
@@ -1149,25 +1298,72 @@ a {
 .schoolplan-logo img {
   width: 100%;
 }
-@media screen and (min-width: 1025px) {
-  .schoolplan-text {
-    margin-top: 40px;
-    font-size: 24px;
-    text-align: center;
-  }
+.schoolplan-imgbox {
+  position: relative;
+}
+.schoolplan-bgimg01 {
+  width: 25%;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+}
+.schoolplan-bgimg02 {
+  width: 25%;
+  position: absolute;
+  top: 10%;
+  right: 3%;
+}
+.schoolplan-arrow {
+  width: 25%;
+  position: absolute;
+  left: -10%;
+  bottom: -30%;
+}
+.schoolplan-bgimg03 {
+  width: 20%;
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+}
+.schoolplan-bgimg04 {
+  width: 20%;
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
 }
 
+.pb-120 {
+  padding-bottom: 120px;
+}
+
+.caveat {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .caveat {
     width: 70%;
     margin: 120px auto;
   }
 }
+.caveat-title {
+  position: relative;
+  z-index: 33;
+  width: 60%;
+  background-image: url(../img/PC-3belowTitle2.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
+}
+.caveat-box {
+  position: relative;
+  z-index: 3;
+}
 @media screen and (min-width: 1025px) {
   .caveat-box {
     border: 5px solid black;
     padding: 20px;
-    margin-top: 240px;
+    margin-top: 120px;
     background-color: #E9FFFE;
   }
 }
@@ -1181,14 +1377,37 @@ a {
 }
 .caveat-list li {
   list-style-type: disc;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+}
+.caveat-bgimg01 {
+  width: 60%;
+  position: absolute;
+  right: -25%;
+  top: 0;
+  z-index: 1;
 }
 
+.Infection {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .Infection {
     width: 70%;
     margin: 120px auto;
     padding-bottom: 100px;
   }
+}
+.Infection-title {
+  width: 60%;
+  position: relative;
+  z-index: 1;
+  background-image: url(../img/PC-3belowTitle2.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
 }
 @media screen and (min-width: 1025px) {
   .Infection-text {
@@ -1200,14 +1419,33 @@ a {
 }
 @media screen and (min-width: 1025px) {
   .Infection-box {
+    position: relative;
+    z-index: 3;
     border: 5px solid black;
     padding: 20px;
-    margin-top: 240px;
+    margin-top: 120px;
     background-color: #E9FFFE;
   }
 }
 .Infection-list li {
   list-style-type: disc;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+}
+.Infection-bgimg01 {
+  width: 60%;
+  position: absolute;
+  left: -30%;
+  top: 0;
+  z-index: 1;
+}
+.Infection-bgimg02 {
+  width: 50%;
+  position: absolute;
+  right: -25%;
+  top: 0;
+  z-index: 1;
 }
 
 .gototop {
@@ -1215,4 +1453,58 @@ a {
 }
 .gototop img {
   width: 100%;
+}
+
+.footer {
+  width: 100%;
+  background-image: url(../img/PC-footer.svg);
+  background-size: contain;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+.footer-logo {
+  width: 15%;
+}
+.footer-logo img {
+  width: 100%;
+}
+.footer-flex {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-box {
+  position: relative;
+}
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  z-index: 3;
+}
+.footer ul li {
+  width: 45%;
+  font-size: 18px;
+  line-height: 32px;
+}
+.footer ul li a {
+  color: #000;
+}
+.footer-bgimg01 {
+  position: absolute;
+  width: 10%;
+  left: -3%;
+  z-index: 1;
+}
+.footer-bgimg02 {
+  position: absolute;
+  width: 10%;
+  bottom: 0;
+  right: 10%;
+  z-index: 1;
+}
+.footer .copylight {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

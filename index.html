@@ -9,17 +9,22 @@
 </head>
 <body>
     <!-- ヘッダー -->
-    <header>
+    <header class="header">
         <!-- グローバルナビゲーション -->
         <div class="nav">
             <h1 class="nav-logo"><a href="#"><img src="assets/img/PC-header-LOGO-v01.png" alt="日専祭"></a></h1>
+            <img src="assets/img/nav-bgimg01.svg" alt="" class="nav-bgimg01">
+            <img src="assets/img/PC-header-deco-05.svg" alt="" class="nav-bgimg04">
             <ul class="nav-menu">
                 <li><a href="#">開催情報</a></li>
-                <li><a href="#">日専祭について</a></li>
-                <li><a href="#">展示・出展</a></li>
-                <li><a href="#">実行委員企画</a></li>
-                <li><a href="#">ご来場の皆様へ</a></li>
+                <li><a href="#info">日専祭について</a></li>
+                <li><a href="#shop">展示・出展</a></li>
+                <li><a href="#shoolplan">実行委員企画</a></li>
+                <li><a href="#caveat">ご来場の皆様へ</a></li>
             </ul>
+            <img src="assets/img/PC-header-deco-06.svg" alt="" class="nav-bgimg02">
+            <img src="assets/img/nav-bgimg02.svg" alt="" class="nav-bgimg03">
+
         </div>
     
     </header>
@@ -27,7 +32,7 @@
     <!-- メインコンテンツ -->
         <div class="conteiner">
     
-            <main>
+            <main class="main">
                 <article>
                     <!-- ハンバーガーメニュー -->
                     <div class="ham">
@@ -51,8 +56,13 @@
                         </div>
         
                     </div>
-                    
-                    
+                
+                    <nav class="grobalnav">
+                        <ul class="grobalnav-list"> 
+                            <li class="grobalnav-con ncon1"><a href="#">Top</a></li>
+                            <li class="grobalnav-con ncon2"><a href="grop/index.html">出展団体</a></li>
+                        </ul>
+                    </nav>  
                     <!-- ファーストビュー -->
                     <section class="fv">
                         <h2 class="fv-logo">
@@ -60,7 +70,7 @@
                             <img src="assets/img/Pc-shocked-01.svg" alt="" class="fv-logo-shock">
                             <img src="assets/img/top-text2.svg" alt="日本電子専門学校" class="fv-logo2"><br>
                             <img src="assets/img/top-text1.svg" alt="日専祭" class="fv-logo3">
-                        </h2>
+                        </h2>  
                         <img src="assets/img/PC-3-01.svg" alt="" class="fv-img1">
                         <img src="assets/img/PC-3-02.svg" alt="" class="fv-img2">
                         <img src="assets/img/PC-3-03.svg" alt="" class="fv-img3">
@@ -92,7 +102,7 @@
                     </section>
             
                     <!-- 開催情報 -->
-                    <section class="info">
+                    <section class="info" id="info">
                         <div class="info-border">
                             <h2 class="info-title"><img src="assets/img/PC-informationTITLE.svg" alt="開催情報"></h2>
                             <img src="assets/img/info-bgimg01.svg" alt="" class="info-bgimg01">
@@ -130,7 +140,7 @@
                                 <img src="assets/img/PC-catch-arrow03.svg" alt="" class="info-bgimg02">
                                 <div class="info-map">
                                     <!-- バグこれが入るとrelativeがなくなる　森先生に相談 -->
-                                    <iframe src="https://www.google.com/maps/d/embed?mid=19OeCHW528Ffh5-5GJXyDHL4eouF-VeQ&ehbc=2E312F" width="640" height="480"></iframe>
+                                    <iframe src="https://www.google.com/maps/d/embed?mid=19OeCHW528Ffh5-5GJXyDHL4eouF-VeQ&hl=ja&ehbc=2E312F" width="640" height="480"></iframe>
                                     <img src="assets/img/PC-Group 22.svg" alt="" class="info-bgimg04">
                                     <img src="assets/img/PC-catch-maru01.svg" alt="" class="info-bgimg05">
                                 </div>
@@ -141,7 +151,7 @@
                     </section>
             
                     <!-- 展示・出展 -->
-                    <section class="shop">
+                    <section class="shop" id="shop">
                         <div class="shop-box">
                             <h2 class="shop-title"><img src="assets/img/PC-exhibitionTITTLE.svg" alt="展示・出展"></h2>
                             <div class="shop-flexbox">
@@ -262,7 +272,7 @@
                     </figure>
                     
                     <!-- ご挨拶 -->
-                    <section class="messege">
+                    <section class="messege" id="messege">
                         <div class="messege-box">
                             <h2 class="messege-title"><img src="assets/img/PC-aisatuTITTLE.svg" alt="あいさつ"></h2>
                             <!-- 理事長 -->
@@ -329,7 +339,7 @@
                     </section>
             
                     <!-- 学園祭ポスター -->
-                    <section class="poster">
+                    <section class="poster" id="poster">
                         <div class="poster-box">
                             <div class="poster-box2">
                                 <h2 class="poster-title"><img src="assets/img/PC-posterTITTLE.svg" alt="学園祭ポスター"></h2>
@@ -371,7 +381,7 @@
                     </section>
             
                     <!-- 日専祭ジャンバー -->
-                    <section class="jumper">
+                    <section class="jumper" id="jumper">
                         <img src="assets/img/decoration-poster-jumper.svg" alt="" class="jumper-bgimg02">
                         <div class="jumper-box">
                             <img src="assets/img/jumper-deco-01.svg" alt="" class="jumper-bgimg01">
@@ -392,6 +402,8 @@
                         <div class="event-box">
                             <img src="assets/img/joke-deco-02.svg" alt="" class="event-bgimg01">
                             <img src="assets/img/joke-deco-03.svg" alt="" class="event-bgimg02">
+                            <img src="assets/img/mike.svg" alt="" class="event-bgimg03">
+                            <img src="assets/img/joke-deco-05.svg" alt="" class="event-bgimg04">
                             <div class="event-box2">
                                 <h2 class="event-title"><img src="assets/img/PC-liveTITLE.svg" alt="声優ライブ"></h2>
                                 <figure class="event-img">
@@ -407,20 +419,27 @@
                     </section>
             
                     <!-- 実行委員企画 -->
-                    <section class="schoolplan">
+                    <section class="schoolplan" id="shoolplan">
                         <div class="schoolplan-box">
                             <div class="schoolplan-box2">
                                 <h2 class="schoolplan-title"><img src="assets/img/PC-planTITTLE.svg" alt="実行委員企画"></h2>
-                                <figure class="schoolplan-logo">
-                                    <img src="assets/img/crossword-logo.svg" alt="実行委員企画のポスターの写真">
-                                </figure>
-                
+                                <img src="assets/img/plan-deco-01.svg" alt="" class="schoolplan-bgimg01">
+                                <img src="assets/img/plan-deco-02.svg" alt="" class="schoolplan-bgimg02">
+                                <div class="schoolplan-imgbox">
+                                    <figure class="schoolplan-logo">
+                                        <img src="assets/img/crossword-logo.svg" alt="実行委員企画のポスターの写真">
+                                    </figure>
+                                    <img src="assets/img/PC-plan-arrow.svg" alt="" class="schoolplan-arrow">
+                                </div>
+                                
                                     <!-- ゲーム内容 -->
-                                    <section>
-                                        <h3>
-                                            ゲーム内容
-                                        </h3>
-                    
+                                    <section class="schoolplan-textbox">
+                                        <div class="schoolplan-flex">
+                                            <h3 class="schoolplan-h3">
+                                                ゲーム内容
+                                            </h3>
+                                        </div>
+                                        
                                         <p>
                                             校内各所に設置されている問題、<br>
                                             ヒントを参考に回答。<br>
@@ -429,25 +448,33 @@
                                     </section>
                                     
                                     <!-- ルール -->
-                                    <section>
-                                        <h3>
-                                            ルール
-                                        </h3>
-                    
-                                        <ol>
-                                            <li>解答用紙はパンフレットに記載されています。</li>
-                                            <li>パンフレットにヒントがある場所が載っているので要チェック！</li>
-                                            <li>問題を解き終わったら本館４階、キャリアセンターまで！</li>
-                                            <li>全部の問題を解くといいことがあるかも！？</li>
-                                        </ol>
+                                    <section class="schoolplan-textbox rule">
+                                        <div class="schoolplan-flex">
+                                            <h3 class="schoolplan-h3">
+                                                ルール
+                                            </h3>
+                                        </div>
+                                        <img src="assets/img/PC-plan-loading.svg" alt="" class="rule-bgimg01">
+                                        <img src="assets/img/PC-plan-window.svg" alt="" class="rule-bgimg02">
+                                        <img src="assets/img/PC-plan-hand.png" alt="" class="rule-bgimg03">
+                                        <div class="schoolplan-flex">
+                                            <ol type="1">
+                                                <li>解答用紙はパンフレットに記載されています。</li>
+                                                <li>パンフレットにヒントがある場所が載っているので要チェック！</li>
+                                                <li>問題を解き終わったら本館４階、キャリアセンターまで！</li>
+                                                <li>全部の問題を解くといいことがあるかも！？</li>
+                                            </ol>
+                                        </div>
                                     </section>
-                
+                                    
                                     <!-- 景品 -->
-                                    <section>
-                                        <h3>
-                                            景品
-                                        </h3>
-                    
+                                    <section class="schoolplan-textbox">
+                                        <div class="schoolplan-flex">
+                                            <h3 class="schoolplan-h3">
+                                                景品
+                                            </h3>
+                                        </div>
+                                        
                                         <p>
                                             クレーンゲームで、話題のゲームソフトが当たるかも！<br>
                                             ４等でもお菓子がもらえるので挑戦してね！
@@ -455,24 +482,30 @@
                                     </section>
                 
                                     <!-- お困りの際は -->
-                                    <section>
-                                        <h3>
-                                            お困りの際は
-                                        </h3>
+                                    <section class="schoolplan-textbox">
+                                        <div class="schoolplan-flex">
+                                            <h3 class="schoolplan-h3">
+                                                お困りの際は
+                                            </h3>
+                                        </div>
+                                        
                     
                                         <p>
                                             本館４階キャリアセンターには常にスタッフが待機しています。<br>
                                             遠慮なくお越しください。
                                         </p>
                                     </section>        
+                                    <img src="assets/img/plan-block01.svg" alt="" class="schoolplan-bgimg03">
+                                    <img src="assets/img/plan-block02.svg" alt="" class="schoolplan-bgimg04">
                             </div>
                         </div>         
                     </section>
             
                     <!-- ご来場の皆様へ -->
-                    <section class="caveat">
-                        <h2><img src="assets/img/PC-sirase01TITLE.svg" alt="ご来場の皆様へ"></h2>
+                    <section class="caveat" id="caveat">
+                        <h2 class="caveat-title"><img src="assets/img/PC-sirase01TITLE.svg" alt="ご来場の皆様へ"></h2>
                         <div class="caveat-box">
+                            
                             <p class="caveat-text">
                                 皆様に快適にお過ごしいただくためにいくつかお願いがございます。<br>
                                 ご協力のほどお願い申し上げます。
@@ -488,12 +521,12 @@
                                 <li>東京都新宿区内全域で路上喫煙は禁止されています。ご注意ください。</li>
                             </ul>
                         </div>
-            
+                        <img src="assets/img/PC-alert-bg-01.svg" alt="" class="caveat-bgimg01">
                     </section>
             
                     <!-- 感染症対策 -->
-                    <section class="Infection">
-                        <h2><img src="assets/img/PC-sirase02TITLE.svg" alt="感染症対策"></h2>
+                    <section class="Infection" id="Infection">
+                        <h2 class="Infection-title"><img src="assets/img/PC-sirase02TITLE.svg" alt="感染症対策"></h2>
                         <div class="Infection-box">
                             <p class="Infection-text">
                                 皆様に快適にお過ごしいただくためにいくつかお願いがございます。<br>
@@ -510,6 +543,8 @@
                                 <li>東京都新宿区内全域で路上喫煙は禁止されています。ご注意ください。</li>
                             </ul>
                         </div>
+                        <img src="assets/img/PC-alert-bg-02.svg" alt="" class="Infection-bgimg01">
+                        <img src="assets/img/PC-alert-bg-03.svg" alt="" class="Infection-bgimg02">
                     </section>
                     
                 </article>
@@ -517,19 +552,29 @@
         </div>
     
     <!-- フッター -->
-    <footer>
-        <!-- ロゴ -->
-        <p><img src="" alt="2023 日専祭"></p>
-        <!-- ナビゲーション -->
-        <ul>
-            <a href="#"><li>開催情報</li></a>
-            <a href="#"><li>日専祭について</li></a>
-            <a href="#"><li>展示・出展</li></a>
-            <a href="#"><li>実行委員企画</li></a>
-            <a href="#"><li>ご来場の皆様へ</li></a>
-        </ul>
-        <!-- Topに戻るボタン -->
-        <p class="gototop"><img src="assets/img/PC-BackToTop.svg" alt="Top"></p>
+    <footer class="footer">
+        <div class="footer-flex">
+            <!-- ロゴ -->
+            <p class="footer-logo"><a href="#"><img src="assets/img/PC-fotterLOGO.png" alt="2023 日専祭"></a></p>
+            <!-- ナビゲーション -->
+            <div class="footer-box">
+                <img src="assets/img/PC-footer-deco01.svg" alt="" class="footer-bgimg01">
+                <img src="assets/img/PC-footer-deco02.svg" alt="" class="footer-bgimg02">
+                <ul class="footer-list">
+                    <li><a href="#">開催情報</a></li>
+                    <li><a href="#info">日専祭について</a></li>
+                    <li><a href="#shop">展示・出展</a></li>
+                    <li><a href="#shoolplan">実行委員企画</a></li>
+                    <li><a href="#caveat">ご来場の皆様へ</a></li>
+                    <li><a href="#Infection">感染症対策</a></li>
+                </ul>
+            </div>
+            <!-- Topに戻るボタン -->
+            <p class="gototop"><a href="#"><img src="assets/img/PC-BackToTop.svg" alt="Top"></a></p>
+        </div>
+        <p class="copylight"><small>
+            Copyright &copy Japan Electronics College. All Rights Reserved.
+        </small></p>
     </footer>
 
 </body>

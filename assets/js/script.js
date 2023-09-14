@@ -1,5 +1,20 @@
 'use strict'; /* 厳格にエラーをチェック */
 
+window.onscroll = function () {
+    let gHeader = document.getElementsByClassName('header')[0]; //headerを任意のclass名に 
+    let gNav = document.getElementsByClassName('nav')[0]; // navを任意のclass名に
+    let gNavHeight = gNav.clientHeight;
+    let gMain =
+      document.getElementsByClassName('main')[0]; // mainを任意のclass名に 
+    if (window.pageYOffset >= gHeader.clientHeight) {
+      gNav.classList.add('fixed'); // fixedを任意のclass名に 
+      gMain.setAttribute('style', 'padding-top:' + gNavHeight + 'px');
+    } else {
+      gNav.classList.remove('fixed'); // fixedを任意のclass名に(上記と同じにする) 
+      gMain.setAttribute('style', 'padding-top:0;'); //padding-top:0;を任意の数値に
+    }
+}
+
 { /* ローカルスコープ */
 
 // DOM取得
