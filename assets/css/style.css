@@ -1,6 +1,11 @@
+@charset "UTF-8";
 body {
   margin: 0;
   background-color: #57D9EE;
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  overflow-x: hidden;
 }
 
 @media screen and (min-width: 1025px) {
@@ -80,44 +85,139 @@ a {
 }
 
 .fv {
+  position: relative;
+  width: 100%;
   margin-top: 60px;
-  background-color: #FFF3D2;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  background-image: url(../img/PC-Top-KVbg.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 280px;
 }
 .fv-logo {
   position: relative;
   width: 100%;
+  margin-top: 80px;
 }
 .fv-logo1 {
+  width: 30%;
   position: absolute;
   top: -60px;
   left: 10px;
 }
+.fv-logo-shock {
+  position: absolute;
+  width: 20%;
+  top: -30%;
+  right: 15%;
+}
 .fv-logo2 {
   position: relative;
   left: 0;
+  width: 30%;
 }
 .fv-logo3 {
   position: relative;
+  width: 50%;
 }
 .fv-flex {
   display: flex;
   justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.fv-flex img {
+  width: 100%;
+}
+.fv-img1 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img1 {
+    top: -15%;
+  }
+}
+.fv-img2 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img2 {
+    width: 15%;
+    bottom: 8%;
+  }
+}
+.fv-img3 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img3 {
+    width: 15%;
+    top: 40%;
+    right: 10%;
+  }
+}
+.fv-img4 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img4 {
+    width: 20%;
+    left: 15%;
+    bottom: -10%;
+    z-index: 10;
+  }
+}
+.fv-img5 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img5 {
+    width: 15%;
+    bottom: 10%;
+    right: 40%;
+  }
+}
+.fv-img6 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .fv-img6 {
+    width: 30%;
+    right: 5%;
+    bottom: -5%;
+  }
 }
 
+.catch {
+  position: relative;
+  background-image: url(../img/PC-alert-bg-03.svg);
+}
+.catch-box {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .catch-box {
-    border: 5px solid black;
+    border: 8px solid black;
     padding: 20px;
-    margin-top: 240px;
+    margin-top: 30px;
     background-color: #FFF3D2;
   }
 }
 .catch-title {
   margin-top: 90px;
+  background-image: url(../img/PC-3belowTitle.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
+}
+@media screen and (min-width: 1025px) {
+  .catch-title img {
+    width: 60%;
+  }
+}
+.catch-titlebox {
+  position: relative;
 }
 @media screen and (min-width: 1025px) {
   .catch-main {
@@ -137,26 +237,86 @@ a {
     text-align: center;
   }
 }
+.catch-img01 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .catch-img01 {
+    top: 10%;
+    left: 5%;
+  }
+}
+.catch-img02 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .catch-img02 {
+    width: 15%;
+    top: 30%;
+    left: -10%;
+  }
+}
+.catch-img03 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .catch-img03 {
+    width: 15%;
+    right: 3%;
+  }
+}
+.catch-bgimg01 {
+  position: absolute;
+  z-index: -10;
+}
+@media screen and (min-width: 1025px) {
+  .catch-bgimg01 {
+    bottom: 0px;
+    right: 0px;
+  }
+}
 
+.info {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .info-title {
     margin-top: 90px;
-    padding-bottom: 120px;
+    background-image: url(../img/PC-3belowTitle.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 105%;
+    padding-bottom: 5%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .info-title img {
+    width: 50%;
   }
 }
 @media screen and (min-width: 1025px) {
   .info-border {
-    border: 5px solid black;
+    border: 8px solid black;
     padding: 20px;
     margin-top: 60px;
     background-color: #FFF3D2;
   }
 }
+.info-box {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .info-box {
     width: 70%;
+    margin-top: 120px;
     margin: 0 auto;
   }
+}
+.info-h3 {
+  background-image: url(../img/3-subtitle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 5%;
 }
 @media screen and (min-width: 1025px) {
   .info-flex {
@@ -181,10 +341,81 @@ a {
   }
 }
 .info-map {
-  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  display: flex;
   justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+.info-bgimg01 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg01 {
+    width: 10%;
+    top: 5%;
+    left: 5%;
+  }
+}
+.info-bgimg02 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg02 {
+    width: 30%;
+    top: -15%;
+    right: -15%;
+  }
+}
+.info-bgimg03 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg03 {
+    width: 25%;
+    bottom: 5%;
+    left: -15%;
+  }
+}
+.info-bgimg04 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg04 {
+    width: 25%;
+    bottom: 0;
+    left: -5%;
+  }
+}
+.info-bgimg05 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg05 {
+    width: 20%;
+    bottom: -10%;
+    right: 10%;
+  }
+}
+.info-bgimg06 {
+  position: absolute;
+  z-index: 2;
+}
+@media screen and (min-width: 1025px) {
+  .info-bgimg06 {
+    width: 15%;
+    bottom: -15%;
+    right: 5%;
+  }
 }
 
+.shop {
+  position: relative;
+  /* is-activeがついている時のスタイル */
+  /* タブパネル */
+  /* is-showがついている時のスタイル */
+}
 @media screen and (min-width: 1025px) {
   .shop {
     margin: 60px auto;
@@ -192,14 +423,30 @@ a {
 }
 @media screen and (min-width: 1025px) {
   .shop-box {
-    border: 5px solid black;
+    position: relative;
+    display: inline-block;
     padding: 20px;
     margin-top: 60px;
     background-color: #FFF3D2;
+    border: 8px solid #000;
+    padding-bottom: 180px;
   }
 }
 .shop-title {
   margin-top: 90px;
+  background-image: url(../img/PC-3belowTitle.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
+}
+@media screen and (min-width: 1025px) {
+  .shop-title img {
+    width: 60%;
+  }
+}
+.shop-flexbox {
+  position: relative;
 }
 @media screen and (min-width: 1025px) {
   .shop-flexbox {
@@ -209,48 +456,224 @@ a {
 }
 @media screen and (min-width: 1025px) {
   .shop-text {
-    margin-top: 140px;
+    width: 80%;
+    margin: 140px auto 30px auto;
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 56px;
   }
 }
-.shop-tab {
-  display: flex;
-  justify-content: space-between;
+.shop-bgimg01 {
+  position: absolute;
 }
 @media screen and (min-width: 1025px) {
-  .shop-tab {
-    width: 70%;
-    margin: 0 auto;
+  .shop-bgimg01 {
+    width: 30%;
+    top: -5%;
+    left: -20%;
+  }
+}
+.shop-bgimg02 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .shop-bgimg02 {
+    width: 25%;
+    top: 20%;
+    right: -35%;
+  }
+}
+.shop-bgimg03 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .shop-bgimg03 {
+    width: 40%;
+    bottom: -10%;
+    left: -35%;
+  }
+}
+.shop-bgimg04 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .shop-bgimg04 {
+    width: 20%;
+    right: 30%;
+    bottom: 3%;
+  }
+}
+.shop-bgimg05 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .shop-bgimg05 {
+    width: 30%;
+    left: -10%;
+    bottom: 0;
+  }
+}
+.shop-bgimg06 {
+  position: absolute;
+}
+@media screen and (min-width: 1025px) {
+  .shop-bgimg06 {
+    width: 20%;
+    right: -10%;
+    bottom: 15%;
   }
 }
 @media screen and (min-width: 1025px) {
   .shop .Department-flex {
-    width: 90%;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     gap: 30px;
   }
 }
+.shop .Department-item {
+  background-color: #fff;
+}
 @media screen and (min-width: 1025px) {
   .shop .Department-item {
     width: 25%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 20px 0;
     text-align: center;
     border: 5px solid black;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .shop .Department-item img {
     width: 80px;
     height: 80px;
   }
 }
+.shop .tab {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.shop .tab__menu {
+  display: flex;
+  align-items: flex-end; /* メニューを下揃え&高さを調整 */
+  justify-content: space-between;
+  min-height: 50px; /* メニュー切替時にタブがズレないように */
+  padding: 0;
+  margin: 0;
+}
+.shop .tab__menu-item {
+  list-style: none;
+  width: 33%;
+  padding: 20px 5px; /* メニューに高さを付ける */
+  text-align: center;
+  margin-right: 6px;
+  background-color: #FCAA3B;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s; /* アニメーション */
+  border-top: 5px solid #000;
+  border-right: 5px solid #000;
+  border-left: 5px solid #000;
+}
+.shop .tab__menu-item:last-of-type {
+  margin-right: 0px;
+}
+.shop .tab__menu-item.is-active {
+  padding: 30px 5px; /* メニューに高さを付ける */
+  color: #000;
+  background-color: #FFD355;
+  background-image: url(../img/tab-act.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 0px;
+  font-weight: 700;
+}
+.shop .tab__panel {
+  width: 100%;
+}
+.shop .tab__panel-box {
+  border: 5px solid #000;
+  min-height: 400px; /* テキスト量が多くなっても対応できるように */
+  background-color: #FCAA3B;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.shop .tab__panel-box001 {
+  display: none;
+}
+.shop .tab__panel-box002 {
+  display: none;
+}
+.shop .tab__panel-box003 {
+  display: none;
+}
+.shop .tab__panel-box.is-show {
+  display: block;
+}
+.shop .groupposter {
+  position: relative;
+}
+.shop .groupposter-box {
+  width: 100%;
+  margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-left: 0;
+}
+.shop .groupposter-img {
+  width: 45%;
+  border: 5px solid #000;
+  box-shadow: 15px 12px 0px #9CFFF9;
+  text-align: center;
+}
+.shop .groupposter-img img {
+  width: 100%;
+  vertical-align: top;
+}
+.shop .watch-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+}
+.shop .watch-btn div .btnbg {
+  position: relative;
+  vertical-align: top;
+}
+.shop .watch-btn div .btnbg2 {
+  position: absolute;
+  width: 50%;
+  bottom: 5%;
+  right: 20%;
+}
+.shop .watch-btn div p {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  font-size: 40px;
+}
 
+.wavyline {
+  width: 70%;
+  margin: 0 auto;
+}
+.wavyline img {
+  width: 100%;
+}
+
+.messege {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .messege {
     margin: 60px auto;
@@ -264,22 +687,44 @@ a {
     background-color: #FFF466;
   }
 }
+.messege-box2 {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .messege-box2 {
     width: 90%;
     margin: 0 auto;
+    margin-top: 120px;
   }
 }
 @media screen and (min-width: 1025px) {
   .messege-title {
     margin-top: 90px;
-    padding-bottom: 120px;
+    background-image: url(../img/PC-3belowTitle.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 105%;
+    padding-bottom: 5%;
   }
+}
+@media screen and (min-width: 1025px) {
+  .messege-title img {
+    width: 50%;
+  }
+}
+.messege-h3 {
+  position: relative;
+  background-image: url(../img/PC-aisatu-talkcloud.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 @media screen and (min-width: 1025px) {
   .messege-h3 {
     font-size: 42px;
     font-weight: 400;
+    padding-left: 5%;
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -288,26 +733,122 @@ a {
     margin-left: 120px;
   }
 }
+.messege-h3--else {
+  position: relative;
+  background-image: url(../img/PC-aisatu-talkcloud2.svg);
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: contain;
+}
+@media screen and (min-width: 1025px) {
+  .messege-h3--else {
+    font-size: 42px;
+    font-weight: 400;
+    margin-left: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .messege-h3--else span {
+    font-weight: 700;
+    margin-left: 120px;
+  }
+}
 .messege-flex {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
 }
 .messege-flex--else {
+  display: flex;
   flex-direction: row-reverse;
 }
+.messege-line {
+  width: 30%;
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+.messege-lineelse {
+  width: 30%;
+  position: absolute;
+  top: -30px;
+  left: 5%;
+}
+.messege-line2 {
+  position: absolute;
+  bottom: -30px;
+  right: -10px;
+  z-index: 2;
+}
+.messege-line2else {
+  position: absolute;
+  bottom: -30px;
+  right: -50px;
+  z-index: 2;
+}
+.messege-img {
+  width: 60%;
+  border: 8px solid #000;
+  position: absolute;
+  top: 0;
+  right: -50px;
+  z-index: 1;
+}
+.messege-img--else {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  z-index: 1;
+}
+.messege-img img {
+  width: 100%;
+  vertical-align: top;
+}
 .messege-text {
+  position: relative;
+  z-index: 3;
   background-color: #BAF5FF;
+}
+.messege-text--else {
+  margin: 0;
+  right: -40px;
 }
 @media screen and (min-width: 1025px) {
   .messege-text {
     width: 90%;
     border: 5px solid black;
     padding: 30px;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 56px;
   }
 }
+.messege-bgimg01 {
+  width: 50%;
+  position: absolute;
+  right: -20%;
+  bottom: -20%;
+  z-index: 1;
+}
+.messege-bgimg02 {
+  width: 50%;
+  position: absolute;
+  left: -20%;
+  bottom: -20%;
+  z-index: 1;
+}
+.messege-bgimg03 {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: -3%;
+  z-index: 1;
+}
 
+.poster {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .poster-box {
     border: 5px solid black;
@@ -323,15 +864,54 @@ a {
     margin: 0 auto;
   }
 }
+.poster-title {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .poster-title {
     margin-top: 100px;
     margin-bottom: 235px;
+    background-image: url(../img/PC-3belowTitle.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 105%;
+    padding-bottom: 5%;
   }
+}
+@media screen and (min-width: 1025px) {
+  .poster-title img {
+    width: 80%;
+  }
+}
+.poster-bgimg01 {
+  width: 40%;
+  position: absolute;
+  left: -15%;
+  top: 12%;
+}
+.poster-bgimg02 {
+  width: 50%;
+  position: absolute;
+  right: -10%;
+  top: 0;
+}
+.poster-bgimg03 {
+  width: 50%;
+  position: absolute;
+  right: -10%;
+  top: 20%;
+}
+.poster-bgimg05 {
+  width: 50%;
+  position: absolute;
+  left: -20%;
+  bottom: -10%;
+  z-index: 1;
 }
 .poster-flex {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 @media screen and (min-width: 1025px) {
   .poster-No1 {
@@ -340,6 +920,9 @@ a {
     flex-wrap: wrap;
     padding-bottom: 450px;
   }
+}
+.poster-No2 {
+  position: relative;
 }
 @media screen and (min-width: 1025px) {
   .poster-No2 {
@@ -350,18 +933,48 @@ a {
   }
 }
 .poster-img {
+  position: relative;
   width: 100%;
   margin: 0;
   margin-bottom: 20px;
+  z-index: 3;
 }
 .poster-img img {
   width: 100%;
 }
+.poster-bgimg04 {
+  width: 10%;
+  position: absolute;
+  left: -5%;
+  top: 40%;
+  z-index: 1;
+}
+.poster-bgimg05 {
+  width: 50%;
+  position: absolute;
+  left: -5%;
+  bottom: 20%;
+  z-index: 1;
+}
+.poster-bgimg06 {
+  width: 60%;
+  position: absolute;
+  left: -20%;
+  bottom: -15%;
+}
+.poster-bgimg07 {
+  width: 20%;
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+}
 .poster-textbox {
+  position: relative;
   width: 100%;
   border: 5px solid black;
   padding: 30px;
   background-color: #FFF3D2;
+  z-index: 2;
 }
 @media screen and (min-width: 1025px) {
   .poster-text {
@@ -369,6 +982,12 @@ a {
   }
 }
 
+.jumper {
+  position: relative;
+}
+.jumper-box {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .jumper-box {
     border: 5px solid black;
@@ -380,24 +999,70 @@ a {
 }
 @media screen and (min-width: 1025px) {
   .jumper-box2 {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
   }
+}
+.jumper-title {
+  width: 60%;
+  background-image: url(../img/PC-3belowTitle.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
 }
 @media screen and (min-width: 1025px) {
   .jumper-title {
     margin-top: 90px;
-    padding-bottom: 190px;
   }
+}
+.jumper-title img {
+  width: 100%;
+}
+.jumper-img {
+  margin-top: 190px;
+}
+.jumper-text {
+  position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 1025px) {
   .jumper-text {
     margin-top: 40px;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
   }
 }
+.jumper-bgimg01 {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: -5%;
+}
+.jumper-bgimg02 {
+  width: 20%;
+  position: absolute;
+  top: -20%;
+  right: -7%;
+  z-index: 3;
+}
+.jumper-bgimg03 {
+  width: 20%;
+  position: absolute;
+  bottom: -20%;
+  right: -5%;
+  z-index: 3;
+}
+.jumper-bgimg04 {
+  width: 40%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
+.event {
+  position: relative;
+}
 @media screen and (min-width: 1025px) {
   .event-box {
     border: 5px solid black;
@@ -409,22 +1074,44 @@ a {
 }
 @media screen and (min-width: 1025px) {
   .event-box2 {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
   }
+}
+.event-title {
+  width: 60%;
+  background-image: url(../img/PC-3belowTitle.svg);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 105%;
+  padding-bottom: 5%;
 }
 @media screen and (min-width: 1025px) {
   .event-title {
     margin-top: 90px;
-    padding-bottom: 190px;
   }
+}
+.event-img {
+  margin-top: 190px;
 }
 @media screen and (min-width: 1025px) {
   .event-text {
     margin-top: 40px;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
   }
+}
+.event-bgimg01 {
+  width: 25%;
+  position: absolute;
+  top: 10%;
+  right: 3%;
+}
+.event-bgimg02 {
+  width: 30%;
+  position: absolute;
+  top: 45%;
+  right: 0;
 }
 
 @media screen and (min-width: 1025px) {
