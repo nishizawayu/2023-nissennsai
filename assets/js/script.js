@@ -15,6 +15,14 @@ window.onscroll = function () {
     }
 }
 
+const hambtn = document.querySelector(".hambtn");
+const ham = document.querySelector(".hammenu");
+
+hambtn.addEventListener("click",()=>{
+  hambtn.classList.toggle("act");
+  ham.classList.toggle("act");
+})
+
 { /* ローカルスコープ */
 
 // DOM取得
