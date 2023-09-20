@@ -30,7 +30,6 @@ body{
         width: 90%;
         margin: 0 auto;
     }
-    
 }
 
 h2{
@@ -90,6 +89,7 @@ a{
         z-index: 900;
         text-align: center;
         background-color:rgba(87,217,238,0.6);
+        transition: all .5s ease-in;
         &bg{
             width: 90%;
             height: 70vh;
@@ -116,40 +116,38 @@ a{
 }
 
 .hambtn {
-    @include mq(sp){
-        position: fixed;
-        top: 3%;
-        right: 3%;
-        display: flex;
-        height: 72px;
-        width: 72px;
-        background-color: #FFED00;
-        border: 4px solid #000;
-        justify-content: center;
-        align-items: center;
-        box-shadow: -15px 12px 0px #00FFE4;
-        z-index: 999;   /*重ね順*/
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    display: flex;
+    height: 72px;
+    width: 72px;
+    background-color: #FFED00;
+    border: 4px solid #000;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -15px 12px 0px #00FFE4;
+    z-index: 999;   /*重ね順*/
 
-        span{
-            position: absolute;
-            left: 0;
-            width: 80%;
-            left: 10%;
-            height: 5px;
-            background-color: #000;
-            border-radius: 4px;
-            transition: all .2s ease-out;
-            &:nth-of-type(1){
-                top: 15px;
-            }
+    span{
+        position: absolute;
+        left: 0;
+        width: 80%;
+        left: 10%;
+        height: 5px;
+        background-color: #000;
+        border-radius: 4px;
+        transition: all .2s ease-out;
+        &:nth-of-type(1){
+            top: 15px;
+        }
 
-            &:nth-of-type(2){
-                top: 34px;
-            }
+        &:nth-of-type(2){
+            top: 34px;
+        }
 
-            &:nth-of-type(3){
-                bottom: 15px;
-            }
+        &:nth-of-type(3){
+           bottom: 15px;
         }
     }
     @include mq(pc){
@@ -213,6 +211,7 @@ a{
 }
 
 .nav{
+    display: none;
     @include mq(pc){
         width: 80%;
         position: fixed;
@@ -224,11 +223,8 @@ a{
         border: 8px solid black;
         box-sizing: border-box;
         transition: all 0.5s;
-    }
-    
-    @include mq(sp){
-        display: none;
-    }
+    }        
+
     &-logo{
         margin-left: 5%;
         width: 10%;
@@ -292,19 +288,44 @@ a{
 .fv{
     position: relative;
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     margin-top: -3%;
     // レスポンシブ難あり　（森先生に相談）
     // calc()を試す 0915
-    background-image: url(../img/PC-Top-KVbg.svg);
+    background-image: url(../img/PHONE-TOP-bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    // padding-top: 120px;
-    // padding-bottom: 280px;
+    background-position-x: 10px;
+    margin-top: 60px;
+    padding-bottom: 90px;
+    @include mq(pc){
+        margin-top: auto;
+        background-image: url(../img/PC-Top-KVbg.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-top: 120px;
+        padding-bottom: 280px;
+    }
     &-logo{
-        position: relative;
-        width: 100%;
-        margin-top: 80px;
+        display: none;
+        @include mq(pc){
+            display: block;
+            position: relative;
+            width: 100%;
+            margin-top: 90px;
+        }
+    }
+    &-logo-phone{
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 70px;
+        img{
+            width: 100%;
+        }
+        @include mq(pc){
+            display: none;
+        }
     }
     &-logo1{
         width: 30%;
@@ -329,18 +350,46 @@ a{
         width: 50%;
     }
     &-flex{
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        margin: 0 auto;
+        @include mq(pc){
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        p{
+            width: 80%;
+            margin: 0 auto;
+            @include mq(pc){
+                width: auto;
+                margin: auto;
+            }
+        }
+        div{
+            width: 80%;
+            margin: 0 auto;
+            @include mq(pc){
+                width: auto;
+                margin: auto;
+            }
+        }
         img{
             width: 100%;
+        }
+    }
+    .fv-2023{
+        position: absolute;
+        width: 50%;
+        top: -10%;
+        @include mq(pc){
+            display: none;
         }
     }
     &-img1{
         position: absolute;
         width: 40%;
+        top: 10%;
         @include mq(pc){
+            width: 30%;
             top: -15%;
         }
     }
@@ -355,10 +404,9 @@ a{
     }
     &-img3{
         position: absolute;
-        width: 15%;
-        top: 40%;
-        right: 10%;
+        display: none;
         @include mq(pc){
+            display: block;
             width: 15%;
             top: 40%;
             right: 10%;
@@ -389,14 +437,38 @@ a{
         }
     }
     &-img6{
-        width: 30%;
-        right: 5%;
-        bottom: -5%;
+        width: 60%;
+        right: 0;
+        bottom: -25%;
         position: absolute;
+        z-index: 2;
         @include mq(pc){
             width: 30%;
             right: 5%;
             bottom: -5%;
+        }
+    }
+    &-img7{
+        width: 40%;
+        position: absolute;
+        display: block;
+        top: 20%;
+        right: 5%;
+        @include mq(pc){
+            display: none;
+        }
+    }
+    &-phonestyle{
+        position: relative;
+    }
+    &-datephone{
+        display: block;
+        width: 25%;
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        @include mq(pc){
+            display: none;
         }
     }
 }
@@ -414,7 +486,7 @@ a{
         background-color: #FFF3D2;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
             border: 8px solid black;
             padding: 20px;
@@ -426,7 +498,7 @@ a{
     &-title{
         position: relative;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 90px;
         background-image: url(../img/PC-3belowTitle2.svg);
         background-repeat: no-repeat;
         background-position-x: 50%;
@@ -440,9 +512,6 @@ a{
         }
         img{
             width: 80%;
-            @include mq(pc){
-                width: 60%;
-            }
         }
     }
     &-titlebox{
@@ -550,7 +619,7 @@ a{
         background-color: #FFF3D2;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
             border: 8px solid black;
             padding: 20px;
@@ -687,7 +756,7 @@ a{
         padding-bottom: 180px;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
             position: relative;
             padding-bottom: 180px;
@@ -1031,7 +1100,7 @@ a{
         padding: 20px 20px 60px 20px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin-top: 60px;
         }
     }
@@ -1223,7 +1292,7 @@ a{
         margin-top: 60px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
+            width: auto;
         }
     }
     &-box2{
@@ -1385,7 +1454,7 @@ a{
         margin-top: 60px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             border: 8px solid black;
             padding: 20px;
             padding-bottom: 100px;
@@ -1511,7 +1580,7 @@ a{
         margin-top: 60px;
         background-color: #5AF1DF;
         @include mq(pc){
-            width: 100%;
+            width: auto;
         }
     }
     &-box2{
@@ -1605,7 +1674,7 @@ a{
         background-size: cover;
         border: 4px solid black;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             border-bottom: 8px solid #000;
         }
     }
@@ -1939,6 +2008,9 @@ a{
     @include mq(pc){
         background-image: url(../img/PC-footer.svg);
         background-size: contain;
+    }
+    @include mq(tab){
+        padding-top: 240px;
     }
     background-repeat: repeat-x;
     padding-top: 120px;
