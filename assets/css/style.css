@@ -109,29 +109,33 @@ a {
     top: 3%;
     right: 3%;
     display: flex;
-    height: 24px;
-    width: 30px;
+    height: 72px;
+    width: 72px;
+    background-color: #FFED00;
+    border: 4px solid #000;
     justify-content: center;
     align-items: center;
+    box-shadow: -15px 12px 0px #00FFE4;
     z-index: 999; /*重ね順*/
   }
   .hambtn span {
     position: absolute;
     left: 0;
-    width: 100%;
-    height: 4px;
+    width: 80%;
+    left: 10%;
+    height: 5px;
     background-color: #000;
     border-radius: 4px;
     transition: all 0.2s ease-out;
   }
   .hambtn span:nth-of-type(1) {
-    top: 0;
+    top: 15px;
   }
   .hambtn span:nth-of-type(2) {
-    top: 10px;
+    top: 34px;
   }
   .hambtn span:nth-of-type(3) {
-    bottom: 0;
+    bottom: 15px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -143,15 +147,15 @@ a {
   transition: all 0.2s ease-out;
 }
 .hambtn.act span:nth-of-type(1) {
-  -webkit-transform: translateY(10px) rotate(45deg);
-  transform: translateY(10px) rotate(45deg);
+  -webkit-transform: translateY(20px) rotate(45deg);
+  transform: translateY(20px) rotate(45deg);
 }
 .hambtn.act span:nth-of-type(2) {
   opacity: 0;
 }
 .hambtn.act span:nth-of-type(3) {
-  -webkit-transform: translateY(-10px) rotate(-45deg);
-  transform: translateY(-10px) rotate(-45deg);
+  -webkit-transform: translateY(-15px) rotate(-45deg);
+  transform: translateY(-15px) rotate(-45deg);
 }
 
 .grobalnav {
