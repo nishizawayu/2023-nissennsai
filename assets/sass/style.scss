@@ -1,14 +1,2038 @@
-body {
-  background-color: #57D9EE;
-}
+$breakpoint: (
+    sp: 'screen and (max-width: 767px)',
+    tab: 'screen and (min-width: 768px)',
+    pc: 'screen and (min-width: 1024px)'
+);
 
-.header {
-  &__logo{
-    img {
-      width: 45%;
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+     @content;
     }
   }
+
+html{
+    scroll-behavior: smooth;
 }
+
+body{
+    margin: 0;
+    background-color: #57D9EE;
+    overflow-x: hidden;
+    // フォント
+    font-family: fot-tsukuardgothic-std, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.conteiner{
+    position: relative;
+    @include mq(pc){
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+}
+
+h2{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    @include mq(pc){
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    img{
+        width: 100%;
+    }
+    
+   
+}
+
+h3{
+    @include mq(pc){
+        font-size: 42px;
+    }
+    
+}
+
+li{
+    list-style: none;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+}
+
+.ham{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    transition: all .5s ease-in;
+    @include mq(pc){
+        display: none;
+    }
+    &-logo{
+        width: 40%;
+        margin-left: 5%;
+        img{
+            width: 100%;
+        }
+    }
+    &menu{
+        width: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100vh;
+        left: 100%;
+        z-index: 900;
+        text-align: center;
+        background-color:rgba(87,217,238,0.6);
+        &bg{
+            width: 90%;
+            height: 70vh;
+            background-color: #FFF3D2;
+        }
+        &.act{
+            left: 0;
+        }
+    }
+    &-text{
+        width: 80%;
+        margin: 0 auto;
+        padding-left: 0;
+        border: 4px solid #000;
+        padding-top: 90px;
+        padding-bottom:90px ;
+        line-height: 42px;
+        a{
+            li{
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.hambtn {
+    @include mq(sp){
+        position: fixed;
+        top: 3%;
+        right: 3%;
+        display: flex;
+        height: 72px;
+        width: 72px;
+        background-color: #FFED00;
+        border: 4px solid #000;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -15px 12px 0px #00FFE4;
+        z-index: 999;   /*重ね順*/
+
+        span{
+            position: absolute;
+            left: 0;
+            width: 80%;
+            left: 10%;
+            height: 5px;
+            background-color: #000;
+            border-radius: 4px;
+            transition: all .2s ease-out;
+            &:nth-of-type(1){
+                top: 15px;
+            }
+
+            &:nth-of-type(2){
+                top: 34px;
+            }
+
+            &:nth-of-type(3){
+                bottom: 15px;
+            }
+        }
+    }
+    @include mq(pc){
+        display: none;
+    }
+
+    &.act{
+        span{
+            transition: all .2s ease-out;
+            &:nth-of-type(1){
+                -webkit-transform: translateY(20px) rotate(45deg);
+                transform: translateY(20px) rotate(45deg);
+            }
+    
+            &:nth-of-type(2){
+                opacity: 0;
+            }
+            &:nth-of-type(3){
+                -webkit-transform: translateY(-15px) rotate(-45deg);
+                transform: translateY(-15px) rotate(-45deg);
+            }
+        }
+    }
+  }
+
+.grobalnav{
+    display: none;
+    @include mq(pc){
+        display: block;
+        &-list{
+            width: 97%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        &-con{
+            // border: 8px solid #000;
+            // background-color: #FFED00;
+            padding: 30px 90px;
+            a{
+                font-size: 20px;
+                font-weight: 700;
+                color: #000;
+            }
+        }
+        .ncon1{
+            background-image: url(../img/nav-img01.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .ncon2{
+            background-image: url(../img/nav-img02.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.header{
+    position: relative;
+}
+
+.nav{
+    @include mq(pc){
+        width: 80%;
+        position: fixed;
+        top: -100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFF3D2;
+        border: 8px solid black;
+        box-sizing: border-box;
+        transition: all 0.5s;
+    }
+    
+    @include mq(sp){
+        display: none;
+    }
+    &-logo{
+        margin-left: 5%;
+        width: 10%;
+        img{
+            width: 100%;
+        }
+    }
+    &-menu{
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        li{
+            margin-left: 20px;
+            a{
+                text-decoration:underline #FF00C7;
+                color: #000;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+    }
+    &-bgimg01{
+        position: absolute;
+        width: 10%;
+        top: -40%;
+        right: -4%;
+    }
+    &-bgimg02{
+        position: absolute;
+        width: 3%;
+        bottom: 5%;
+        left: 20%;
+    }
+    &-bgimg03{
+        position: absolute;
+        width: 5%;
+        top: 0;
+        left: 15%;
+    }
+    &-bgimg04{
+        position: absolute;
+        width: 3%;
+        top: 2%;
+        right: 35%;
+    }
+
+}
+
+.fixed {
+    @include mq(pc){
+        width: 90%;
+        position: fixed;
+        top: 3%;
+        left: 5%;
+        z-index: 100;
+    }
+    /* 必要に応じて */
+  }
+
+// ファーストビュー
+.fv{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: -3%;
+    // レスポンシブ難あり　（森先生に相談）
+    // calc()を試す 0915
+    background-image: url(../img/PC-Top-KVbg.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    // padding-top: 120px;
+    // padding-bottom: 280px;
+    &-logo{
+        position: relative;
+        width: 100%;
+        margin-top: 80px;
+    }
+    &-logo1{
+        width: 30%;
+        position: absolute;
+        top: -60px;
+        left: 10px;
+    }
+    &-logo-shock{
+        position: absolute;
+        width: 20%;
+        top: -30%;
+        right: 15%;
+    }
+
+    &-logo2{
+        position: relative;
+        left: 0;
+        width: 30%;
+    }
+    &-logo3{
+        position: relative;
+        width: 50%;
+    }
+    &-flex{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+    &-img1{
+        position: absolute;
+        width: 40%;
+        @include mq(pc){
+            top: -15%;
+        }
+    }
+    &-img2{
+        position: absolute;
+        width: 15%;
+        bottom: 8%;
+        @include mq(pc){
+            width: 15%;
+            bottom: 8%;
+        }
+    }
+    &-img3{
+        position: absolute;
+        width: 15%;
+        top: 40%;
+        right: 10%;
+        @include mq(pc){
+            width: 15%;
+            top: 40%;
+            right: 10%;
+        }
+    }
+    &-img4{
+        position: absolute;
+        width: 20%;
+        left: 15%;
+        bottom: -10%;
+        z-index: 10;
+        @include mq(pc){
+            width: 20%;
+            left: 15%;
+            bottom: -10%;
+            z-index: 10;
+        }
+    }
+    &-img5{
+        width: 15%;
+        bottom: 10%;
+        right: 40%;
+        position: absolute;
+        @include mq(pc){
+            width: 15%;
+            bottom: 10%;
+            right: 40%;
+        }
+    }
+    &-img6{
+        width: 30%;
+        right: 5%;
+        bottom: -5%;
+        position: absolute;
+        @include mq(pc){
+            width: 30%;
+            right: 5%;
+            bottom: -5%;
+        }
+    }
+}
+
+// キャッチコピー
+.catch{
+    position: relative;
+    background-image: url(../img/PC-alert-bg-03.svg);
+    &-box{
+        width: 80%;
+        border: 8px solid black;
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: 60px;
+        background-color: #FFF3D2;
+        box-shadow: 15px 12px 0px #FDF150;
+        @include mq(pc){
+            width: 100%;
+            margin: auto;
+            border: 8px solid black;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: #FFF3D2;
+            box-shadow: none;
+        }
+    }
+    &-title{
+        position: relative;
+        width: 100%;
+        margin-top: 30px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            width: 80%;
+            @include mq(pc){
+                width: 60%;
+            }
+        }
+    }
+    &-titlebox{
+        position: relative;
+    }
+    &-main{
+        @include mq(pc){
+            width: 70%;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        &-PC{
+            display: none;
+            @include mq(pc){
+                display: block;
+                width: 100%;
+            }
+        }
+        &-PHONE{
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            @include mq(pc){
+                display: none;
+            }
+        }
+    }
+    &-text{
+        text-align: center;
+        @include mq(pc){
+            margin-top: 60px;
+            font-size: 24px;
+        }
+    }
+    &-img01{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            top: 10%;
+            left: 5%;
+        }
+    }
+    &-img02{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 15%;
+            top: 30%;
+            left: -10%;
+        }
+    }
+    &-img03{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 15%;
+            right: 3%;
+        }
+    }
+    &-bgimg01{
+        position: absolute;
+        z-index: -10;
+        @include mq(pc){
+            bottom: 0px;
+            right: 0px;
+        }
+    }
+}
+
+// 開催情報
+.info{
+    position: relative;
+    &-title{
+        position: relative;
+        width: 80%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            width: 80%;
+            @include mq(pc){
+                width: 50%;
+            }
+        }
+    }
+    &-border{
+        width: 80%;
+        border: 8px solid black;
+        padding: 20px;
+        margin: 0 auto;
+        margin-top: 60px;
+        background-color: #FFF3D2;
+        box-shadow: 15px 12px 0px #FDF150;
+        @include mq(pc){
+            width: 100%;
+            margin: auto;
+            border: 8px solid black;
+            padding: 20px;
+            margin-top: 60px;
+            background-color: #FFF3D2;
+            box-shadow: none;
+        }
+    }
+
+    &-box{
+        position: relative;
+        margin-top: 60px;
+        @include mq(pc){
+            width: 70%;
+            margin-top: 120px;
+            margin: 0 auto;
+        }
+    }
+    &-h3{
+        background-image: url(../img/3-subtitle.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left: 5%;
+    }
+    &-flex{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        @include mq(pc){
+            gap: 60px;
+        }
+    }
+    &-text{
+        @include mq(pc){
+            font-size: 40px;
+            text-align: left;
+            margin-left: 30px;
+        }
+        &--center{
+            text-align: center;
+        }
+        span{
+            @include mq(pc){
+                font-size: 36px;
+            }   
+        }
+    }
+    // 悩みポイント
+    &-map{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding-bottom: 120px;
+    }
+    &-bgimg01{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 10%;
+            top: 5%;
+            left: 5%;
+        }
+    }
+    &-bgimg02{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 30%;
+            top: -15%;
+            right: -15%;
+        }
+    }
+    &-bgimg03{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 25%;
+            bottom: 5%;
+            left: -15%;
+        }
+    }
+    &-bgimg04{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 25%;
+            bottom: 0;
+            left: -5%;
+        }
+    }
+    &-bgimg05{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 20%;
+            bottom: -10%;
+            right: 10%;
+        }
+    }
+    &-bgimg06{
+        display: none;
+        position: absolute;
+        z-index: 2;
+        @include mq(pc){
+            display: block;
+            width: 15%;
+            bottom: -15%;
+            right: 5%;
+        }
+    }
+}
+
+.shop{
+    position: relative;
+    @include mq(pc){
+        margin: 60px auto;
+    }
+
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        padding: 20px;
+        margin-top: 60px;
+        background-color: #FFF3D2;
+        border: 8px solid #000;
+        padding-bottom: 180px;
+        box-shadow: 15px 12px 0px #FDF150;
+        @include mq(pc){
+            width: 100%;
+            margin: auto;
+            position: relative;
+            padding-bottom: 180px;
+            box-shadow: none;
+            // background-image: url(../img/PC-exhibition-bg.svg);
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            // height: 0;
+            // padding-bottom: 180%;
+        }
+    }
+
+    &-title{
+        position: relative;
+        width: 80%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            @include mq(pc){
+                width: 60%;
+            }
+        }
+    }
+
+    &-flexbox{
+        position: relative;
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+    
+    &-text{
+        margin-top: 60px;
+        text-align: center;
+        @include mq(pc){
+            width: 80%;
+            margin: 140px auto 30px auto;
+            font-size: 24px;
+            line-height: 56px;
+        }
+    }
+
+    &-bgimg01{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 30%;
+            top: -5%;
+            left: -20%;
+        }
+    }
+
+    &-bgimg02{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 25%;
+            top: 20%;
+            right: -35%;
+        }
+    }
+
+    &-bgimg03{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 40%;
+            bottom: -10%;
+            left: -35%;
+        }
+    }
+
+    &-bgimg04{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 20%;
+            right: 30%;
+            bottom: 3%;
+        }
+    }
+
+    &-bgimg05{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 30%;
+            left: -10%;
+            bottom: 0;
+        }
+    }
+
+    &-bgimg06{
+        display: none;
+        position: absolute;
+        @include mq(pc){
+            display: block;
+            width: 20%;
+            right: -10%;
+            bottom: 15%;
+        }
+    }
+
+    // タブメニュー
+    .Department-flex{
+        @include mq(pc){
+            width: 100%;
+            margin-top: 0px;
+            padding-top: 0px;
+            padding-left: 0;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+    .Department-item{
+        background-color: #fff;
+        @include mq(pc){
+            width: 25%;
+            padding: 20px 0;
+            text-align: center;
+            border: 5px solid black;
+            border-radius: 12px;
+            font-size: 14px;
+            img{
+                width: 80px;
+                height: 80px;
+            }
+        }  
+    } 
+    .tab {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .tab__menu {
+        display: flex;
+        align-items: flex-end; /* メニューを下揃え&高さを調整 */
+        justify-content: space-between;
+        min-height: 50px; /* メニュー切替時にタブがズレないように */
+        padding: 0;
+        margin: 0;
+      }
+      
+      .tab__menu-item {
+        list-style: none;
+        width: 33%;
+        padding: 20px 5px; /* メニューに高さを付ける */
+        text-align: center;
+        margin-right: 6px;
+        background-color: #FCAA3B;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        cursor: pointer;
+        transition: all .3s; /* アニメーション */
+        border-top: 5px solid #000;
+        border-right: 5px solid #000;
+        border-left: 5px solid #000;
+      }
+      
+      .tab__menu-item:last-of-type {
+        margin-right: 0px;
+      }
+      
+      /* is-activeがついている時のスタイル */
+      .tab__menu-item.is-active {
+        padding: 30px 5px; /* メニューに高さを付ける */
+        color: #000;
+        background-color: #FFD355;
+        background-image: url(../img/tab-act.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 0px;
+        font-weight: 700;
+      }
+
+      /* タブパネル */
+    .tab__panel {
+        width: 100%;
+    }
+   
+   .tab__panel-box {
+    border: 5px solid #000;
+    min-height: 400px; /* テキスト量が多くなっても対応できるように */
+    background-color: #FCAA3B;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   }
+   
+   .tab__panel-box001 {
+     display: none;
+   }
+   
+   .tab__panel-box002 {
+     display: none;
+   }
+   
+   .tab__panel-box003 {
+     display: none;
+   }
+   
+   /* is-showがついている時のスタイル */
+   .tab__panel-box.is-show {
+     display: block;
+   }
+//    ---------
+
+    //各団体ポスター
+    .groupposter{
+        position: relative;
+        &-box{
+            width: 100%;
+            margin: 60px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            padding-left: 0;
+        }
+        &-img{
+            width: 80%;
+            margin: 0 auto;
+            @include mq(pc){
+                width: 45%;
+                margin: auto;
+                box-shadow: 15px 12px 0px #9CFFF9;
+            }
+            border: 5px solid #000;
+            text-align:center;
+            img{
+                width: 100%;
+                vertical-align:top;
+            }
+        }
+    }
+    .PC-br{
+        display: none;
+        @include mq(pc){
+            display: block;
+        }
+    }
+    // 一覧を見るボタン 要相談
+    .watch-btn{
+        background-color: #FF0000;
+        border: 4px solid black;
+        position: absolute;
+        bottom: -1%;
+        right: -5%;
+        color: #fff;
+        @include mq(pc){
+            border: none;
+            background-color: #FFF3D2;
+            bottom: 0;
+            right: 0;
+        }
+        // background-image: url(../img/PC-exhibition-bg-btn.svg);
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        div{
+            display: flex;
+            @include mq(pc){
+                display: block;
+            }
+            .btnbg{
+                display: none;
+                @include mq(pc){
+                    display: block;
+                    position: relative;
+                    vertical-align:top;
+                }   
+            }
+            .btnbg2{
+                width: 40%;
+                @include mq(pc){
+                    position: absolute;
+                    width: 50%;
+                    bottom: 5%;
+                    right: 20%;
+                }
+                
+            }
+            p{
+                font-size: 24px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                @include mq(pc){
+                    position: absolute;
+                    top: 30%;
+                    right: 5%;
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+}
+
+.wavyline{
+    width: 90%;
+    margin: 30px auto;
+    @include mq(pc){
+        width: 70%;
+        margin: 0 auto;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+// ご挨拶
+.messege{
+    position: relative;
+    @include mq(pc){
+        margin: 60px auto;
+    }
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        border: 8px solid black;
+        padding: 20px 20px 60px 20px;
+        background-color: #FFF466;
+        @include mq(pc){
+            width: 100%;
+            margin-top: 60px;
+        }
+    }
+    &-box2{
+        position: relative;
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 120px;
+        }
+    }
+    &-title{
+        position: relative;
+        width: 80%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            @include mq(pc){
+                width: 50%;
+            }
+        }
+    }
+    &-h3{
+        position: relative;
+        background-image: url(../img/PC-aisatu-talkcloud.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include mq(pc){
+            font-size: 42px;
+            font-weight: 400;
+            padding-left: 5%;
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+        span{
+            @include mq(pc){
+                font-weight: 700;
+                margin-left: 120px;
+            }
+        }
+    }
+    &-h3--else{
+        position: relative;
+        background-image: url(../img/PC-aisatu-talkcloud2.svg);
+        background-repeat: no-repeat;
+        background-position-y: 10px;
+        background-size: contain;
+        @include mq(pc){
+            font-size: 42px;
+            font-weight: 400;
+            margin-left: 3%;
+            padding-left: 8%;
+            padding-right: 8%;
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+        span{
+            @include mq(pc){
+                font-weight: 700;
+                margin-left: 120px;
+            }
+        }
+    }
+    &-flex{
+        position: relative;
+        display: flex;
+        @include mq(pc){
+            display: block;
+        }
+        &--else{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    &-line{
+        width: 30%;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+    &-lineelse{
+        width: 30%;
+        position: absolute;
+        top: -30px;
+        left: 5%;
+    }
+    &-line2{
+        position: absolute;
+        bottom: -30px;
+        right: -10px;
+        z-index: 2;
+    }
+    &-line2else{
+        position: absolute;
+        bottom: -30px;
+        right: -50px;
+        z-index: 2;
+    }
+    &-img{
+        width: 50%;
+        border: 8px solid #000;
+        position: relative;
+        @include mq(pc){
+            position: absolute;
+            top: 0;
+            right: -50px;
+            z-index: 1;
+        }
+        &--else{
+            position: relative;
+            @include mq(pc){
+                position: absolute;
+                top: 0;
+                left: -50px;
+                z-index: 1;
+            }
+        }
+        img{
+            width: 100%;
+            vertical-align:top;
+        }
+    }
+    &-text{
+        position: relative;
+        width: 90%;
+        padding: 5%;
+        border: 5px solid black;
+        z-index: 3;
+        background-color: #BAF5FF;
+        &--else{
+            margin: 0;
+            @include mq(pc){
+                right: -40px;
+            }
+        }
+        @include mq(pc){
+            width: 90%;
+            padding: 30px;
+            font-size: 28px;
+            line-height: 56px;
+        }   
+    }
+    &-bgimg01{
+        width: 70%;
+        position: absolute;
+        right: 0;
+        bottom: -20%;
+        z-index: 1;
+        @include mq(pc){
+            width: 50%;
+            right: -20%;
+            bottom: -20%;
+        }
+    }
+    &-bgimg02{
+        width: 50%;
+        position: absolute;
+        left: -20%;
+        bottom: -20%;
+        z-index: 1;
+    }
+    &-bgimg03{
+        width: 50%;
+        position: absolute;
+        right: 0;
+        bottom: -3%;
+        z-index: 1;
+    }
+}
+
+.poster{
+    position: relative;
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        border: 8px solid black;
+        padding: 20px;
+        padding-bottom: 100px;
+        margin-top: 60px;
+        background-color: #FFF466;
+        @include mq(pc){
+            width: 100%;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    &-title{
+        position: relative;
+        width: 80%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+        img{
+            @include mq(pc){
+                width: 80%;
+            }
+        }
+    }
+    &-bgimg01{
+        width: 40%;
+        position: absolute;
+        left: -15%;
+        top: 12%;
+    }
+    &-bgimg02{
+        display: none;
+        @include mq(pc){
+            display: block;
+            width: 50%;
+            position: absolute;
+            right: -10%;
+            top:0;
+        }
+        
+    }
+    &-bgimg03{
+        width: 50%;
+        position: absolute;
+        right: -10%;
+        top:20%;
+    }
+    &-bgimg05{
+        width: 50%;
+        position: absolute;
+        left: -20%;
+        bottom:-10%;
+        z-index: 1;
+    }
+    &-flex{
+        position: relative;
+        margin-top: 120px;
+        @include mq(pc){
+            margin-top: 180px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-No1{
+        width: 100%;
+        @include mq(pc){
+            width: 45%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 450px;
+        }
+    }
+    &-No2{
+        width: 100%;
+        position: relative;
+        margin-top: 60px;
+        @include mq(pc){
+            width: 45%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 450px;
+        }
+    }
+    &-img{
+        position: relative;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+        z-index: 3;
+        img{
+            width: 100%;
+        }
+    }
+
+    &-bgimg04{
+        width: 10%;
+        position: absolute;
+        left: -5%;
+        top: 40%;
+        z-index: 1;
+    }
+
+    &-bgimg05{
+        width: 50%;
+        position: absolute;
+        left: -5%;
+        bottom: 20%;
+        z-index: 1;
+    }
+
+    &-bgimg06{
+        width: 60%;
+        position: absolute;
+        left: -20%;
+        bottom: -15%;
+    }
+
+    &-bgimg07{
+        width: 20%;
+        position: absolute;
+        right: -10%;
+        bottom: -10%;
+    }
+    
+    &-textbox{
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        border: 5px solid black;
+        padding: 3%;
+        @include mq(pc){
+            width: 100%;
+            padding: 30px;
+        }
+        background-color: #FFF3D2;
+        z-index: 2;
+    }
+    &-text{
+        @include mq(pc){
+            font-size: 24px;
+        }
+    }
+}
+
+.jumper{
+    position: relative;
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        border: 8px solid black;
+        padding: 20px;
+        padding-bottom: 100px;
+        margin-top: 60px;
+        background-color: #FFF466;
+        @include mq(pc){
+            width: 100%;
+            border: 8px solid black;
+            padding: 20px;
+            padding-bottom: 100px;
+            margin-top: 60px;
+            background-color: #FFF466;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+    &-title{
+        width: 80%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 60%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }        
+        img{
+            width: 100%;
+        }
+    }
+    &-img{
+        position: relative;
+        z-index: 3;
+        background: #fff;
+        border: 8px solid #000;
+        display: inline-block;
+        margin-top: 60px;
+        img{
+            width: 100%;
+        }
+        @include mq(pc){
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    &-text{
+        position: relative;
+        z-index: 2;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 60px;
+        @include mq(pc){
+            width: 100%;
+            margin: auto;
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: left;
+        }
+    }
+    &-bgimg01{
+        width: 35%;
+        bottom: 10%;
+        left: -5%;
+        position: absolute;
+        z-index: 1;
+        @include mq(pc){
+            width: 20%;
+            top: 0;
+            bottom: auto;
+        }
+    }
+    &-bgimg02{
+        width: 35%;
+        position: absolute;
+        right: 0;
+        bottom: -10%;
+        z-index: 1;
+        @include mq(pc){
+            width: 20%;
+            top: -10%;
+            right: -7%;
+            z-index: 3;
+        }
+        
+    }
+    &-bgimg03{
+        display: none;
+        @include mq(pc){
+            display: block;
+            width: 20%;
+            position: absolute;
+            bottom: -10%;
+            right: -5%;
+            z-index: 3;
+        }
+    }
+    &-bgimg04{
+        display: none;
+        @include mq(pc){
+            display: block;
+            width: 40%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+.event{
+    position: relative;
+    @include mq(pc){
+        background-image: url(../img/mike.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        border: 8px solid black;
+        padding: 20px;
+        padding-bottom: 100px;
+        margin-top: 60px;
+        background-color: #5AF1DF;
+        @include mq(pc){
+            width: 100%;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+    &-title{
+        width: 70%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }        
+        img{
+            width: 100%;
+        }
+    }
+    &-img{
+        margin-top: 190px;
+    }
+    &-text{
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: left;
+        }
+    }
+    &-bgimg01{
+        width:30%;
+        position: absolute;
+        right: 0;
+        top: 30%;
+        @include mq(pc){
+            width:25%;
+            top: 10%;
+            right: 3%;
+        }
+        
+    }
+    &-bgimg02{
+        width:50%;
+        position: absolute;
+        top: 45%;
+        right: 0;
+        @include mq(pc){
+            width:30%;
+            top: 45%;
+        }
+    }
+    &-bgimg03{
+        width: 55%;
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+    &-bgimg04{
+        width: 50%;
+        position: absolute;
+        bottom: -20%;
+        right: 0;
+        z-index: 3;
+        @include mq(pc){
+            width: 30%;
+            bottom: -20%;
+            right: -10%;
+        }
+    }
+
+}
+
+.schoolplan{
+    position: relative;
+    z-index: 1;
+    &-box{
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        padding-bottom: 100px;
+        margin-top: 60px;
+        background-color: #FFF3D2;
+        background-image: url(../img/PC-plan-bg.svg);
+        background-size: cover;
+        border: 4px solid black;
+        @include mq(pc){
+            width: 100%;
+            border-bottom: 8px solid #000;
+        }
+    }
+    &-box2{
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+    &-textbox{
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 30px;
+        @include mq(pc){
+            font-size: 18px;
+            margin-top: 120px;
+        }
+        line-height: 48px;
+        p{
+            text-align: center;
+        }
+        li{
+            list-style-type:decimal;
+        }
+    }
+    &-flex{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+    }
+    .rule{
+        position: relative;
+        padding-bottom: 60px;
+        @include mq(pc){
+            background-color: #fff;
+            border: 8px solid #000;
+            box-shadow: -20px 15px 0px #AB00E8;
+        }
+        &-bgimg01{
+            display: none;
+            @include mq(pc){
+                display: block;
+                width: 20%;
+                position: absolute;
+                top: -30%;
+            }
+            
+        }
+        &-bgimg02{
+            position: absolute;
+            width: 60%;
+            bottom: 0;
+            right: 3%;
+            @include mq(pc){
+                width: 35%;
+                top: -10%;
+                bottom: auto;
+            }
+            
+        }
+        &-bgimg03{
+            display: none;
+            height: 0;
+            @include mq(pc){
+                display: block;
+                height: auto;
+                width: 25%;
+                position: absolute;
+                bottom: -20%;
+                right: -3%;
+            }
+            
+        }
+    }
+    &-h3{
+        text-align: left;
+        background-image: url(../img/3-subtitle.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left:5%;
+    }
+    &-title{
+        width: 70%;
+        margin-top: 60px;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            width: 50%;
+            margin-top: 90px;
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }        
+        img{
+            width: 100%;
+        }
+    }
+    
+    &-logo{
+        width: 90%;
+        position: relative;
+        @include mq(pc){
+            width: 80%;
+            margin: 0 auto;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &-imgbox{
+        position: relative;
+    }
+    &-bgimg01{
+        display: none;
+        @include mq(pc){
+            display: block;
+            width: 25%;
+            position: absolute;
+            top: 5%;
+            left: 3%;
+        }
+    }
+    &-bgimg02{
+        display: none;
+        @include mq(pc){
+            display: block;
+            width: 25%;
+            position: absolute;
+            top: 10%;
+            right: 3%;
+        }
+        
+    }
+    &-arrow{
+        width: 30%;
+        position: absolute;
+        left: -5%;
+        bottom: -40%;
+
+        @include mq(pc){
+            width: 25%;
+            left: -10%;
+            bottom: -30%;
+        }
+    }
+    &-bgimg03{
+        display: none;
+        @include mq(pc){
+            width: 20%;
+            display: block;
+            position: absolute;
+            bottom: 3%;
+            left: 5%;
+        }
+        
+    }
+    &-bgimg04{
+        display: none;
+        @include mq(pc){
+            width: 20%;
+            display: block;
+            position: absolute;
+            bottom: 3%;
+            right: 5%;
+        }
+    }
+}
+
+.pb-120{
+    padding-bottom: 120px;
+}
+
+.caveat{
+    position: relative;
+    width: 90%;
+    margin: 120px auto;
+    @include mq(pc){
+        width: 70%;
+        margin: 120px auto;
+    }
+    &-title{
+        width: 60%;
+        position: relative;
+        z-index: 3;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+    }
+    &-box{
+        position: relative;
+        z-index: 3;
+        border: 4px solid black;
+        padding: 20px;
+        margin-top: 60px;
+        background-color: #E9FFFE;
+        @include mq(pc){
+            border: 8px solid black;
+            margin-top: 120px;
+        }
+    }
+    &-text{
+        text-align: center;
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+    &-list{
+        li{
+            list-style-type:disc;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 48px;
+        };
+    }
+    &-bgimg01{
+        width: 60%;
+        position: absolute;
+        right: -5%;
+        top: 0;
+        z-index: 1;
+        @include mq(pc){
+            right: -25%;
+        }
+        
+    }
+}
+
+.Infection{
+    position: relative;
+    width: 90%;
+    margin: 120px auto;
+    padding-bottom: 60px;
+    @include mq(pc){
+        width: 70%;
+        margin: 120px auto;
+        padding-bottom: 100px;
+    }
+    &-title{
+        width: 50%;
+        position: relative;
+        z-index: 1;
+        background-image: url(../img/PC-3belowTitle2.svg);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 115%;
+        padding-bottom: 15%;
+        @include mq(pc){
+            background-position-y: 105%;
+            padding-bottom: 5%;
+        }
+    }
+    &-text{
+        text-align: center;
+        @include mq(pc){
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+    &-box{
+        position: relative;
+        z-index: 3;
+        border: 4px solid black;
+        padding: 20px;
+        margin-top: 60px;
+        background-color: #E9FFFE;
+        @include mq(pc){
+            border: 8px solid black;
+            padding: 20px;
+            margin-top: 120px;
+        }
+    }
+    &-list{
+        li{
+            list-style-type:disc;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 48px;
+        };   
+    }
+    &-bgimg01{
+        width: 60%;
+        position: absolute;
+        left: -30%;
+        top: 0;
+        z-index: 1;
+    }
+    &-bgimg02{
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        @include mq(pc){
+            right: -25%;
+        }
+    }
+}
+
+.gototop{
+    width: 20%;
+    position: absolute;
+    right: 10%;
+    top: 55%;
+    @include mq(pc){
+        position: relative;
+        width: 10%;
+        top: auto;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    // background: #FFF500;
+    background-image: url(../img/PHONE-footer-bg.svg);
+    background-size: cover;
+    @include mq(pc){
+        background-image: url(../img/PC-footer.svg);
+        background-size: contain;
+    }
+    background-repeat: repeat-x;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    &-logo{
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        width: 25%;
+        @include mq(pc){
+            position: relative;
+            width: 15%;
+            top: auto;
+            left: auto;
+        }
+        
+        img{
+            width: 100%;
+        }
+    }
+    &-flex{
+        width: 80%;
+        margin: 0 auto;
+        @include mq(pc){
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-box{
+        position: relative;
+    }
+    &-list{
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 0;
+        line-height: 32px;
+        @include mq(pc){
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    ul{
+        li{
+            @include mq(pc){
+                width: 45%;
+                font-size: 18px;
+                line-height: 32px;
+            }
+            a{
+                color: #000;
+            }
+        }
+    }
+    &-bgimg01{
+        position: absolute;
+        width: 20%;
+        bottom: 0;
+        left: 20%;
+        @include mq(pc){
+            width: 10%;
+            bottom: auto;
+            left: -3%;
+            z-index: 1;
+        }
+        
+    }
+    &-bgimg02{
+        position: absolute;
+        width: 20%;
+        top: 0;
+        right: 20%;
+        @include mq(pc){
+            width: 10%;
+            top: auto;
+            bottom: 0;
+            right: 10%;
+            z-index: 1;
+        }
+    }
+    .copylight{
+        text-align: center;
+        margin: 0;
+        margin-top: 60px;
+        @include mq(pc){
+            margin-top: 0;
+        }
+    }
+
+}
+
 
 .main {
   width: 310px;
@@ -34,224 +2058,6 @@ body {
     align-items: center;
     }
   }
-}
-
-main div h1 img {
-  width: 60%;
-}
-
-/* style.css */
-a {
-  text-decoration: none;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-
-/* ヘッダー */
-.humBtn {
-  height: 50px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
-
-.humBtn__inner {
-  position: relative;
-}
-
-.humBtn__title {
-  width: 80px;
-}
-
-
-@media screen and (min-width: 960px) {
-  .humBtn__title {
-    width: 120px;
-  }
-}
-
-.humBtn__title img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.humBtn__nav {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  transform: translateX(100%);
-  background-color: #fff;
-  transition: ease .4s;
-}
-
-
-@media screen and (min-width: 960px) {
-  .humBtn__nav {
-    position: static;
-    transform: initial;
-    background-color: inherit;
-    height: inherit;
-    display: flex;
-    justify-content: end;
-    width: 50%;
-  }
-}
-
-
-@media screen and (min-width: 960px) {
-  .nav__items {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    height: initial;
-    justify-content: space-between;
-  }
-}
-
-.nav-items {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0;
-}
-
-
-@media screen and (min-width: 960px) {
-  .nav-items {
-    padding-top: inherit;
-    padding-bottom: inherit;
-    position: inherit;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-  }
-}
-
-.nav-items__item a {
-  color: black;
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 24px;
-}
-
-.nav-items__item:last-child a {
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 960px) {
-  .nav-items__item a {
-    margin-bottom: 0;
-  }
-}
-
-
-/* ハンバーガーメニュー */
-.humBtn__hamburger {
-  width: 48px;
-  height: 100%;
-
-}
-
-.hamburger {
-  background-color: #FFED00;
-  border-color: transparent;
-  z-index: 9999;
-  right: 0;
-  position: absolute;
-  top: 20px;
-  width: 65px;
-  height: 65px;
-  border: solid 4px;
-  margin-right: 20px;
-}
-
-@media screen and (min-width: 960px) {
-  .hamburger {
-    display: none;
-  }
-}
-
-
-.hamburger span {
-  width: 100%;
-  height: 4px;
-  background-color: #000;
-  position: relative;
-  transition: ease .4s;
-  display: block;
-}
-
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  margin: 8px 0;
-}
-
-.hamburger span:nth-child(3) {
-  top: 0;
-}
-
-
-/* ハンバーガーメニュークリック後のスタイル */
-.humBtn__nav.active {
-  transform: translateX(0);
-}
-
-.hamburger.active span:nth-child(1) {
-  top: 12px;
-  transform: rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-
-}
-
-.hamburger.active span:nth-child(3) {
-  top: -11px;
-  transform: rotate(-45deg);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* タブのスタイル */
-.tabs {
-  // display: flex;
 }
 
 .tabs img {
