@@ -1,13 +1,10 @@
+@charset "UTF-8";
 body {
   background-color: #57D9EE;
 }
 
-.header {
-  &__logo{
-    img {
-      width: 45%;
-    }
-  }
+.header__logo img {
+  width: 45%;
 }
 
 .main {
@@ -18,22 +15,20 @@ body {
   background-color: #FFF3D2;
 }
 
-.tabs {
-  &__ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    &__li {
-      width: 75px;
-    height: 45px;
-    border: solid 3px;
-    display: flex;
-    justify-content: center;
-    /* align-items: baseline; */
-    align-items: center;
-    }
-  }
+.tabs__ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.tabs__ul__li {
+  width: 75px;
+  height: 45px;
+  border: solid 3px;
+  display: flex;
+  justify-content: center;
+  /* align-items: baseline; */
+  align-items: center;
 }
 
 main div h1 img {
@@ -49,7 +44,6 @@ ul,
 li {
   list-style: none;
 }
-
 
 /* ヘッダー */
 .humBtn {
@@ -69,13 +63,11 @@ li {
   width: 80px;
 }
 
-
 @media screen and (min-width: 960px) {
   .humBtn__title {
     width: 120px;
   }
 }
-
 .humBtn__title img {
   display: block;
   width: 100%;
@@ -91,9 +83,8 @@ li {
   height: 100vh;
   transform: translateX(100%);
   background-color: #fff;
-  transition: ease .4s;
+  transition: ease 0.4s;
 }
-
 
 @media screen and (min-width: 960px) {
   .humBtn__nav {
@@ -106,8 +97,6 @@ li {
     width: 50%;
   }
 }
-
-
 @media screen and (min-width: 960px) {
   .nav__items {
     width: 100%;
@@ -117,7 +106,6 @@ li {
     justify-content: space-between;
   }
 }
-
 .nav-items {
   position: absolute;
   top: 50%;
@@ -125,7 +113,6 @@ li {
   transform: translate(-50%, -50%);
   padding: 0;
 }
-
 
 @media screen and (min-width: 960px) {
   .nav-items {
@@ -137,7 +124,6 @@ li {
     transform: translate(0, 0);
   }
 }
-
 .nav-items__item a {
   color: black;
   width: 100%;
@@ -156,13 +142,10 @@ li {
     margin-bottom: 0;
   }
 }
-
-
 /* ハンバーガーメニュー */
 .humBtn__hamburger {
   width: 48px;
   height: 100%;
-
 }
 
 .hamburger {
@@ -183,14 +166,12 @@ li {
     display: none;
   }
 }
-
-
 .hamburger span {
   width: 100%;
   height: 4px;
   background-color: #000;
   position: relative;
-  transition: ease .4s;
+  transition: ease 0.4s;
   display: block;
 }
 
@@ -206,7 +187,6 @@ li {
   top: 0;
 }
 
-
 /* ハンバーガーメニュークリック後のスタイル */
 .humBtn__nav.active {
   transform: translateX(0);
@@ -219,7 +199,6 @@ li {
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
-
 }
 
 .hamburger.active span:nth-child(3) {
@@ -227,43 +206,13 @@ li {
   transform: rotate(-45deg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* タブのスタイル */
-.tabs {
-  // display: flex;
-}
-
 .tabs img {
   cursor: pointer;
   width: 30%;
 }
 
 /* ネストされたタブのスタイル */
-.nested-tabs {
-  // display: flex;
-}
-
 .nested-tabs img {
   cursor: pointer;
   margin: 10px;
@@ -282,22 +231,20 @@ li {
 /* ネストされたコンテンツのスタイル */
 .nested-content {
   display: none;
-  .contentArea {
-    width: 270px;
-    margin:  0 auto;
-    text-align: left;
-    border: solid 4px;
-    margin-top: 30px;
-    &__imgArea {
-      &__img {
-        width: 100%;
-        border-bottom: solid 4px;
-        display: block;
-      }
-    }
-    &__textArea {
-      width: 260px;
-      margin: 0 auto;
-    }
-  }
 }
+.nested-content .contentArea {
+  width: 270px;
+  margin: 0 auto;
+  text-align: left;
+  border: solid 4px;
+  margin-top: 30px;
+}
+.nested-content .contentArea__imgArea__img {
+  width: 100%;
+  border-bottom: solid 4px;
+  display: block;
+}
+.nested-content .contentArea__textArea {
+  width: 260px;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
