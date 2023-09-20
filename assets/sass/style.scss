@@ -2088,4 +2088,22 @@ a{
 /* ネストされたコンテンツのスタイル */
 .nested-content {
   display: none;
+  .contentArea {
+    width: 270px;
+    margin:  0 auto;
+    text-align: left;
+    border: solid 4px;
+    margin-top: 30px;
+    &__imgArea {
+      &__img {
+        width: 100%;
+        border-bottom: solid 4px;
+        display: block;
+      }
+    }
+    &__textArea {
+      width: 260px;
+      margin: 0 auto;
+    }
+  }
 }
