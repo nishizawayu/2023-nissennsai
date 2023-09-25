@@ -305,7 +305,7 @@ a{
 .nav{
     display: none;
     @include mq(pc){
-        width: 80%;
+        width: 90%;
         position: fixed;
         top: -100%;
         display: flex;
@@ -319,6 +319,7 @@ a{
 
     &-logo{
         margin-left: 5%;
+        margin: 0;
         width: 10%;
         img{
             width: 100%;
@@ -360,17 +361,17 @@ a{
         position: absolute;
         width: 3%;
         top: 2%;
-        right: 35%;
+        right: 40%;
     }
 
 }
 
 .fixed {
     @include mq(pc){
-        width: 90%;
+        width: 94%;
         position: fixed;
         top: 3%;
-        left: 5%;
+        left: 3%;
         z-index: 100;
     }
     /* 必要に応じて */
@@ -392,6 +393,7 @@ a{
     // レスポンシブ難あり　（森先生に相談）
     // calc()を試す 0915
     @include mq(pc){
+        margin-top: -5%;
         margin-top: auto;
         // background-size: contain;
         // background-repeat: no-repeat;
@@ -686,6 +688,8 @@ a{
             display: block;
             top: 10%;
             left: 5%;
+            animation: rotation1 3s infinite;
+            transform-origin:center;
         }
     }
     &-img02{
@@ -853,6 +857,18 @@ a{
             width: 30%;
             top: -15%;
             right: -15%;
+            &-n1{
+                animation: anime2 0.6s ease 0s infinite alternate;
+                transform-origin:center;
+            }
+            &-n2{
+                animation: anime2 0.8s ease 0s infinite alternate;
+                transform-origin:center;
+            }
+            &-n3{
+                animation: anime2 1s ease 0s infinite alternate;
+                transform-origin:center;
+            }
         }
     }
     &-bgimg03{
@@ -873,6 +889,8 @@ a{
             width: 25%;
             bottom: 0;
             left: -5%;
+            animation: anime2 0.8s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
     &-bgimg05{
@@ -929,11 +947,17 @@ a{
             padding-bottom: 180px;
             box-shadow: none;
             // background-image: url(../img/PC-exhibition-bg.svg);
-            // background-size: contain;
+            // background-position: center center;
+            // padding-top: calc(472.017 / 848.783 * 95%);
+            // background-size: cover;
             // background-repeat: no-repeat;
             // height: 0;
-            // padding-bottom: 180%;
         }
+        // &-bg{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
     }
 
     &-title{
@@ -1232,7 +1256,7 @@ a{
                 margin-bottom: 10px;
                 @include mq(pc){
                     position: absolute;
-                    top: 30%;
+                    top: 40%;
                     right: 5%;
                     font-size: 40px;
                 }
@@ -1307,9 +1331,8 @@ a{
         background-image: url(../img/PC-aisatu-talkcloud.svg);
         background-repeat: no-repeat;
         background-size: contain;
-        background-position-x: 55%;
-        background-position-y: 3%;
-        padding: 20% 5%;
+        background-position:center;
+        padding: 20% 5% 20% 0;
         text-align: center;
         @include mq(pc){
             text-align: left;
@@ -1333,9 +1356,9 @@ a{
         position: relative;
         background-image: url(../img/PC-aisatu-talkcloud2.svg);
         background-repeat: no-repeat;
-        background-position-y: 10px;
+        background-position: center;
         background-size: contain;
-        padding: 20% 5%;
+        padding: 20% 0 20% 5%;
         text-align: center;
         @include mq(pc){
             text-align: left;
@@ -1443,7 +1466,7 @@ a{
     &-text{
         position: relative;
         width: 90%;
-        padding: 5%;
+        padding: 3%;
         border: 5px solid black;
         z-index: 3;
         background-color: #BAF5FF;
@@ -1918,7 +1941,7 @@ a{
             font-size: 24px;
             margin-top: 120px;
         }
-        line-height: 48px;
+        line-height: 36px;
         p{
             text-align: center;
         }
@@ -2122,7 +2145,7 @@ a{
             list-style-type:disc;
             font-size: 18px;
             font-weight: 500;
-            line-height: 48px;
+            line-height: 36px;
         };
     }
     &-bgimg01{

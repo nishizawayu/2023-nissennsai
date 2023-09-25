@@ -282,7 +282,7 @@ a {
 }
 @media screen and (min-width: 801px) {
   .nav {
-    width: 80%;
+    width: 90%;
     position: fixed;
     top: -100%;
     display: flex;
@@ -296,6 +296,7 @@ a {
 }
 .nav-logo {
   margin-left: 5%;
+  margin: 0;
   width: 10%;
 }
 .nav-logo img {
@@ -337,7 +338,7 @@ a {
   position: absolute;
   width: 3%;
   top: 2%;
-  right: 35%;
+  right: 40%;
 }
 
 .fixed {
@@ -345,10 +346,10 @@ a {
 }
 @media screen and (min-width: 801px) {
   .fixed {
-    width: 90%;
+    width: 94%;
     position: fixed;
     top: 3%;
-    left: 5%;
+    left: 3%;
     z-index: 100;
   }
 }
@@ -367,6 +368,7 @@ a {
 }
 @media screen and (min-width: 801px) {
   .fv {
+    margin-top: -5%;
     margin-top: auto;
     width: 100%;
     height: 0;
@@ -693,6 +695,8 @@ a {
     display: block;
     top: 10%;
     left: 5%;
+    animation: rotation1 3s infinite;
+    transform-origin: center;
   }
 }
 .catch-img02 {
@@ -882,6 +886,18 @@ a {
     top: -15%;
     right: -15%;
   }
+  .info-bgimg02-n1 {
+    animation: anime2 0.6s ease 0s infinite alternate;
+    transform-origin: center;
+  }
+  .info-bgimg02-n2 {
+    animation: anime2 0.8s ease 0s infinite alternate;
+    transform-origin: center;
+  }
+  .info-bgimg02-n3 {
+    animation: anime2 1s ease 0s infinite alternate;
+    transform-origin: center;
+  }
 }
 .info-bgimg03 {
   display: none;
@@ -905,6 +921,8 @@ a {
     width: 25%;
     bottom: 0;
     left: -5%;
+    animation: anime2 0.8s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .info-bgimg05 {
@@ -1276,7 +1294,7 @@ a {
 @media screen and (min-width: 801px) {
   .shop .watch-btn div p {
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 5%;
     font-size: 40px;
   }
@@ -1357,9 +1375,8 @@ a {
   background-image: url(../img/PC-aisatu-talkcloud.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-x: 55%;
-  background-position-y: 3%;
-  padding: 20% 5%;
+  background-position: center;
+  padding: 20% 5% 20% 0;
   text-align: center;
 }
 @media screen and (min-width: 801px) {
@@ -1385,9 +1402,9 @@ a {
   position: relative;
   background-image: url(../img/PC-aisatu-talkcloud2.svg);
   background-repeat: no-repeat;
-  background-position-y: 10px;
+  background-position: center;
   background-size: contain;
-  padding: 20% 5%;
+  padding: 20% 0 20% 5%;
   text-align: center;
 }
 @media screen and (min-width: 801px) {
@@ -1510,7 +1527,7 @@ a {
 .messege-text {
   position: relative;
   width: 90%;
-  padding: 5%;
+  padding: 3%;
   border: 5px solid black;
   z-index: 3;
   background-color: #BAF5FF;
@@ -2025,7 +2042,7 @@ a {
   font-size: 16px;
   font-weight: 500;
   margin-top: 30px;
-  line-height: 48px;
+  line-height: 36px;
 }
 @media screen and (min-width: 801px) {
   .schoolplan-textbox {
@@ -2257,7 +2274,7 @@ a {
   list-style-type: disc;
   font-size: 18px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 36px;
 }
 .caveat-bgimg01 {
   width: 60%;
