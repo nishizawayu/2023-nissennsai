@@ -41,6 +41,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background-color: #57D9EE;
   overflow-x: hidden;
@@ -52,9 +53,9 @@ body {
 .conteiner {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .conteiner {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
 }
@@ -64,7 +65,7 @@ h2 {
   text-align: center;
   margin: 0 auto;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   h2 {
     width: 70%;
     text-align: center;
@@ -75,7 +76,7 @@ h2 img {
   width: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   h3 {
     font-size: 42px;
   }
@@ -90,6 +91,55 @@ a {
   text-decoration: none;
 }
 
+@keyframes anime1 {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes anime2 {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(0.8, 0.8);
+  }
+}
+@keyframes anime3 {
+  from {
+    transform: scale(0.7, 0.7);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes yurayura {
+  0%, 100% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes yurayurabig {
+  0%, 100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+@keyframes rotation1 {
+  0% {
+    transform: rotate(0) scale(0.7, 0.7);
+  }
+  100% {
+    transform: rotate(360deg) scale(1, 1);
+  }
+}
+=======
 ul,
 li {
   list-style: none;
@@ -304,7 +354,7 @@ li {
   overflow: hidden;
   transition: all 0.5s ease-in;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .ham {
     display: none;
   }
@@ -326,11 +376,37 @@ li {
   z-index: 900;
   text-align: center;
   background-color: rgba(87, 217, 238, 0.6);
+  transition: all 0.5s ease-in;
 }
 .hammenubg {
+  position: relative;
   width: 90%;
   height: 70vh;
   background-color: #FFF3D2;
+}
+.hammenu-bgimg01 {
+  position: absolute;
+  width: 35%;
+  left: 0;
+  top: 20%;
+}
+.hammenu-bgimg02 {
+  position: absolute;
+  width: 35%;
+  left: 0;
+  bottom: 10%;
+}
+.hammenu-bgimg03 {
+  position: absolute;
+  width: 25%;
+  right: 3%;
+  bottom: 5%;
+}
+.hammenu-bgimg04 {
+  position: absolute;
+  width: 40%;
+  right: 0;
+  top: 20%;
 }
 .hammenu.act {
   left: 0;
@@ -338,6 +414,7 @@ li {
 .ham-text {
   width: 80%;
   margin: 0 auto;
+  margin-top: 30px;
   padding-left: 0;
   border: 4px solid #000;
   padding-top: 90px;
@@ -347,43 +424,50 @@ li {
 .ham-text a li {
   font-size: 24px;
 }
-
-@media screen and (max-width: 767px) {
-  .hambtn {
-    position: fixed;
-    top: 3%;
-    right: 3%;
-    display: flex;
-    height: 72px;
-    width: 72px;
-    background-color: #FFED00;
-    border: 4px solid #000;
-    justify-content: center;
-    align-items: center;
-    box-shadow: -15px 12px 0px #00FFE4;
-    z-index: 999; /*重ね順*/
-  }
-  .hambtn span {
-    position: absolute;
-    left: 0;
-    width: 80%;
-    left: 10%;
-    height: 5px;
-    background-color: #000;
-    border-radius: 4px;
-    transition: all 0.2s ease-out;
-  }
-  .hambtn span:nth-of-type(1) {
-    top: 15px;
-  }
-  .hambtn span:nth-of-type(2) {
-    top: 34px;
-  }
-  .hambtn span:nth-of-type(3) {
-    bottom: 15px;
-  }
+.ham-text a li span {
+  background-image: url(../img/PHONE-menu-deco-04.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 105%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-right: 10%;
 }
-@media screen and (min-width: 1024px) {
+
+.hambtn {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  display: flex;
+  height: 72px;
+  width: 72px;
+  background-color: #FFED00;
+  border: 4px solid #000;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -15px 12px 0px #00FFE4;
+  z-index: 999; /*重ね順*/
+}
+.hambtn span {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  left: 10%;
+  height: 5px;
+  background-color: #000;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+.hambtn span:nth-of-type(1) {
+  top: 15px;
+}
+.hambtn span:nth-of-type(2) {
+  top: 34px;
+}
+.hambtn span:nth-of-type(3) {
+  bottom: 15px;
+}
+@media screen and (min-width: 801px) {
   .hambtn {
     display: none;
   }
@@ -406,7 +490,7 @@ li {
 .grobalnav {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .grobalnav {
     display: block;
   }
@@ -415,9 +499,6 @@ li {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
-  }
-  .grobalnav-con {
-    padding: 30px 90px;
   }
   .grobalnav-con a {
     font-size: 20px;
@@ -428,11 +509,13 @@ li {
     background-image: url(../img/nav-img01.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    padding: 30px 102px;
   }
   .grobalnav .ncon2 {
     background-image: url(../img/nav-img02.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    padding: 30px 90px;
   }
 }
 
@@ -440,9 +523,12 @@ li {
   position: relative;
 }
 
-@media screen and (min-width: 1024px) {
+.nav {
+  display: none;
+}
+@media screen and (min-width: 801px) {
   .nav {
-    width: 80%;
+    width: 90%;
     position: fixed;
     top: -100%;
     display: flex;
@@ -454,13 +540,9 @@ li {
     transition: all 0.5s;
   }
 }
-@media screen and (max-width: 767px) {
-  .nav {
-    display: none;
-  }
-}
 .nav-logo {
   margin-left: 5%;
+  margin: 0;
   width: 10%;
 }
 .nav-logo img {
@@ -502,47 +584,104 @@ li {
   position: absolute;
   width: 3%;
   top: 2%;
-  right: 35%;
+  right: 40%;
 }
 
 .fixed {
   /* 必要に応じて */
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fixed {
-    width: 90%;
+    width: 94%;
     position: fixed;
     top: 3%;
-    left: 5%;
+    left: 3%;
     z-index: 100;
   }
 }
 
 .fv {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  margin-top: -3%;
-  background-image: url(../img/PC-Top-KVbg.svg);
-  background-size: contain;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 3%;
+  background-image: url(../img/PHONE-TOP-bg.svg);
+  padding-top: 143.4161864155%;
+  /*calc(画像の高さ / 画像の幅 * widthの値)*/
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
-.fv-logo {
-  position: relative;
+@media screen and (min-width: 801px) {
+  .fv {
+    margin-top: -5%;
+    margin-top: auto;
+    width: 100%;
+    height: 0;
+    background-image: url(../img/PC-Top-KVbg.svg);
+    padding-top: 65.6509799026%;
+    /*calc(画像の高さ / 画像の幅 * widthの値)*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.fv-bg {
+  position: absolute; /* コンテンツを絶対位置に配置 */
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-top: 80px;
+  height: 100%;
+}
+@media screen and (min-width: 801px) {
+  .fv-bg {
+    top: 10%;
+  }
+}
+.fv-logo {
+  display: none;
+}
+@media screen and (min-width: 801px) {
+  .fv-logo {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 90px;
+  }
+}
+.fv-logo-phone {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.fv-logo-phone img {
+  width: 100%;
+}
+@media screen and (min-width: 801px) {
+  .fv-logo-phone {
+    display: none;
+  }
 }
 .fv-logo1 {
   width: 30%;
   position: absolute;
   top: -60px;
   left: 10px;
+  z-index: 2;
+}
+@media screen and (min-width: 801px) {
+  .fv-logo1 {
+    animation: anime3 0.9s ease 0s infinite alternate;
+    transform-origin: center;
+  }
 }
 .fv-logo-shock {
   position: absolute;
   width: 20%;
   top: -30%;
   right: 15%;
+  z-index: 1;
 }
 .fv-logo2 {
   position: relative;
@@ -553,46 +692,83 @@ li {
   position: relative;
   width: 50%;
 }
-.fv-flex {
-  display: flex;
-  justify-content: center;
-  width: 90%;
+@media screen and (min-width: 801px) {
+  .fv-flex {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.fv-flex p {
+  width: 80%;
   margin: 0 auto;
+}
+@media screen and (min-width: 801px) {
+  .fv-flex p {
+    width: auto;
+    margin: auto;
+  }
+}
+.fv-flex div {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 801px) {
+  .fv-flex div {
+    width: auto;
+    margin: auto;
+  }
 }
 .fv-flex img {
   width: 100%;
 }
+.fv .fv-2023 {
+  position: absolute;
+  width: 50%;
+  top: 0;
+}
+@media screen and (min-width: 801px) {
+  .fv .fv-2023 {
+    display: none;
+  }
+}
 .fv-img1 {
   position: absolute;
   width: 40%;
+  top: 20%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img1 {
-    top: -15%;
+    width: 30%;
+    top: -25%;
   }
 }
 .fv-img2 {
+  display: none;
   position: absolute;
-  width: 15%;
-  bottom: 8%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img2 {
+    display: block;
     width: 15%;
     bottom: 8%;
+    animation: anime1 0.5s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .fv-img3 {
   position: absolute;
-  width: 15%;
-  top: 40%;
-  right: 10%;
+  display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img3 {
+    display: block;
     width: 15%;
-    top: 40%;
+    top: 35%;
     right: 10%;
+    transform-origin: center;
+    animation: yurayura 2s ease 0s infinite alternate;
   }
 }
 .fv-img4 {
@@ -602,38 +778,71 @@ li {
   bottom: -10%;
   z-index: 10;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img4 {
     width: 20%;
     left: 15%;
     bottom: -10%;
     z-index: 10;
+    animation: anime1 1s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .fv-img5 {
-  width: 15%;
-  bottom: 10%;
-  right: 40%;
+  display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img5 {
+    display: block;
     width: 15%;
     bottom: 10%;
     right: 40%;
+    animation: yurayura 1s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .fv-img6 {
-  width: 30%;
-  right: 5%;
-  bottom: -5%;
+  width: 60%;
+  right: 0;
+  bottom: -25%;
   position: absolute;
+  z-index: 2;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .fv-img6 {
     width: 30%;
     right: 5%;
     bottom: -5%;
+    animation: anime3 0.7s ease 0s infinite alternate;
+    transform-origin: center;
+  }
+}
+.fv-img7 {
+  width: 40%;
+  position: absolute;
+  display: block;
+  top: 30%;
+  right: 5%;
+}
+@media screen and (min-width: 801px) {
+  .fv-img7 {
+    display: none;
+  }
+}
+.fv-phonestyle {
+  position: relative;
+}
+.fv-datephone {
+  display: block;
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+}
+@media screen and (min-width: 801px) {
+  .fv-datephone {
+    display: none;
   }
 }
 
@@ -650,12 +859,13 @@ li {
   background-color: #FFF3D2;
   box-shadow: 15px 12px 0px #FDF150;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-box {
-    width: 100%;
+    width: auto;
     margin: auto;
     border: 8px solid black;
     padding: 20px;
+    padding-bottom: 90px;
     margin-top: 60px;
     background-color: #FFF3D2;
     box-shadow: none;
@@ -664,14 +874,15 @@ li {
 .catch-title {
   position: relative;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 30%;
   background-image: url(../img/PC-3belowTitle2.svg);
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 115%;
   padding-bottom: 15%;
+  z-index: 3;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-title {
     width: 50%;
     margin-top: 90px;
@@ -682,15 +893,10 @@ li {
 .catch-title img {
   width: 80%;
 }
-@media screen and (min-width: 1024px) {
-  .catch-title img {
-    width: 60%;
-  }
-}
 .catch-titlebox {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-main {
     width: 70%;
     text-align: center;
@@ -701,7 +907,7 @@ li {
 .catch-main-PC {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-main-PC {
     display: block;
     width: 100%;
@@ -712,7 +918,7 @@ li {
   display: block;
   margin: 0 auto;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-main-PHONE {
     display: none;
   }
@@ -720,7 +926,7 @@ li {
 .catch-text {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-text {
     margin-top: 60px;
     font-size: 24px;
@@ -730,18 +936,20 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-img01 {
     display: block;
     top: 10%;
     left: 5%;
+    animation: rotation1 3s infinite;
+    transform-origin: center;
   }
 }
 .catch-img02 {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-img02 {
     display: block;
     width: 15%;
@@ -753,7 +961,7 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-img03 {
     display: block;
     width: 15%;
@@ -764,7 +972,7 @@ li {
   position: absolute;
   z-index: -10;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .catch-bgimg01 {
     bottom: 0px;
     right: 0px;
@@ -784,7 +992,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-title {
     width: 50%;
     margin-top: 90px;
@@ -795,7 +1003,7 @@ li {
 .info-title img {
   width: 80%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-title img {
     width: 50%;
   }
@@ -809,9 +1017,9 @@ li {
   background-color: #FFF3D2;
   box-shadow: 15px 12px 0px #FDF150;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-border {
-    width: 100%;
+    width: auto;
     margin: auto;
     border: 8px solid black;
     padding: 20px;
@@ -822,32 +1030,47 @@ li {
 }
 .info-box {
   position: relative;
-  margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-box {
     width: 70%;
     margin-top: 120px;
     margin: 0 auto;
   }
 }
+.info .info-phonbg1 {
+  width: 30%;
+  position: absolute;
+  top: -5%;
+  right: -10%;
+}
+@media screen and (min-width: 801px) {
+  .info .info-phonbg1 {
+    display: none;
+  }
+}
 .info-h3 {
   background-image: url(../img/3-subtitle.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  padding-top: 5%;
   padding-left: 5%;
 }
-.info-flex {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-flex {
+    display: flex;
+    justify-content: center;
     gap: 60px;
   }
 }
-@media screen and (min-width: 1024px) {
+.info-text {
+  font-size: 24px;
+  text-align: center;
+}
+.info-text-bold {
+  font-weight: 700;
+}
+@media screen and (min-width: 801px) {
   .info-text {
     font-size: 40px;
     text-align: left;
@@ -857,9 +1080,22 @@ li {
 .info-text--center {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+.info-text span {
+  font-size: 20px;
+  font-weight: 500;
+}
+@media screen and (min-width: 801px) {
   .info-text span {
     font-size: 36px;
+  }
+}
+.info-phonimg02 {
+  width: 50%;
+  margin-left: 40%;
+}
+@media screen and (min-width: 801px) {
+  .info-phonimg02 {
+    display: none;
   }
 }
 .info-map {
@@ -870,11 +1106,14 @@ li {
   margin: 0 auto;
   padding-bottom: 120px;
 }
+.info-map-size {
+  width: 90%;
+}
 .info-bgimg01 {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg01 {
     display: block;
     width: 10%;
@@ -886,19 +1125,31 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg02 {
     display: block;
     width: 30%;
     top: -15%;
     right: -15%;
   }
+  .info-bgimg02-n1 {
+    animation: anime2 0.6s ease 0s infinite alternate;
+    transform-origin: center;
+  }
+  .info-bgimg02-n2 {
+    animation: anime2 0.8s ease 0s infinite alternate;
+    transform-origin: center;
+  }
+  .info-bgimg02-n3 {
+    animation: anime2 1s ease 0s infinite alternate;
+    transform-origin: center;
+  }
 }
 .info-bgimg03 {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg03 {
     display: block;
     width: 25%;
@@ -910,19 +1161,21 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg04 {
     display: block;
     width: 25%;
     bottom: 0;
     left: -5%;
+    animation: anime2 0.8s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .info-bgimg05 {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg05 {
     display: block;
     width: 20%;
@@ -935,7 +1188,7 @@ li {
   position: absolute;
   z-index: 2;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .info-bgimg06 {
     display: block;
     width: 15%;
@@ -950,9 +1203,20 @@ li {
   /* タブパネル */
   /* is-showがついている時のスタイル */
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop {
     margin: 60px auto;
+  }
+}
+.shop-phonimg01 {
+  width: 40%;
+  top: -5%;
+  left: 0;
+  position: absolute;
+}
+@media screen and (min-width: 801px) {
+  .shop-phonimg01 {
+    display: none;
   }
 }
 .shop-box {
@@ -966,9 +1230,9 @@ li {
   padding-bottom: 180px;
   box-shadow: 15px 12px 0px #FDF150;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-box {
-    width: 100%;
+    width: auto;
     margin: auto;
     position: relative;
     padding-bottom: 180px;
@@ -985,7 +1249,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-title {
     width: 50%;
     margin-top: 90px;
@@ -993,7 +1257,7 @@ li {
     padding-bottom: 5%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-title img {
     width: 60%;
   }
@@ -1001,7 +1265,7 @@ li {
 .shop-flexbox {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-flexbox {
     width: 70%;
     margin: 0 auto;
@@ -1011,7 +1275,7 @@ li {
   margin-top: 60px;
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-text {
     width: 80%;
     margin: 140px auto 30px auto;
@@ -1023,7 +1287,7 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg01 {
     display: block;
     width: 30%;
@@ -1035,19 +1299,19 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg02 {
     display: block;
     width: 25%;
     top: 20%;
-    right: -35%;
+    right: -30%;
   }
 }
 .shop-bgimg03 {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg03 {
     display: block;
     width: 40%;
@@ -1059,7 +1323,7 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg04 {
     display: block;
     width: 20%;
@@ -1071,7 +1335,7 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg05 {
     display: block;
     width: 30%;
@@ -1083,15 +1347,15 @@ li {
   display: none;
   position: absolute;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop-bgimg06 {
     display: block;
     width: 20%;
-    right: -10%;
+    right: -1%;
     bottom: 15%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .Department-flex {
     width: 100%;
     margin-top: 0px;
@@ -1107,7 +1371,7 @@ li {
 .shop .Department-item {
   background-color: #fff;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .Department-item {
     width: 25%;
     padding: 20px 0;
@@ -1204,7 +1468,7 @@ li {
   border: 5px solid #000;
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .groupposter-img {
     width: 45%;
     margin: auto;
@@ -1218,7 +1482,7 @@ li {
 .shop .PC-br {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .PC-br {
     display: block;
   }
@@ -1231,7 +1495,7 @@ li {
   right: -5%;
   color: #fff;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .watch-btn {
     border: none;
     background-color: #FFF3D2;
@@ -1242,7 +1506,7 @@ li {
 .shop .watch-btn div {
   display: flex;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .watch-btn div {
     display: block;
   }
@@ -1250,7 +1514,7 @@ li {
 .shop .watch-btn div .btnbg {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .watch-btn div .btnbg {
     display: block;
     position: relative;
@@ -1260,7 +1524,7 @@ li {
 .shop .watch-btn div .btnbg2 {
   width: 40%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .watch-btn div .btnbg2 {
     position: absolute;
     width: 50%;
@@ -1273,10 +1537,10 @@ li {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .shop .watch-btn div p {
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 5%;
     font-size: 40px;
   }
@@ -1286,7 +1550,7 @@ li {
   width: 90%;
   margin: 30px auto;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .wavyline {
     width: 70%;
     margin: 0 auto;
@@ -1299,7 +1563,7 @@ li {
 .messege {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege {
     margin: 60px auto;
   }
@@ -1311,16 +1575,17 @@ li {
   padding: 20px 20px 60px 20px;
   background-color: #FFF466;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-box {
-    width: 100%;
+    width: auto;
     margin-top: 60px;
   }
 }
 .messege-box2 {
   position: relative;
+  margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-box2 {
     width: 90%;
     margin: 0 auto;
@@ -1337,7 +1602,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-title {
     width: 50%;
     margin-top: 90px;
@@ -1345,19 +1610,26 @@ li {
     padding-bottom: 5%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-title img {
     width: 50%;
   }
 }
 .messege-h3 {
+  width: 50%;
   position: relative;
   background-image: url(../img/PC-aisatu-talkcloud.svg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
+  padding: 20% 5% 20% 0;
+  text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-h3 {
+    text-align: left;
+    background-position-x: 0;
+    width: auto;
     font-size: 42px;
     font-weight: 400;
     padding-left: 5%;
@@ -1365,31 +1637,36 @@ li {
     padding-bottom: 200px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-h3 span {
     font-weight: 700;
     margin-left: 120px;
   }
 }
 .messege-h3--else {
+  width: 50%;
   position: relative;
   background-image: url(../img/PC-aisatu-talkcloud2.svg);
   background-repeat: no-repeat;
-  background-position-y: 10px;
+  background-position: center;
   background-size: contain;
+  padding: 20% 0 20% 5%;
+  text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-h3--else {
+    text-align: left;
+    width: auto;
     font-size: 42px;
     font-weight: 400;
-    margin-left: 3%;
+    margin-left: 50%;
     padding-left: 8%;
-    padding-right: 8%;
+    padding-right: 6%;
     padding-top: 200px;
     padding-bottom: 200px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-h3--else span {
     font-weight: 700;
     margin-left: 120px;
@@ -1398,47 +1675,74 @@ li {
 .messege-flex {
   position: relative;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-flex {
     display: block;
+    margin: auto;
   }
 }
 .messege-flex--else {
+  width: 100%;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.messege-flex figure {
+  margin: 0;
+}
+@media screen and (min-width: 801px) {
+  .messege-flex figure {
+    margin-left: 40px;
+  }
 }
 .messege-line {
   width: 30%;
   position: absolute;
-  top: -30px;
+  top: -50px;
   right: 0;
 }
 .messege-lineelse {
   width: 30%;
   position: absolute;
-  top: -30px;
+  top: -50px;
   left: 5%;
 }
 .messege-line2 {
+  display: none;
   position: absolute;
   bottom: -30px;
   right: -10px;
   z-index: 2;
 }
+@media screen and (min-width: 801px) {
+  .messege-line2 {
+    display: block;
+  }
+}
 .messege-line2else {
+  display: none;
   position: absolute;
   bottom: -30px;
   right: -50px;
   z-index: 2;
 }
+@media screen and (min-width: 801px) {
+  .messege-line2else {
+    display: block;
+  }
+}
 .messege-img {
   width: 50%;
-  border: 8px solid #000;
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-img {
+    width: 50%;
     position: absolute;
     top: 0;
     right: -50px;
@@ -1448,7 +1752,7 @@ li {
 .messege-img--else {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-img--else {
     position: absolute;
     top: 0;
@@ -1459,29 +1763,36 @@ li {
 .messege-img img {
   width: 100%;
   vertical-align: top;
+  border: 4px solid #000;
+}
+@media screen and (min-width: 801px) {
+  .messege-img img {
+    border: 8px solid #000;
+  }
 }
 .messege-text {
   position: relative;
   width: 90%;
-  padding: 5%;
+  padding: 3%;
   border: 5px solid black;
   z-index: 3;
   background-color: #BAF5FF;
 }
+@media screen and (min-width: 801px) {
+  .messege-text {
+    width: 50%;
+    margin-left: 15%;
+    padding: 8%;
+    font-size: 28px;
+    line-height: 56px;
+  }
+}
 .messege-text--else {
   margin: 0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-text--else {
-    right: -40px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .messege-text {
-    width: 90%;
-    padding: 30px;
-    font-size: 28px;
-    line-height: 56px;
+    margin-left: 35%;
   }
 }
 .messege-bgimg01 {
@@ -1490,8 +1801,9 @@ li {
   right: 0;
   bottom: -20%;
   z-index: 1;
+  display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .messege-bgimg01 {
     width: 50%;
     right: -20%;
@@ -1499,6 +1811,7 @@ li {
   }
 }
 .messege-bgimg02 {
+  display: none;
   width: 50%;
   position: absolute;
   left: -20%;
@@ -1506,6 +1819,7 @@ li {
   z-index: 1;
 }
 .messege-bgimg03 {
+  display: none;
   width: 50%;
   position: absolute;
   right: 0;
@@ -1525,12 +1839,12 @@ li {
   margin-top: 60px;
   background-color: #FFF466;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-box {
-    width: 100%;
+    width: auto;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-box2 {
     width: 90%;
     margin: 0 auto;
@@ -1546,7 +1860,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-title {
     width: 50%;
     margin-top: 90px;
@@ -1554,7 +1868,7 @@ li {
     padding-bottom: 5%;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-title img {
     width: 80%;
   }
@@ -1568,7 +1882,7 @@ li {
 .poster-bgimg02 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-bgimg02 {
     display: block;
     width: 50%;
@@ -1594,7 +1908,7 @@ li {
   position: relative;
   margin-top: 120px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-flex {
     margin-top: 180px;
     display: flex;
@@ -1604,7 +1918,7 @@ li {
 .poster-No1 {
   width: 100%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-No1 {
     width: 45%;
     display: flex;
@@ -1617,7 +1931,7 @@ li {
   position: relative;
   margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-No2 {
     width: 45%;
     display: flex;
@@ -1634,6 +1948,14 @@ li {
 }
 .poster-img img {
   width: 100%;
+}
+.poster-name {
+  font-size: 20px;
+}
+@media screen and (min-width: 801px) {
+  .poster-name {
+    font-size: 28px;
+  }
 }
 .poster-bgimg04 {
   width: 10%;
@@ -1670,15 +1992,15 @@ li {
   background-color: #FFF3D2;
   z-index: 2;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-textbox {
     width: 100%;
     padding: 30px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .poster-text {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -1695,9 +2017,9 @@ li {
   margin-top: 60px;
   background-color: #FFF466;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-box {
-    width: 100%;
+    width: auto;
     border: 8px solid black;
     padding: 20px;
     padding-bottom: 100px;
@@ -1705,7 +2027,7 @@ li {
     background-color: #FFF466;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-box2 {
     width: 70%;
     margin: 0 auto;
@@ -1720,7 +2042,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-title {
     width: 60%;
     margin-top: 90px;
@@ -1742,7 +2064,7 @@ li {
 .jumper-img img {
   width: 100%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-img {
     width: 100%;
     margin-left: 0;
@@ -1755,7 +2077,7 @@ li {
   margin: 0 auto;
   margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-text {
     width: 100%;
     margin: auto;
@@ -1771,7 +2093,7 @@ li {
   position: absolute;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-bgimg01 {
     width: 20%;
     top: 0;
@@ -1785,31 +2107,31 @@ li {
   bottom: -10%;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-bgimg02 {
     width: 20%;
     top: -10%;
-    right: -7%;
+    right: -3%;
     z-index: 3;
   }
 }
 .jumper-bgimg03 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-bgimg03 {
     display: block;
     width: 20%;
     position: absolute;
     bottom: -10%;
-    right: -5%;
+    right: -3%;
     z-index: 3;
   }
 }
 .jumper-bgimg04 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .jumper-bgimg04 {
     display: block;
     width: 40%;
@@ -1822,7 +2144,7 @@ li {
 .event {
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event {
     background-image: url(../img/mike.svg);
     background-repeat: no-repeat;
@@ -1838,12 +2160,12 @@ li {
   margin-top: 60px;
   background-color: #5AF1DF;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-box {
-    width: 100%;
+    width: auto;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-box2 {
     width: 70%;
     margin: 0 auto;
@@ -1858,7 +2180,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-title {
     width: 50%;
     margin-top: 90px;
@@ -1870,9 +2192,19 @@ li {
   width: 100%;
 }
 .event-img {
-  margin-top: 190px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
+  .event-img {
+    margin-top: 190px;
+  }
+}
+.event-img img {
+  width: 100%;
+}
+@media screen and (min-width: 801px) {
   .event-text {
     margin-top: 40px;
     font-size: 24px;
@@ -1885,7 +2217,7 @@ li {
   right: 0;
   top: 30%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-bgimg01 {
     width: 25%;
     top: 10%;
@@ -1893,12 +2225,12 @@ li {
   }
 }
 .event-bgimg02 {
-  width: 50%;
+  width: 30%;
   position: absolute;
   top: 45%;
   right: 0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-bgimg02 {
     width: 30%;
     top: 45%;
@@ -1913,15 +2245,15 @@ li {
 .event-bgimg04 {
   width: 50%;
   position: absolute;
-  bottom: -20%;
+  bottom: -15%;
   right: 0;
   z-index: 3;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .event-bgimg04 {
     width: 30%;
     bottom: -20%;
-    right: -10%;
+    right: -3%;
   }
 }
 
@@ -1940,13 +2272,13 @@ li {
   background-size: cover;
   border: 4px solid black;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-box {
-    width: 100%;
+    width: auto;
     border-bottom: 8px solid #000;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-box2 {
     width: 70%;
     margin: 0 auto;
@@ -1956,11 +2288,11 @@ li {
   font-size: 16px;
   font-weight: 500;
   margin-top: 30px;
-  line-height: 48px;
+  line-height: 36px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-textbox {
-    font-size: 18px;
+    font-size: 24px;
     margin-top: 120px;
   }
 }
@@ -1979,7 +2311,7 @@ li {
   position: relative;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan .rule {
     background-color: #fff;
     border: 8px solid #000;
@@ -1989,7 +2321,7 @@ li {
 .schoolplan .rule-bgimg01 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan .rule-bgimg01 {
     display: block;
     width: 20%;
@@ -2003,7 +2335,7 @@ li {
   bottom: 0;
   right: 3%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan .rule-bgimg02 {
     width: 35%;
     top: -10%;
@@ -2014,7 +2346,7 @@ li {
   display: none;
   height: 0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan .rule-bgimg03 {
     display: block;
     height: auto;
@@ -2040,7 +2372,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-title {
     width: 50%;
     margin-top: 90px;
@@ -2055,7 +2387,7 @@ li {
   width: 90%;
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-logo {
     width: 80%;
     margin: 0 auto;
@@ -2070,7 +2402,7 @@ li {
 .schoolplan-bgimg01 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-bgimg01 {
     display: block;
     width: 25%;
@@ -2082,7 +2414,7 @@ li {
 .schoolplan-bgimg02 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-bgimg02 {
     display: block;
     width: 25%;
@@ -2097,7 +2429,7 @@ li {
   left: -5%;
   bottom: -40%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-arrow {
     width: 25%;
     left: -10%;
@@ -2107,7 +2439,7 @@ li {
 .schoolplan-bgimg03 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-bgimg03 {
     width: 20%;
     display: block;
@@ -2119,7 +2451,7 @@ li {
 .schoolplan-bgimg04 {
   display: none;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .schoolplan-bgimg04 {
     width: 20%;
     display: block;
@@ -2138,7 +2470,7 @@ li {
   width: 90%;
   margin: 120px auto;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .caveat {
     width: 70%;
     margin: 120px auto;
@@ -2154,7 +2486,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .caveat-title {
     background-position-y: 105%;
     padding-bottom: 5%;
@@ -2168,7 +2500,7 @@ li {
   margin-top: 60px;
   background-color: #E9FFFE;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .caveat-box {
     border: 8px solid black;
     margin-top: 120px;
@@ -2177,7 +2509,7 @@ li {
 .caveat-text {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .caveat-text {
     margin-top: 40px;
     font-size: 24px;
@@ -2186,9 +2518,9 @@ li {
 }
 .caveat-list li {
   list-style-type: disc;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 36px;
 }
 .caveat-bgimg01 {
   width: 60%;
@@ -2197,7 +2529,7 @@ li {
   top: 0;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .caveat-bgimg01 {
     right: -25%;
   }
@@ -2209,7 +2541,7 @@ li {
   margin: 120px auto;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .Infection {
     width: 70%;
     margin: 120px auto;
@@ -2226,7 +2558,7 @@ li {
   background-position-y: 115%;
   padding-bottom: 15%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .Infection-title {
     background-position-y: 105%;
     padding-bottom: 5%;
@@ -2235,7 +2567,7 @@ li {
 .Infection-text {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .Infection-text {
     margin-top: 40px;
     font-size: 24px;
@@ -2250,16 +2582,15 @@ li {
   margin-top: 60px;
   background-color: #E9FFFE;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .Infection-box {
     border: 8px solid black;
-    padding: 20px;
     margin-top: 120px;
   }
 }
 .Infection-list li {
   list-style-type: disc;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 48px;
 }
@@ -2277,7 +2608,7 @@ li {
   right: 0;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .Infection-bgimg02 {
     right: -25%;
   }
@@ -2289,7 +2620,7 @@ li {
   right: 10%;
   top: 55%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .gototop {
     position: relative;
     width: 10%;
@@ -2306,11 +2637,12 @@ li {
   background-image: url(../img/PHONE-footer-bg.svg);
   background-size: cover;
   background-repeat: repeat-x;
-  padding-top: 120px;
+  padding-top: 20%;
   padding-bottom: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer {
+    padding-top: 120px;
     background-image: url(../img/PC-footer.svg);
     background-size: contain;
   }
@@ -2321,7 +2653,7 @@ li {
   left: 10%;
   width: 25%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer-logo {
     position: relative;
     width: 15%;
@@ -2336,7 +2668,7 @@ li {
   width: 80%;
   margin: 0 auto;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer-flex {
     display: flex;
     justify-content: space-between;
@@ -2353,7 +2685,7 @@ li {
   padding-left: 0;
   line-height: 32px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer-list {
     text-align: left;
     display: flex;
@@ -2361,7 +2693,7 @@ li {
     justify-content: space-between;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer ul li {
     width: 45%;
     font-size: 18px;
@@ -2377,7 +2709,7 @@ li {
   bottom: 0;
   left: 20%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer-bgimg01 {
     width: 10%;
     bottom: auto;
@@ -2391,7 +2723,7 @@ li {
   top: 0;
   right: 20%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer-bgimg02 {
     width: 10%;
     top: auto;
@@ -2405,8 +2737,58 @@ li {
   margin: 0;
   margin-top: 60px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .footer .copylight {
     margin-top: 0;
   }
+}
+
+.main {
+  width: 310px;
+  margin: 0 auto;
+  text-align: center;
+  border: solid 8px;
+  background-color: #FFF3D2;
+}
+
+.tabs__ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.tabs__ul__li {
+  width: 75px;
+  height: 45px;
+  border: solid 3px;
+  display: flex;
+  justify-content: center;
+  /* align-items: baseline; */
+  align-items: center;
+}
+
+.tabs img {
+  cursor: pointer;
+  width: 30%;
+}
+
+/* ネストされたタブのスタイル */
+.nested-tabs img {
+  cursor: pointer;
+  margin: 10px;
+  width: 25%;
+}
+
+/* コンテンツのスタイル */
+.tab-content {
+  display: none;
+}
+
+.tab-content:first-child {
+  display: block;
+}
+
+/* ネストされたコンテンツのスタイル */
+.nested-content {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
