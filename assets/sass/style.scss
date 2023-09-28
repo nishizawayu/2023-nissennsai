@@ -75,6 +75,7 @@ html{
 }
 
 body{
+    position: relative;
     margin: 0;
     background-color: #57D9EE;
     overflow-x: hidden;
@@ -87,10 +88,9 @@ body{
 .conteiner{
     position: relative;
     @include mq(pc){
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
     }
-    
 }
 
 h2{
@@ -125,6 +125,62 @@ a{
     text-decoration: none;
 }
 
+// アニメーション
+@keyframes anime1 {
+    from {
+      transform: scale(0.9,0.9);
+    }
+    to {
+      transform: scale(1,1);
+    }
+  }
+
+  @keyframes anime2 {
+    from {
+      transform: scale(1,1);
+    }
+    to {
+      transform: scale(0.8,0.8);
+    }
+  }
+
+  @keyframes anime3 {
+    from {
+      transform: scale(0.7,0.7);
+    }
+    to {
+      transform: scale(1,1);
+    }
+  }
+
+  @keyframes yurayura {
+    0% , 100%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+  }
+
+  @keyframes yurayurabig {
+    0% , 100%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes rotation1{
+    0%{ 
+        transform:rotate(0)scale(0.7,0.7);
+    }
+    100%{ 
+        transform:rotate(360deg)scale(1,1); 
+    }
+  }
+
+
 .ham{
     width: 100%;
     display: block;
@@ -150,10 +206,36 @@ a{
         z-index: 900;
         text-align: center;
         background-color:rgba(87,217,238,0.6);
+        transition: all .5s ease-in;
         &bg{
+            position: relative;
             width: 90%;
             height: 70vh;
             background-color: #FFF3D2;
+        }
+        &-bgimg01{
+            position: absolute;
+            width: 35%;
+            left: 0;
+            top: 20%;
+        }
+        &-bgimg02{
+            position: absolute;
+            width: 35%;
+            left: 0;
+            bottom: 10%;
+        }
+        &-bgimg03{
+            position: absolute;
+            width: 25%;
+            right: 3%;
+            bottom: 5%;
+        }
+        &-bgimg04{
+            position: absolute;
+            width: 40%;
+            right: 0;
+            top: 20%;
         }
         &.act{
             left: 0;
@@ -162,6 +244,7 @@ a{
     &-text{
         width: 80%;
         margin: 0 auto;
+        margin-top: 30px;
         padding-left: 0;
         border: 4px solid #000;
         padding-top: 90px;
@@ -170,46 +253,53 @@ a{
         a{
             li{
                 font-size: 24px;
+                span{
+                    background-image: url(../img/PHONE-menu-deco-04.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position-x: 105%;
+                    padding-top: 3%;
+                    padding-bottom: 5%;
+                    padding-right: 10%;
+                }
             }
         }
     }
 }
 
 .hambtn {
-    @include mq(sp){
-        position: fixed;
-        top: 3%;
-        right: 3%;
-        display: flex;
-        height: 72px;
-        width: 72px;
-        background-color: #FFED00;
-        border: 4px solid #000;
-        justify-content: center;
-        align-items: center;
-        box-shadow: -15px 12px 0px #00FFE4;
-        z-index: 999;   /*重ね順*/
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    display: flex;
+    height: 72px;
+    width: 72px;
+    background-color: #FFED00;
+    border: 4px solid #000;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -15px 12px 0px #00FFE4;
+    z-index: 999;   /*重ね順*/
 
-        span{
-            position: absolute;
-            left: 0;
-            width: 80%;
-            left: 10%;
-            height: 5px;
-            background-color: #000;
-            border-radius: 4px;
-            transition: all .2s ease-out;
-            &:nth-of-type(1){
-                top: 15px;
-            }
+    span{
+        position: absolute;
+        left: 0;
+        width: 80%;
+        left: 10%;
+        height: 5px;
+        background-color: #000;
+        border-radius: 4px;
+        transition: all .2s ease-out;
+        &:nth-of-type(1){
+            top: 15px;
+        }
 
-            &:nth-of-type(2){
-                top: 34px;
-            }
+        &:nth-of-type(2){
+            top: 34px;
+        }
 
-            &:nth-of-type(3){
-                bottom: 15px;
-            }
+        &:nth-of-type(3){
+           bottom: 15px;
         }
     }
     @include mq(pc){
@@ -248,7 +338,6 @@ a{
         &-con{
             // border: 8px solid #000;
             // background-color: #FFED00;
-            padding: 30px 90px;
             a{
                 font-size: 20px;
                 font-weight: 700;
@@ -259,11 +348,13 @@ a{
             background-image: url(../img/nav-img01.svg);
             background-size: contain;
             background-repeat: no-repeat;
+            padding: 30px 102px;
         }
         .ncon2{
             background-image: url(../img/nav-img02.svg);
             background-size: contain;
             background-repeat: no-repeat;
+            padding: 30px 90px;
         }
     }
 }
@@ -294,24 +385,23 @@ a{
 }
 
 .nav{
+    display: none;
     @include mq(pc){
-        width: 80%;
+        width: 90%;
         position: fixed;
         top: -100%;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #FFF3D2;
-        border: 8px solid black;
+        border: 12px solid black;
         box-sizing: border-box;
         transition: all 0.5s;
-    }
-    
-    @include mq(sp){
-        display: none;
-    }
+    }        
+
     &-logo{
         margin-left: 5%;
+        margin: 0;
         width: 10%;
         img{
             width: 100%;
@@ -334,13 +424,13 @@ a{
     &-bgimg01{
         position: absolute;
         width: 10%;
-        top: -40%;
-        right: -4%;
+        top: -55%;
+        right: 0;
     }
     &-bgimg02{
         position: absolute;
         width: 3%;
-        bottom: 5%;
+        bottom: -1%;
         left: 20%;
     }
     &-bgimg03{
@@ -353,17 +443,17 @@ a{
         position: absolute;
         width: 3%;
         top: 2%;
-        right: 35%;
+        right: 40%;
     }
 
 }
 
 .fixed {
     @include mq(pc){
-        width: 90%;
+        width: 94%;
         position: fixed;
         top: 3%;
-        left: 5%;
+        left: 3%;
         z-index: 100;
     }
     /* 必要に応じて */
@@ -372,32 +462,84 @@ a{
 // ファーストビュー
 .fv{
     position: relative;
-    width: 100%;
-    height: 100vh;
-    margin-top: -3%;
+    width: 95%;
+    // height: 100vh;
+    margin: 0 auto;
+    margin-top: 3%;
+    background-image: url(../img/PHONE-TOP-bg.svg);
+    padding-top: calc(193.322 / 128.058 * 95%);
+    /*calc(画像の高さ / 画像の幅 * widthの値)*/
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     // レスポンシブ難あり　（森先生に相談）
     // calc()を試す 0915
-    background-image: url(../img/PC-Top-KVbg.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    // padding-top: 120px;
-    // padding-bottom: 280px;
-    &-logo{
-        position: relative;
+    @include mq(pc){
+        margin-top: -5%;
+        margin-top: auto;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // padding-top: 120px;
+        // padding-bottom: 280px;
         width: 100%;
-        margin-top: 80px;
+        height: 0;
+        background-image: url(../img/PC-Top-KVbg.svg);
+        padding-top: calc(350.62 / 480.66 * 90%);
+        /*calc(画像の高さ / 画像の幅 * widthの値)*/
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &-bg{
+        position: absolute; /* コンテンツを絶対位置に配置 */
+        top: 0;
+        @include mq(pc){
+            top: 10%;
+        }
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &-logo{
+        display: none;
+        @include mq(pc){
+            display: block;
+            position: relative;
+            width: 100%;
+            margin-top: 90px;
+        }
+    }
+    &-logo-phone{
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 70px;
+        img{
+            width: 100%;
+        }
+        @include mq(pc){
+            display: none;
+        }
     }
     &-logo1{
         width: 30%;
         position: absolute;
         top: -60px;
         left: 10px;
+        z-index: 2;
+        @include mq(pc){
+            animation: anime3 0.9s ease 0s infinite alternate;
+            transform-origin:center;
+        }
     }
     &-logo-shock{
         position: absolute;
         width: 20%;
         top: -30%;
         right: 15%;
+        z-index: 1;
+        // animation: anime3 .8s ease 0s infinite alternate;
+        // transform-origin:center;
     }
 
     &-logo2{
@@ -409,40 +551,74 @@ a{
         position: relative;
         width: 50%;
     }
+
     &-flex{
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        margin: 0 auto;
+        @include mq(pc){
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+        p{
+            width: 80%;
+            margin: 0 auto;
+            @include mq(pc){
+                width: auto;
+                margin: auto;
+            }
+        }
+        div{
+            width: 80%;
+            margin: 0 auto;
+            @include mq(pc){
+                width: auto;
+                margin: auto;
+            }
+        }
         img{
             width: 100%;
+        }
+    }
+    .fv-2023{
+        position: absolute;
+        width: 50%;
+        top: 0;
+        @include mq(pc){
+            display: none;
         }
     }
     &-img1{
         position: absolute;
         width: 40%;
+        top: 20%;
         @include mq(pc){
-            top: -15%;
+            width: 30%;
+            top: -25%;
+            // animation: rotation1 3s ease 0s infinite alternate; 
+            // transform-origin:center;
         }
     }
     &-img2{
+        display: none;
         position: absolute;
-        width: 15%;
-        bottom: 8%;
         @include mq(pc){
+            display: block;
             width: 15%;
             bottom: 8%;
+            animation: anime1 0.5s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
     &-img3{
         position: absolute;
-        width: 15%;
-        top: 40%;
-        right: 10%;
+        display: none;
         @include mq(pc){
+            display: block;
             width: 15%;
-            top: 40%;
+            top: 35%;
             right: 10%;
+            transform-origin: center;
+            animation: yurayura 2s ease 0s infinite alternate; 
         }
     }
     &-img4{
@@ -456,28 +632,57 @@ a{
             left: 15%;
             bottom: -10%;
             z-index: 10;
+            animation: anime1 1s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
     &-img5{
-        width: 15%;
-        bottom: 10%;
-        right: 40%;
+        display: none;
         position: absolute;
         @include mq(pc){
+            display: block;
             width: 15%;
             bottom: 10%;
             right: 40%;
+            animation: yurayura 1s ease 0s infinite alternate; 
+            transform-origin:center;
         }
     }
     &-img6{
-        width: 30%;
-        right: 5%;
-        bottom: -5%;
+        width: 60%;
+        right: 0;
+        bottom: -25%;
         position: absolute;
+        z-index: 2;
         @include mq(pc){
             width: 30%;
             right: 5%;
             bottom: -5%;
+            animation: anime3 0.7s ease 0s infinite alternate;
+            transform-origin:center;
+        }
+    }
+    &-img7{
+        width: 40%;
+        position: absolute;
+        display: block;
+        top: 30%;
+        right: 5%;
+        @include mq(pc){
+            display: none;
+        }
+    }
+    &-phonestyle{
+        position: relative;
+    }
+    &-datephone{
+        display: block;
+        width: 25%;
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        @include mq(pc){
+            display: none;
         }
     }
 }
@@ -488,17 +693,18 @@ a{
     background-image: url(../img/PC-alert-bg-03.svg);
     &-box{
         width: 80%;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px;
         margin: 0 auto;
         margin-top: 60px;
         background-color: #FFF3D2;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
-            border: 8px solid black;
+            border: 12px solid black;
             padding: 20px;
+            padding-bottom: 90px;
             margin-top: 60px;
             background-color: #FFF3D2;
             box-shadow: none;
@@ -507,12 +713,13 @@ a{
     &-title{
         position: relative;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 30%;
         background-image: url(../img/PC-3belowTitle2.svg);
         background-repeat: no-repeat;
         background-position-x: 50%;
         background-position-y: 115%;
         padding-bottom: 15%;
+        z-index: 3;
         @include mq(pc){
             width: 50%;
             margin-top: 90px;
@@ -521,9 +728,6 @@ a{
         }
         img{
             width: 80%;
-            @include mq(pc){
-                width: 60%;
-            }
         }
     }
     &-titlebox{
@@ -566,6 +770,8 @@ a{
             display: block;
             top: 10%;
             left: 5%;
+            animation: rotation1 3s infinite;
+            transform-origin:center;
         }
     }
     &-img02{
@@ -624,16 +830,16 @@ a{
     }
     &-border{
         width: 80%;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px;
         margin: 0 auto;
         margin-top: 60px;
         background-color: #FFF3D2;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
-            border: 8px solid black;
+            border: 12px solid black;
             padding: 20px;
             margin-top: 60px;
             background-color: #FFF3D2;
@@ -643,28 +849,43 @@ a{
 
     &-box{
         position: relative;
-        margin-top: 60px;
         @include mq(pc){
             width: 70%;
             margin-top: 120px;
             margin: 0 auto;
         }
     }
+
+    .info-phonbg1{
+        width: 30%;
+        position: absolute;
+        top: -5%;
+        right: -10%;
+        @include mq(pc){
+            display: none;
+        }
+    }
+
     &-h3{
         background-image: url(../img/3-subtitle.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        padding-top: 5%;
         padding-left: 5%;
     }
     &-flex{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
         @include mq(pc){
+            display: flex;
+            justify-content: center;
             gap: 60px;
         }
     }
     &-text{
+        font-size: 24px;
+        text-align: center;
+        &-bold{
+            font-weight: 700;
+        }
         @include mq(pc){
             font-size: 40px;
             text-align: left;
@@ -674,9 +895,18 @@ a{
             text-align: center;
         }
         span{
+            font-size: 20px;
+            font-weight: 500;
             @include mq(pc){
                 font-size: 36px;
             }   
+        }
+    }
+    &-phonimg02{
+        width: 50%;
+        margin-left: 40%;
+        @include mq(pc){
+            display: none;
         }
     }
     // 悩みポイント
@@ -687,6 +917,9 @@ a{
         justify-content: center;
         margin: 0 auto;
         padding-bottom: 120px;
+        &-size{
+            width: 90%;
+        }
     }
     &-bgimg01{
         display: none;
@@ -706,6 +939,18 @@ a{
             width: 30%;
             top: -15%;
             right: -15%;
+            &-n1{
+                animation: anime2 0.6s ease 0s infinite alternate;
+                transform-origin:center;
+            }
+            &-n2{
+                animation: anime2 0.8s ease 0s infinite alternate;
+                transform-origin:center;
+            }
+            &-n3{
+                animation: anime2 1s ease 0s infinite alternate;
+                transform-origin:center;
+            }
         }
     }
     &-bgimg03{
@@ -726,6 +971,8 @@ a{
             width: 25%;
             bottom: 0;
             left: -5%;
+            animation: anime2 0.8s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
     &-bgimg05{
@@ -756,7 +1003,15 @@ a{
     @include mq(pc){
         margin: 60px auto;
     }
-
+    &-phonimg01{
+        width: 40%;
+        top: -5%;
+        left: 0;
+        position: absolute;
+        @include mq(pc){
+            display: none;
+        }
+    }
     &-box{
         width: 80%;
         margin: 0 auto;
@@ -764,21 +1019,27 @@ a{
         padding: 20px;
         margin-top: 60px;
         background-color: #FFF3D2;
-        border: 8px solid #000;
+        border: 12px solid #000;
         padding-bottom: 180px;
         box-shadow: 15px 12px 0px #FDF150;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin: auto;
             position: relative;
             padding-bottom: 180px;
             box-shadow: none;
             // background-image: url(../img/PC-exhibition-bg.svg);
-            // background-size: contain;
+            // background-position: center center;
+            // padding-top: calc(472.017 / 848.783 * 95%);
+            // background-size: cover;
             // background-repeat: no-repeat;
             // height: 0;
-            // padding-bottom: 180%;
         }
+        // &-bg{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
     }
 
     &-title{
@@ -840,7 +1101,7 @@ a{
             display: block;
             width: 25%;
             top: 20%;
-            right: -35%;
+            right: -30%;
         }
     }
 
@@ -883,7 +1144,7 @@ a{
         @include mq(pc){
             display: block;
             width: 20%;
-            right: -10%;
+            right: -1%;
             bottom: 15%;
         }
     }
@@ -1077,7 +1338,7 @@ a{
                 margin-bottom: 10px;
                 @include mq(pc){
                     position: absolute;
-                    top: 30%;
+                    top: 40%;
                     right: 5%;
                     font-size: 40px;
                 }
@@ -1108,16 +1369,17 @@ a{
     &-box{
         width: 80%;
         margin: 0 auto;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px 20px 60px 20px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             margin-top: 60px;
         }
     }
     &-box2{
         position: relative;
+        margin-top: 60px;
         @include mq(pc){
             width: 90%;
             margin: 0 auto;
@@ -1146,11 +1408,18 @@ a{
         }
     }
     &-h3{
+        width: 50%;
         position: relative;
         background-image: url(../img/PC-aisatu-talkcloud.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        background-position:center;
+        padding: 20% 5% 20% 0;
+        text-align: center;
         @include mq(pc){
+            text-align: left;
+            background-position-x: 0;
+            width: auto;
             font-size: 42px;
             font-weight: 400;
             padding-left: 5%;
@@ -1165,17 +1434,22 @@ a{
         }
     }
     &-h3--else{
+        width: 50%;
         position: relative;
         background-image: url(../img/PC-aisatu-talkcloud2.svg);
         background-repeat: no-repeat;
-        background-position-y: 10px;
+        background-position: center;
         background-size: contain;
+        padding: 20% 0 20% 5%;
+        text-align: center;
         @include mq(pc){
+            text-align: left;
+            width: auto;
             font-size: 42px;
             font-weight: 400;
-            margin-left: 3%;
+            margin-left: 50%;
             padding-left: 8%;
-            padding-right: 8%;
+            padding-right: 6%;
             padding-top: 200px;
             padding-bottom: 200px;
         }
@@ -1189,43 +1463,64 @@ a{
     &-flex{
         position: relative;
         display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
         @include mq(pc){
             display: block;
+            margin: auto;
         }
         &--else{
+            width: 100%;
             display: flex;
             flex-direction: row-reverse;
+            justify-content: space-around;
+            padding-bottom: 10px;
+        }
+        figure{
+            margin: 0;
+            @include mq(pc){
+                margin-left:40px;
+            }
         }
     }
     &-line{
         width: 30%;
         position: absolute;
-        top: -30px;
+        top: -50px;
         right: 0;
     }
     &-lineelse{
         width: 30%;
         position: absolute;
-        top: -30px;
+        top: -50px;
         left: 5%;
     }
     &-line2{
+        display: none;
+        @include mq(pc){
+            display: block;
+        }
         position: absolute;
         bottom: -30px;
-        right: -10px;
+        right: 200px;
         z-index: 2;
     }
     &-line2else{
+        display: none;
+        @include mq(pc){
+            display: block;
+        }
         position: absolute;
         bottom: -30px;
-        right: -50px;
+        right: -80px;
         z-index: 2;
     }
     &-img{
         width: 50%;
-        border: 8px solid #000;
         position: relative;
         @include mq(pc){
+            width: 50%;
             position: absolute;
             top: 0;
             right: -50px;
@@ -1243,27 +1538,33 @@ a{
         img{
             width: 100%;
             vertical-align:top;
+            border: 4px solid #000;
+            @include mq(pc){
+                border: 8px solid #000;
+            }
+            
         }
     }
     &-text{
         position: relative;
         width: 90%;
-        padding: 5%;
+        padding: 3%;
         border: 5px solid black;
         z-index: 3;
         background-color: #BAF5FF;
-        &--else{
-            margin: 0;
-            @include mq(pc){
-                right: -40px;
-            }
-        }
         @include mq(pc){
-            width: 90%;
-            padding: 30px;
+            width: 50%;
+            margin-left: 15%;
+            padding: 8%;
             font-size: 28px;
             line-height: 56px;
         }   
+        &--else{
+            margin: 0;
+            @include mq(pc){
+                margin-left:35%;
+            }
+        }
     }
     &-bgimg01{
         width: 70%;
@@ -1271,6 +1572,7 @@ a{
         right: 0;
         bottom: -20%;
         z-index: 1;
+        display: none;
         @include mq(pc){
             width: 50%;
             right: -20%;
@@ -1278,6 +1580,7 @@ a{
         }
     }
     &-bgimg02{
+        display: none;
         width: 50%;
         position: absolute;
         left: -20%;
@@ -1285,6 +1588,7 @@ a{
         z-index: 1;
     }
     &-bgimg03{
+        display: none;
         width: 50%;
         position: absolute;
         right: 0;
@@ -1298,13 +1602,13 @@ a{
     &-box{
         width: 80%;
         margin: 0 auto;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px;
         padding-bottom: 100px;
         margin-top: 60px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
+            width: auto;
         }
     }
     &-box2{
@@ -1404,6 +1708,13 @@ a{
         }
     }
 
+    &-name{
+        font-size: 20px;
+        @include mq(pc){
+            font-size: 28px;
+        }
+    }
+
     &-bgimg04{
         width: 10%;
         position: absolute;
@@ -1424,7 +1735,7 @@ a{
         width: 60%;
         position: absolute;
         left: -20%;
-        bottom: -15%;
+        bottom: -13%;
     }
 
     &-bgimg07{
@@ -1449,7 +1760,7 @@ a{
     }
     &-text{
         @include mq(pc){
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 }
@@ -1460,14 +1771,14 @@ a{
         width: 80%;
         margin: 0 auto;
         position: relative;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px;
         padding-bottom: 100px;
         margin-top: 60px;
         background-color: #FFF466;
         @include mq(pc){
-            width: 100%;
-            border: 8px solid black;
+            width: auto;
+            border: 12px solid black;
             padding: 20px;
             padding-bottom: 100px;
             margin-top: 60px;
@@ -1502,7 +1813,7 @@ a{
         position: relative;
         z-index: 3;
         background: #fff;
-        border: 8px solid #000;
+        border: 12px solid #000;
         display: inline-block;
         margin-top: 60px;
         img{
@@ -1548,7 +1859,7 @@ a{
         @include mq(pc){
             width: 20%;
             top: -10%;
-            right: -7%;
+            right: -3%;
             z-index: 3;
         }
         
@@ -1560,7 +1871,7 @@ a{
             width: 20%;
             position: absolute;
             bottom: -10%;
-            right: -5%;
+            right: -3%;
             z-index: 3;
         }
     }
@@ -1586,13 +1897,13 @@ a{
     &-box{
         width: 80%;
         margin: 0 auto;
-        border: 8px solid black;
+        border: 12px solid black;
         padding: 20px;
         padding-bottom: 100px;
         margin-top: 60px;
         background-color: #5AF1DF;
         @include mq(pc){
-            width: 100%;
+            width: auto;
         }
     }
     &-box2{
@@ -1620,7 +1931,15 @@ a{
         }
     }
     &-img{
-        margin-top: 190px;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 60px;
+        @include mq(pc){
+            margin-top: 190px;
+        }
+        img{
+            width: 100%;
+        }
     }
     &-text{
         @include mq(pc){
@@ -1642,7 +1961,7 @@ a{
         
     }
     &-bgimg02{
-        width:50%;
+        width:30%;
         position: absolute;
         top: 45%;
         right: 0;
@@ -1660,13 +1979,13 @@ a{
     &-bgimg04{
         width: 50%;
         position: absolute;
-        bottom: -20%;
+        bottom: -15%;
         right: 0;
         z-index: 3;
         @include mq(pc){
             width: 30%;
             bottom: -20%;
-            right: -10%;
+            right: -3%;
         }
     }
 
@@ -1686,7 +2005,7 @@ a{
         background-size: cover;
         border: 4px solid black;
         @include mq(pc){
-            width: 100%;
+            width: auto;
             border-bottom: 8px solid #000;
         }
     }
@@ -1701,10 +2020,10 @@ a{
         font-weight: 500;
         margin-top: 30px;
         @include mq(pc){
-            font-size: 18px;
+            font-size: 24px;
             margin-top: 120px;
         }
-        line-height: 48px;
+        line-height: 36px;
         p{
             text-align: center;
         }
@@ -1722,7 +2041,7 @@ a{
         padding-bottom: 60px;
         @include mq(pc){
             background-color: #fff;
-            border: 8px solid #000;
+            border: 12px solid #000;
             box-shadow: -20px 15px 0px #AB00E8;
         }
         &-bgimg01{
@@ -1891,7 +2210,7 @@ a{
         margin-top: 60px;
         background-color: #E9FFFE;
         @include mq(pc){
-            border: 8px solid black;
+            border: 12px solid black;
             margin-top: 120px;
         }
     }
@@ -1906,9 +2225,9 @@ a{
     &-list{
         li{
             list-style-type:disc;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 500;
-            line-height: 48px;
+            line-height: 36px;
         };
     }
     &-bgimg01{
@@ -1964,15 +2283,14 @@ a{
         margin-top: 60px;
         background-color: #E9FFFE;
         @include mq(pc){
-            border: 8px solid black;
-            padding: 20px;
+            border: 12px solid black;
             margin-top: 120px;
         }
     }
     &-list{
         li{
             list-style-type:disc;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 500;
             line-height: 48px;
         };   
@@ -2017,13 +2335,17 @@ a{
     // background: #FFF500;
     background-image: url(../img/PHONE-footer-bg.svg);
     background-size: cover;
+    // @include mq(tab){
+    //     padding-top: 240px;
+    // }
+    background-repeat: repeat-x;
+    padding-top: 20%;
+    padding-bottom: 60px;
     @include mq(pc){
+        padding-top: 120px;
         background-image: url(../img/PC-footer.svg);
         background-size: contain;
     }
-    background-repeat: repeat-x;
-    padding-top: 120px;
-    padding-bottom: 60px;
     &-logo{
         position: absolute;
         top: 17%;
@@ -2247,6 +2569,8 @@ a{
 /* ネストされたコンテンツのスタイル */
 .nested-content {
   display: none;
+}
+
   .contentArea {
     width: 280px;
     margin:  0 auto;

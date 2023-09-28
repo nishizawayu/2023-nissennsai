@@ -1,6 +1,7 @@
 'use strict'; /* 厳格にエラーをチェック */
 
-window.onscroll = function () {
+try{
+  window.onscroll = function () {
     let gHeader = document.getElementsByClassName('header')[0]; //headerを任意のclass名に 
     let gNav = document.getElementsByClassName('nav')[0]; // navを任意のclass名に
     let gNavHeight = gNav.clientHeight;
@@ -13,6 +14,9 @@ window.onscroll = function () {
       gNav.classList.remove('fixed'); // fixedを任意のclass名に(上記と同じにする) 
       gMain.setAttribute('style', 'padding-top:0;'); //padding-top:0;を任意の数値に
     }
+}
+}catch{
+  console("no nav")
 }
 
 const hambtn = document.querySelector(".hambtn");
