@@ -2715,19 +2715,4 @@ a {
 }
 .footerArea__logo__link__img {
   display: block;
-}
-
-#back_img1 {
-  background-image: url(../img/sp-img/sp-1.png);
-  background-repeat: no-repeat;
-  background-position-x: 5%;
-  background-position-y: 98%;
-  padding-bottom: 1px;
-  position: relative;
-  z-index: 2;
-}
-@media screen and (min-width: 801px) {
-  #back_img1 {
-    width: 40%;
-  }
 }/*# sourceMappingURL=style.css.map */

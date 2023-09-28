@@ -2622,15 +2622,15 @@ a{
     }
 }
 
-#back_img1 {
-    background-image: url(../img/sp-img/sp-1.png);
-    background-repeat: no-repeat;
-    background-position-x: 5%;
-    background-position-y: 98%;
-    padding-bottom: 1px;
-    position: relative;
-    z-index: 2;
-    @include mq(pc){
-        width: 40%;
-    }
-}
+// #back_img1 {
+//     background-image: url(../img/sp-img/sp-1.png);
+//     background-repeat: no-repeat;
+//     background-position-x: 5%;
+//     background-position-y: 98%;
+//     padding-bottom: 1px;
+//     position: relative;
+//     z-index: 2;
+//     @include mq(pc){
+//         width: 40%;
+//     }
+// }
