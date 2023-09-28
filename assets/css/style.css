@@ -289,7 +289,7 @@ a {
     align-items: center;
     justify-content: center;
     background-color: #FFF3D2;
-    border: 8px solid black;
+    border: 12px solid black;
     box-sizing: border-box;
     transition: all 0.5s;
   }
@@ -319,13 +319,13 @@ a {
 .nav-bgimg01 {
   position: absolute;
   width: 10%;
-  top: -40%;
-  right: -4%;
+  top: -55%;
+  right: 0;
 }
 .nav-bgimg02 {
   position: absolute;
   width: 3%;
-  bottom: 5%;
+  bottom: -1%;
   left: 20%;
 }
 .nav-bgimg03 {
@@ -606,7 +606,7 @@ a {
 }
 .catch-box {
   width: 80%;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px;
   margin: 0 auto;
   margin-top: 60px;
@@ -617,7 +617,7 @@ a {
   .catch-box {
     width: auto;
     margin: auto;
-    border: 8px solid black;
+    border: 12px solid black;
     padding: 20px;
     padding-bottom: 90px;
     margin-top: 60px;
@@ -764,7 +764,7 @@ a {
 }
 .info-border {
   width: 80%;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px;
   margin: 0 auto;
   margin-top: 60px;
@@ -775,7 +775,7 @@ a {
   .info-border {
     width: auto;
     margin: auto;
-    border: 8px solid black;
+    border: 12px solid black;
     padding: 20px;
     margin-top: 60px;
     background-color: #FFF3D2;
@@ -980,7 +980,7 @@ a {
   padding: 20px;
   margin-top: 60px;
   background-color: #FFF3D2;
-  border: 8px solid #000;
+  border: 12px solid #000;
   padding-bottom: 180px;
   box-shadow: 15px 12px 0px #FDF150;
 }
@@ -1325,7 +1325,7 @@ a {
 .messege-box {
   width: 80%;
   margin: 0 auto;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px 20px 60px 20px;
   background-color: #FFF466;
 }
@@ -1470,7 +1470,7 @@ a {
   display: none;
   position: absolute;
   bottom: -30px;
-  right: -10px;
+  right: 200px;
   z-index: 2;
 }
 @media screen and (min-width: 801px) {
@@ -1482,7 +1482,7 @@ a {
   display: none;
   position: absolute;
   bottom: -30px;
-  right: -50px;
+  right: -80px;
   z-index: 2;
 }
 @media screen and (min-width: 801px) {
@@ -1587,7 +1587,7 @@ a {
 .poster-box {
   width: 80%;
   margin: 0 auto;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px;
   padding-bottom: 100px;
   margin-top: 60px;
@@ -1729,7 +1729,7 @@ a {
   width: 60%;
   position: absolute;
   left: -20%;
-  bottom: -15%;
+  bottom: -13%;
 }
 .poster-bgimg07 {
   width: 20%;
@@ -1765,7 +1765,7 @@ a {
   width: 80%;
   margin: 0 auto;
   position: relative;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px;
   padding-bottom: 100px;
   margin-top: 60px;
@@ -1774,7 +1774,7 @@ a {
 @media screen and (min-width: 801px) {
   .jumper-box {
     width: auto;
-    border: 8px solid black;
+    border: 12px solid black;
     padding: 20px;
     padding-bottom: 100px;
     margin-top: 60px;
@@ -1811,7 +1811,7 @@ a {
   position: relative;
   z-index: 3;
   background: #fff;
-  border: 8px solid #000;
+  border: 12px solid #000;
   display: inline-block;
   margin-top: 60px;
 }
@@ -1908,7 +1908,7 @@ a {
 .event-box {
   width: 80%;
   margin: 0 auto;
-  border: 8px solid black;
+  border: 12px solid black;
   padding: 20px;
   padding-bottom: 100px;
   margin-top: 60px;
@@ -2068,7 +2068,7 @@ a {
 @media screen and (min-width: 801px) {
   .schoolplan .rule {
     background-color: #fff;
-    border: 8px solid #000;
+    border: 12px solid #000;
     box-shadow: -20px 15px 0px #AB00E8;
   }
 }
@@ -2256,7 +2256,7 @@ a {
 }
 @media screen and (min-width: 801px) {
   .caveat-box {
-    border: 8px solid black;
+    border: 12px solid black;
     margin-top: 120px;
   }
 }
@@ -2338,7 +2338,7 @@ a {
 }
 @media screen and (min-width: 801px) {
   .Infection-box {
-    border: 8px solid black;
+    border: 12px solid black;
     margin-top: 120px;
   }
 }
