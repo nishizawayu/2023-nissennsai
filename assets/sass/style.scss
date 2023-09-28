@@ -119,6 +119,7 @@ a{
     }
   }
 
+  
 
 .ham{
     width: 100%;
@@ -305,16 +306,23 @@ a{
 .nav{
     display: none;
     @include mq(pc){
-        width: 90%;
+        width: 94%;
         position: fixed;
-        top: -100%;
+        top: 3%;
+        left: 3%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        z-index: 100;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #FFF3D2;
         border: 12px solid black;
         box-sizing: border-box;
-        transition: all 0.5s;
+        transition: all .6s ease-out;
+        &.hidden {
+            top: -30%;
+        }
     }        
 
     &-logo{
@@ -323,6 +331,7 @@ a{
         width: 10%;
         img{
             width: 100%;
+            vertical-align:bottom;
         }
     }
     &-menu{
@@ -366,16 +375,16 @@ a{
 
 }
 
-.fixed {
-    @include mq(pc){
-        width: 94%;
-        position: fixed;
-        top: 3%;
-        left: 3%;
-        z-index: 100;
-    }
-    /* 必要に応じて */
-  }
+// .fixed {
+//     @include mq(pc){
+//         width: 94%;
+//         position: fixed;
+//         top: 3%;
+//         left: 3%;
+//         z-index: 100;
+//     }
+//     /* 必要に応じて */
+//   }
 
 // ファーストビュー
 .fv{
@@ -533,7 +542,7 @@ a{
         @include mq(pc){
             display: block;
             width: 15%;
-            top: 35%;
+            top: 30%;
             right: 10%;
             transform-origin: center;
             animation: yurayura 2s ease 0s infinite alternate; 
@@ -847,6 +856,26 @@ a{
             width: 10%;
             top: 5%;
             left: 5%;
+            img{
+                width: 80%;
+            }
+            &-a{
+                animation: anime2 1s ease infinite;
+                transform-origin:center;
+            }
+            &-b{
+                margin-top: 20px;
+                animation: anime2 1s ease infinite;
+                animation-delay: 0.3s;
+                transform-origin:center;
+            }
+            &-c{
+                margin-top: 20px;
+                animation: anime2 1s ease infinite;
+                animation-delay: 0.6s;
+                transform-origin:center;
+            }
+
         }
     }
     &-bgimg02{
@@ -858,15 +887,17 @@ a{
             top: -15%;
             right: -15%;
             &-n1{
-                animation: anime2 0.6s ease 0s infinite alternate;
+                animation: anime2 0.8s ease 0s infinite alternate;
                 transform-origin:center;
             }
             &-n2{
                 animation: anime2 0.8s ease 0s infinite alternate;
+                animation-delay: 0.3s;
                 transform-origin:center;
             }
             &-n3{
-                animation: anime2 1s ease 0s infinite alternate;
+                animation: anime2 0.8s ease 0s infinite alternate;
+                animation-delay: 0.6s;
                 transform-origin:center;
             }
         }
@@ -1009,6 +1040,8 @@ a{
             width: 30%;
             top: -5%;
             left: -20%;
+            animation: anime1 0.9s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
 
@@ -1031,6 +1064,8 @@ a{
             width: 40%;
             bottom: -10%;
             left: -35%;
+            animation: anime2 0.9s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
 
@@ -1038,10 +1073,22 @@ a{
         display: none;
         position: absolute;
         @include mq(pc){
-            display: block;
+            display: flex;
             width: 20%;
-            right: 30%;
+            right: 35%;
             bottom: 3%;
+        }
+        img{
+            width: 30%;
+        }
+        &-a{
+            margin-right: 10px;
+        }
+        &-b{
+            margin-right: 10px;
+        }
+        &-c{
+
         }
     }
 
@@ -1405,14 +1452,20 @@ a{
     &-line{
         width: 30%;
         position: absolute;
-        top: -50px;
+        top: -6px;
         right: 0;
+        @include mq(pc){
+            top: -50px;
+        }
     }
     &-lineelse{
         width: 30%;
         position: absolute;
-        top: -50px;
+        top: -6px;
         left: 5%;
+        @include mq(pc){
+            top: -50px;
+        }
     }
     &-line2{
         display: none;
@@ -1421,7 +1474,7 @@ a{
         }
         position: absolute;
         bottom: -30px;
-        right: 200px;
+        right: 150px;
         z-index: 2;
     }
     &-line2else{
@@ -1466,7 +1519,9 @@ a{
     &-text{
         position: relative;
         width: 90%;
-        padding: 3%;
+        padding: 6%;
+        font-size: 18px;
+        line-height: 36px;
         border: 5px solid black;
         z-index: 3;
         background-color: #BAF5FF;
@@ -1561,6 +1616,10 @@ a{
         position: absolute;
         left: -15%;
         top: 12%;
+        @include mq(pc){
+            width: 55%;
+            top: 11%;
+        }
     }
     &-bgimg02{
         display: none;
@@ -1574,17 +1633,13 @@ a{
         
     }
     &-bgimg03{
-        width: 50%;
-        position: absolute;
-        right: -10%;
-        top:20%;
-    }
-    &-bgimg05{
-        width: 50%;
-        position: absolute;
-        left: -20%;
-        bottom:-10%;
-        z-index: 1;
+        display: none;
+        @include mq(pc){
+            width: 50%;
+            position: absolute;
+            right: -10%;
+            top:20%;
+        }
     }
     &-flex{
         position: relative;
@@ -1634,26 +1689,37 @@ a{
     }
 
     &-bgimg04{
-        width: 10%;
-        position: absolute;
-        left: -5%;
-        top: 40%;
+        display: none;
         z-index: 1;
+        @include mq(pc){
+            display: block;
+            width: 10%;
+            position: absolute;
+            left: -5%;
+            top: 40%;
+        }
     }
 
     &-bgimg05{
-        width: 50%;
-        position: absolute;
-        left: -5%;
-        bottom: 20%;
-        z-index: 1;
+        display: none;
+        @include mq(pc){
+            width: 50%;
+            position: absolute;
+            left: -5%;
+            bottom: 20%;
+            z-index: 1;
+        }
+        
     }
 
     &-bgimg06{
-        width: 60%;
+        width: 100%;
         position: absolute;
         left: -20%;
         bottom: -13%;
+        @include mq(pc){
+            width: 60%;
+        }
     }
 
     &-bgimg07{
@@ -1733,6 +1799,7 @@ a{
         background: #fff;
         border: 12px solid #000;
         display: inline-block;
+        margin: 0;
         margin-top: 60px;
         img{
             width: 100%;
@@ -1742,12 +1809,29 @@ a{
             margin-left: 0;
         }
     }
+    &-name{
+        font-size: 20px;
+        width: 80%;
+        margin: 0 auto;
+        @include mq(pc){
+            width: auto;
+            margin: auto;
+            font-size: 28px;
+            margin-top: 30px;
+        }
+        &-1{
+            margin-top: 30px;
+            @include mq(pc){
+                margin-top: auto;
+            }
+        }
+    }
     &-text{
         position: relative;
         z-index: 2;
         width: 80%;
         margin: 0 auto;
-        margin-top: 60px;
+        margin-top: 30px;
         @include mq(pc){
             width: 100%;
             margin: auto;
@@ -1758,18 +1842,19 @@ a{
     }
     &-bgimg01{
         width: 35%;
-        bottom: 10%;
-        left: -5%;
+        bottom: -17%;
+        left: -2%;
         position: absolute;
         z-index: 1;
         @include mq(pc){
             width: 20%;
             top: 0;
+            left: -5%;
             bottom: auto;
         }
     }
     &-bgimg02{
-        width: 35%;
+        width: 40%;
         position: absolute;
         right: 0;
         bottom: -10%;
@@ -1837,7 +1922,7 @@ a{
         background-repeat: no-repeat;
         background-position-x: 50%;
         background-position-y: 115%;
-        padding-bottom: 15%;
+        padding-bottom: 42%;
         @include mq(pc){
             width: 50%;
             margin-top: 90px;
@@ -1869,19 +1954,21 @@ a{
     &-bgimg01{
         width:30%;
         position: absolute;
-        right: 0;
-        top: 30%;
+        right: 6%;
+        top: 14%;
         @include mq(pc){
             width:25%;
             top: 10%;
             right: 3%;
+            animation: anime2 0.8s ease 0s infinite alternate;
+            transform-origin:center;
         }
         
     }
     &-bgimg02{
-        width:30%;
+        width:54%;
         position: absolute;
-        top: 45%;
+        top: 28%;
         right: 0;
         @include mq(pc){
             width:30%;
@@ -1895,7 +1982,7 @@ a{
         left: 5%;
     }
     &-bgimg04{
-        width: 50%;
+        width: 65%;
         position: absolute;
         bottom: -15%;
         right: 0;
@@ -1904,6 +1991,8 @@ a{
             width: 30%;
             bottom: -20%;
             right: -3%;
+            animation: anime3 1.2s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
 
@@ -1974,8 +2063,8 @@ a{
         }
         &-bgimg02{
             position: absolute;
-            width: 60%;
-            bottom: 0;
+            width: 55%;
+            bottom: -8%;
             right: 3%;
             @include mq(pc){
                 width: 35%;
@@ -2027,9 +2116,12 @@ a{
     &-logo{
         width: 90%;
         position: relative;
+        margin: 0 auto;
+        margin-top: 30px;
         @include mq(pc){
             width: 80%;
             margin: 0 auto;
+            margin-top: auto;
         }
         img{
             width: 100%;
@@ -2133,6 +2225,7 @@ a{
         }
     }
     &-text{
+        font-size: 18px;
         text-align: center;
         @include mq(pc){
             margin-top: 40px;
@@ -2143,9 +2236,14 @@ a{
     &-list{
         li{
             list-style-type:disc;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
-            line-height: 36px;
+            line-height: 42px;
+            @include mq(pc){
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 48px;
+            }
         };
     }
     &-bgimg01{
@@ -2156,6 +2254,8 @@ a{
         z-index: 1;
         @include mq(pc){
             right: -25%;
+            animation: anime2 1.2s ease 0s infinite alternate;
+            transform-origin:center;
         }
         
     }
@@ -2186,6 +2286,7 @@ a{
         }
     }
     &-text{
+        font-size: 18px;
         text-align: center;
         @include mq(pc){
             margin-top: 40px;
@@ -2208,9 +2309,14 @@ a{
     &-list{
         li{
             list-style-type:disc;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
-            line-height: 48px;
+            line-height: 42px;
+            @include mq(pc){
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 48px;
+            }
         };   
     }
     &-bgimg01{
@@ -2219,6 +2325,10 @@ a{
         left: -30%;
         top: 0;
         z-index: 1;
+        @include mq(pc){
+            animation: anime2 1.2s ease 0s infinite alternate;
+            transform-origin:center;
+        }
     }
     &-bgimg02{
         width: 50%;
@@ -2228,6 +2338,8 @@ a{
         z-index: 1;
         @include mq(pc){
             right: -25%;
+            animation: anime1 1.5s ease 0s infinite alternate;
+            transform-origin:center;
         }
     }
 }
