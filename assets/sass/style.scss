@@ -2,6 +2,67 @@ $breakpoint: (
     sp: 'screen and (max-width: 800px)',
     pc: 'screen and (min-width: 801px)'
 );
+//　ブレイクポイント
+$sp1 : 390px;
+$sp2 : 500px;
+$sp3 : 650px;
+$sp4 : 750px;
+$pc1-2 : 799px;
+$pc1 : 800px;
+$pc2 : 950px;
+$pc3 : 1200px;
+$pc4 : 1400px;
+$pc5 : 1600px;
+@mixin sp1 {
+    @media screen and (max-width : ($sp1)) {
+        @content;   
+    }
+}
+@mixin sp2 {
+    @media screen and (max-width : ($sp2)) {
+        @content;   
+    }
+}
+@mixin sp3 {
+    @media screen and (max-width : ($sp3)) {
+        @content;   
+    }
+}
+@mixin sp4 {
+    @media screen and (min-width : ($sp4)) {
+        @content;   
+    }
+}
+@mixin pc1-2 {
+    @media screen and (max-width : ($pc1-2)) {
+        @content;
+    }
+}
+@mixin pc1 {
+    @media screen and (min-width : ($pc1)) {
+        @content;   
+    }
+}
+@mixin pc2 {
+    @media screen and (min-width : ($pc2)) {
+        @content;   
+    }
+}
+@mixin pc3 {
+    @media screen and (min-width : ($pc3)) {
+        @content;   
+    }
+}
+@mixin pc4 {
+    @media screen and (min-width : ($pc4)) {
+        @content;   
+    }
+}
+@mixin pc5 {
+    @media screen and (min-width : ($pc5)) {
+        @content;   
+    }
+}
 
 @mixin mq($bp) {
     @media #{map-get($breakpoint, $bp)} {
@@ -301,6 +362,27 @@ a{
 
 .header{
     position: relative;
+    &__link {
+        @include pc1-2 {
+            display: none;
+        }
+        @include pc1 {
+            position: absolute;
+            display: flex;
+            width: 50%;
+            top: 25%;
+            right: 3%;
+            &__a {
+                &__img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include pc1 {
+        padding-bottom: 70px;
+    }
 }
 
 .nav{
@@ -2468,11 +2550,21 @@ a{
 
 
 .main {
-  width: 310px;
+  width: 330px;
   margin: 0 auto;
   text-align: center;
   border: solid 8px;
   background-color: #FFF3D2;
+  margin-bottom: 80px;
+  @include sp2 {
+    width: 400px;
+  }
+  @include sp3 {
+    width: 500px;
+  }
+  @include pc1 {
+    width: 700px;
+  }
 }
 
 .tabs {
@@ -2481,14 +2573,29 @@ a{
     justify-content: center;
     padding: 0;
     margin: 0;
+    gap: 8px;
+    padding-top: 25px;
     &__li {
-      width: 75px;
-    height: 45px;
-    border: solid 3px;
-    display: flex;
-    justify-content: center;
-    /* align-items: baseline; */
-    align-items: center;
+      width: 86px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;border-top: solid 4px;
+      border-left: solid 4px;
+      border-right: solid 4px;
+      border-radius: 15px 15px 0px 0px;
+      font-size: 15px;
+      line-height: 18px;
+      @include sp2 {
+        width: 108px;
+        @include sp3 {
+            width: 121px;
+            @include pc1 {
+                width: 142px;
+                padding: 3px;
+            }
+        }
+      }
     }
   }
 }
@@ -2498,15 +2605,73 @@ a{
   width: 30%;
 }
 
+/* ネストされたタブのスタイル */
+.nested-tabs {
+    background-color: #FCAA3B;
+    width: 88%;
+    margin: 0 auto;
+    border: solid 4px;
+    padding: 15px 0px 10px 0px;
+    border-radius: 0px 0px 15px 15px;
+    @include sp2 {
+        width: 89%;
+        @include sp3 {
+            width: 79%;
+            @include pc1 {
+                width: 68%;
+            }
+        }
+    }
+    p {
+        padding: 4px 8px;
+        border: 4px solid #000;
+        border-radius: 9px;
+        background: #fff;
+        @include pc1 {
+            padding: 10px 20px;
+        }
+    }
+    .active {
+        color: #000;
+        background: #9CFFF9;
+        border-color: #FDF150;
+    }
+    &__text {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    &__layout {
+        display: flex;
+        width: 84%;
+        margin: 0 auto;
+        @include sp2 {
+            width: 75%;
+            @include sp3 {
+                width: 70%;
+            }
+        }
+        justify-content: space-between;
+        .active {
+            color: #000;
+            background: #9CFFF9;
+            border-color: #FDF150;
+        }
+    }
+}
+
 .nested-tabs img {
   cursor: pointer;
-  margin: 10px;
-  width: 25%;
+  margin: 4px;
+  width: 28%;
+  @include pc1 {
+    width: 23%;
+  }
 }
 
 /* コンテンツのスタイル */
 .tab-content {
   display: none;
+  margin-bottom: 70px;
 }
 
 .tab-content:first-child {
@@ -2519,11 +2684,42 @@ a{
 }
 
   .contentArea {
-    width: 270px;
+    width: 280px;
     margin:  0 auto;
     text-align: left;
     border: solid 4px;
-    margin-top: 30px;
+    margin-top: 50px;
+    box-shadow: 10px 10px #00FFE4;
+    margin-bottom: 80px;
+    background-color: #FFF3D2;
+    position: relative;
+    z-index: 10;
+    @include pc1 {
+        margin: 0;
+        margin-top: 60px;
+    }
+    @include sp2 {
+        margin-bottom: 100px;
+        width: 330px;
+        @include sp3 {
+            width: 360px;
+            @include pc1 {
+                width: 40%;
+            }
+        }
+    }
+    &-first{
+        @include sp1 {
+            width: 280px;
+            @include sp2 {
+                width: 330px;
+                @include sp3 {
+                    width: 360px;
+                }
+            }
+        }
+        width: 100%;
+    }
     &__imgArea {
       &__img {
         width: 100%;
@@ -2534,5 +2730,343 @@ a{
     &__textArea {
       width: 260px;
       margin: 0 auto;
+      @include pc1 {
+        width: 80%;
+      }
     }
   }
+  &__flex {
+
+    position: relative;
+    &__img3 {
+        position: absolute;
+        bottom: -23%;
+    }
+    &__img4 {
+        position: absolute;
+        right: 0;
+        bottom: -23%;
+    }
+      position: relative;
+      z-index: 100;
+
+    &__img2 {
+        position: absolute;
+        right: 0;
+        top: 30%;
+        z-index: 1;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    @include pc1 {
+        display: none;
+    }
+    @include sp1 {
+        // background-image: url(../img/sp-img/sp-1.png);
+        // background-repeat: no-repeat;
+    }
+    @include pc1 {
+        display: flex;
+        justify-content: space-around;
+    }
+  }
+}
+
+// .back-ground-img {
+//     background-image: url(../img/sp-img/sp-1.png);
+// }
+
+.main h1 {
+    padding-top: 30px;
+    img {
+        width: 60%;
+    }
+}
+
+.header {
+    &__logo {
+        img {
+            width: 45%;
+        }
+    }
+}
+
+.humBtn {
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    @include pc1 {
+        display: none;
+    }
+  }
+  
+  .humBtn__inner {
+    position: relative;
+  }
+  
+  .humBtn__title {
+    width: 80px;
+  }
+  
+  
+  @media screen and (min-width: 960px) {
+    .humBtn__title {
+      width: 120px;
+    }
+  }
+  
+  .humBtn__title img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .humBtn__nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 70vh;
+    transform: translateX(100%);
+    background-color: #FFF3D2;
+    transition: ease .4s;
+    border: solid 4px;
+  }
+  
+  
+  @media screen and (min-width: 960px) {
+    .humBtn__nav {
+      position: static;
+      transform: initial;
+      background-color: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: end;
+      width: 50%;
+    }
+  }
+  
+  
+  @media screen and (min-width: 960px) {
+    .nav__items {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: initial;
+      justify-content: space-between;
+    }
+  }
+  
+  .nav-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+  
+  
+  @media screen and (min-width: 960px) {
+    .nav-items {
+      padding-top: inherit;
+      padding-bottom: inherit;
+      position: inherit;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+    }
+  }
+  
+  .nav-items__item a {
+    color: black;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .nav-items__item:last-child a {
+    margin-bottom: 0;
+  }
+  
+  @media screen and (min-width: 960px) {
+    .nav-items__item a {
+      margin-bottom: 0;
+    }
+  }
+  
+  
+  /* ハンバーガーメニュー */
+  .humBtn__hamburger {
+    width: 48px;
+    height: 100%;
+  
+  }
+  
+  .hamburger {
+    background-color: #FFED00;
+    border-color: transparent;
+    z-index: 9999;
+    right: 0;
+    position: absolute;
+    top: 20px;
+    width: 65px;
+    height: 65px;
+    border: solid 4px;
+    margin-right: 20px;
+    box-shadow: -5px 5px #00FFE4;
+    @include sp3 {
+        width: 80px;
+        height: 80px;
+    }
+  }
+  
+  @media screen and (min-width: 960px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  
+  
+  .hamburger span {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position: relative;
+    transition: ease .4s;
+    display: block;
+  }
+  
+  .hamburger span:nth-child(1) {
+    top: 0;
+  }
+  
+  .hamburger span:nth-child(2) {
+    margin: 8px 0;
+  }
+  
+  .hamburger span:nth-child(3) {
+    top: 0;
+  }
+  
+  
+  /* ハンバーガーメニュークリック後のスタイル */
+  .humBtn__nav.active {
+    transform: translateX(0);
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    top: 12px;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    top: -11px;
+    transform: rotate(-45deg);
+  }
+
+  .header {
+    &__logo {
+        a {
+            display: inline-block;
+            width: 45%;
+            margin-left: 15px;
+            img {
+                width: 100%;
+                display: block;
+                @include sp3 {
+                    width: 80%;
+                    @include pc1 {
+                        width: 65%;
+                        padding-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+
+.footerArea {
+    background-color: #FFF500;
+    height: 80vh;
+    text-align: center;
+    position: relative;
+    &__headerLogo {
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        width: 40%;
+        &__a {
+            &__img {
+                display: block;
+                width: 100%;
+                @include sp2 {
+                    width: 90%;
+                    @include sp3 {
+                        width: 80%;
+                        @include pc1 {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__nav{
+        padding: 0;
+        padding-top: 150px;
+        &__item {
+            padding-bottom: 20px;
+            a {
+                color: #000000;
+                font-size: 22px;
+            }
+        }
+    }
+    &__logo {
+        &__link {
+            img {
+                width: 100%;
+            }
+        }
+        @include sp3 {
+            width: 20%;
+            @include pc1 {
+                width: 15%;
+            }
+        }
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        &__link {
+            &__img {
+                display: block;
+            }
+        }
+    }
+}
+
+// #back_img1 {
+//     background-image: url(../img/sp-img/sp-1.png);
+//     background-repeat: no-repeat;
+//     background-position-x: 5%;
+//     background-position-y: 98%;
+//     padding-bottom: 1px;
+//     position: relative;
+//     z-index: 2;
+//     @include mq(pc){
+//         width: 40%;
+//     }
+// }

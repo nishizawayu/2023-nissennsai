@@ -20,11 +20,15 @@ try{
 
 const hambtn = document.querySelector(".hambtn");
 const ham = document.querySelector(".hammenu");
-
-hambtn.addEventListener("click",()=>{
-  hambtn.classList.toggle("act");
-  ham.classList.toggle("act");
-})
+try{
+    hambtn.addEventListener("click",()=>{
+    hambtn.classList.toggle("act");
+    ham.classList.toggle("act");
+  })
+}
+catch{
+  console.log("no ham");
+}
 
 { /* ローカルスコープ */
 
@@ -147,6 +151,16 @@ function tabSwitch(e) {
 
 }
 
+const hamBtn = document.querySelector('#js-hamburger');
+const nav = document.querySelector('#js-nav');
+
+hamBtn.addEventListener('click', function () {
+
+  hamBtn.classList.toggle('active');
+  nav.classList.toggle('active');
+
+});
+
 // タブの要素を取得
 const tab1 = document.getElementById('tab1');
 const tab2 = document.getElementById('tab2');
@@ -197,9 +211,43 @@ const nestedTab19 = document.getElementById('subtab19');
 const nestedContent19 = document.getElementById('subcontent19');
 const nestedTab20 = document.getElementById('subtab20');
 const nestedContent20 = document.getElementById('subcontent20');
+const nestedTab21 = document.getElementById('subtab21');
+const nestedContent21 = document.getElementById('subcontent21');
 
 
+// const buileImg1 = [".tab1-1.png",".tab2-1.png",".tab3-1.png",".tab4-1.png",".tab5-1.png"];
+// const buildImg2 = [".tab1-2.png",".tab2-2.png",".tab3-2.png",".tab4-2.png",".tab5-2.png"];
 
+// const tabBuild = document.querySelectorAll(".tab-building");
+// tabBuild.forEach((bulid, index) => {
+//   bulid.addEventListener('click', () => {
+//       // クリックされた要素に特定のクラスを追加
+//       bulid.classList.add('active');
+      
+//       // 他の要素から特定のクラスを削除
+//       tabBuild.forEach(otherElement => {
+//           if (otherElement !== bulid) {
+//               otherElement.classList.remove('active');
+//           }
+//       });
+//   });
+// });
+// nodelistで取得
+// const tabBtn = document.querySelectorAll(".tab-btn");
+
+// tabBtn.forEach(btn => {
+//   btn.addEventListener('click', () => {
+//       // クリックされた要素に特定のクラスを追加
+//       btn.classList.add('active');
+
+//       // 他の要素から特定のクラスを削除
+//       tabBtn.forEach(otherElement => {
+//           if (otherElement !== btn) {
+//               otherElement.classList.remove('active');
+//           }
+//       });
+//   });
+// });
 
 
 // ページ読み込み時に一つ目のタブと一つ目のサブタブを表示させる
@@ -248,6 +296,20 @@ tab1.addEventListener('click', () => {
 
     // 一つ目のタブコンテンツを表示
     document.getElementById('content1').style.display = 'block';
+
+    // すべてのサブタブを初期画像に戻す
+    resetNestedTabs();
+
+    // 一つ目のサブタブをアクティブに
+    nestedTab1.src = "../assets/img/tabItem1/tab1-2.png";
+
+    // サブコンテンツを非表示
+    document.querySelectorAll('.nested-content').forEach(content => {
+        content.style.display = 'none';
+    });
+
+    // 一つ目のサブコンテンツを表示
+    document.getElementById('subcontent1').style.display = 'block';
 });
 
 // タブ2とタブ3のクリック処理も同様に設定
@@ -261,6 +323,20 @@ tab2.addEventListener('click', () => {
     });
 
     document.getElementById('content2').style.display = 'block';
+
+      // すべてのサブタブを初期画像に戻す
+      resetNestedTabs();
+
+      // 一つ目のサブタブをアクティブに
+      nestedTab10.src = "../assets/img/tabItem2/tab1-2.png";
+  
+      // サブコンテンツを非表示
+      document.querySelectorAll('.nested-content').forEach(content => {
+          content.style.display = 'none';
+      });
+  
+      // 一つ目のサブコンテンツを表示
+      document.getElementById('subcontent10').style.display = 'block';
 });
 
 tab3.addEventListener('click', () => {
@@ -273,7 +349,62 @@ tab3.addEventListener('click', () => {
     });
 
     document.getElementById('content3').style.display = 'block';
+
+          // すべてのサブタブを初期画像に戻す
+          resetNestedTabs();
+
+          // 一つ目のサブタブをアクティブに
+          nestedTab15.style.color = '#000000';
+          nestedTab15.style.background = '#9CFFF9';
+          nestedTab15.style.borderColor = '#FDF150';
+          
+          // サブコンテンツを非表示
+          document.querySelectorAll('.nested-content').forEach(content => {
+              content.style.display = 'none';
+          });
+      
+          // 一つ目のサブコンテンツを表示
+          document.getElementById('subcontent15').style.display = 'block';
 });
+
+function resetNestedTabs() {
+  // すべてのサブタブを初期画像に戻す
+  nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+  nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+  nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+  nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+  nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+  nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+  nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+  nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+  nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
+  nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
+  nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+  nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+  nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+}
 
 // ネストされたタブがクリックされたときの処理
 //　学科のサブタブ
@@ -495,4 +626,211 @@ nestedTab14.addEventListener('click', () => {
 });
 
 document.getElementById('subcontent14').style.display = 'block';
+});
+
+
+
+nestedTab15.addEventListener('click', (ev) => {
+  console.log(ev.target.id);
+  console.log(nestedTab15.id);
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#9CFFF9';
+  nestedTab15.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent15').style.display = 'block';
+});
+
+nestedTab16.addEventListener('click', () => {
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#9CFFF9';
+  nestedTab16.style.borderColor = '#FDF150';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent16').style.display = 'block';
+});
+
+nestedTab17.addEventListener('click', () => {
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#9CFFF9';
+  nestedTab17.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent17').style.display = 'block';
+});
+
+nestedTab18.addEventListener('click', () => {
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#9CFFF9';
+  nestedTab18.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent18').style.display = 'block';
+});
+
+nestedTab19.addEventListener('click', () => {
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#9CFFF9';
+  nestedTab19.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent19').style.display = 'block';
+});
+
+nestedTab20.addEventListener('click', () => {
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#9CFFF9';
+  nestedTab20.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#ffffff';
+  nestedTab21.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent20').style.display = 'block';
+});
+
+nestedTab21.addEventListener('click', () => {
+  nestedTab21.style.color = '#000000';
+  nestedTab21.style.background = '#9CFFF9';
+  nestedTab21.style.borderColor = '#FDF150';
+  nestedTab16.style.color = '#000000';
+  nestedTab16.style.background = '#ffffff';
+  nestedTab16.style.borderColor = '#000000';
+  nestedTab17.style.color = '#000000';
+  nestedTab17.style.background = '#ffffff';
+  nestedTab17.style.borderColor = '#000000';
+  nestedTab18.style.color = '#000000';
+  nestedTab18.style.background = '#ffffff';
+  nestedTab18.style.borderColor = '#000000';
+  nestedTab19.style.color = '#000000';
+  nestedTab19.style.background = '#ffffff';
+  nestedTab19.style.borderColor = '#000000';
+  nestedTab20.style.color = '#000000';
+  nestedTab20.style.background = '#ffffff';
+  nestedTab20.style.borderColor = '#000000';
+  nestedTab15.style.color = '#000000';
+  nestedTab15.style.background = '#ffffff';
+  nestedTab15.style.borderColor = '#000000';
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+});
+
+document.getElementById('subcontent21').style.display = 'block';
 });
