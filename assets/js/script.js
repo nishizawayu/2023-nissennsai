@@ -62,58 +62,71 @@ try{
   console.log("no scroll triger")
 }
 
-gsap.set(".js-spin", { autoAlpha: 0 });
+try{
+  gsap.set(".js-spin", { autoAlpha: 0 });
 
-gsap.to(".js-spin", {
-  //アニメーションしたい要素を指定
-  autoAlpha: 1, //opacity: 1;とvisibility：visible;がつく
-  x: -50, //横に500px動かす
-  rotation: 360, //回転。rotationXとrotationYも指定できる
-  duration: 2,
-  scrollTrigger: {
-    trigger: ".js-spin", //アニメーションが始まるトリガーとなる要素
+  gsap.to(".js-spin", {
+    //アニメーションしたい要素を指定
+    autoAlpha: 1, //opacity: 1;とvisibility：visible;がつく
+    x: -50, //横に500px動かす
+    rotation: 360, //回転。rotationXとrotationYも指定できる
+    duration: 2,
+    scrollTrigger: {
+      trigger: ".js-spin", //アニメーションが始まるトリガーとなる要素
+      start:'top 80%',
+      end:'bottom 20%',//アニメーションが始まる位置
+    },
+    stagger: {
+      from: "start",
+      amount: 0.4,
+    },
+  });
+}catch{
+  console.log("no gasap")
+}
+
+try{
+  gsap.set('.js-left', {
+    opacity: 0,
+    x: -50,
+  });
+  
+  ScrollTrigger.batch('.js-left', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      x: 0, 
+      stagger: 0.1,
+      overwrite: true,
+    }),
     start:'top 80%',
-    end:'bottom 20%',//アニメーションが始まる位置
-  },
-  stagger: {
-    from: "start",
-    amount: 0.4,
-  },
-});
+    end:'bottom 20%',
+    toggleActions:'play none none reverse',
+  });
+}catch{
+  console.log("no gsap")
+}
 
-gsap.set('.js-left', {
-  opacity: 0,
-  x: -50,
-});
+try{
+  gsap.set('.js-right', {
+    opacity: 0,
+    x: 50,
+  });
+  
+  ScrollTrigger.batch('.js-right', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      x: 0, 
+      stagger: 0.1,
+      overwrite: true,
+    }),
+    start:'top 80%',
+    end:'bottom 20%',
+    toggleActions:'play none none reverse',
+  });
+}catch{
+  console.log("no gsap")
+}
 
-ScrollTrigger.batch('.js-left', {
-  onEnter: batch => gsap.to(batch, {
-    opacity: 1, 
-    x: 0, 
-    stagger: 0.1,
-    overwrite: true,
-  }),
-  start:'top 80%',
-  end:'bottom 20%',
-  toggleActions:'play none none reverse',
-});
-
-gsap.set('.js-right', {
-  opacity: 0,
-  x: 50,
-});
-
-ScrollTrigger.batch('.js-right', {
-  onEnter: batch => gsap.to(batch, {
-    opacity: 1, 
-    x: 0, 
-    stagger: 0.1,
-    overwrite: true,
-  }),
-  start:'top 80%',
-  end:'bottom 20%',
-  toggleActions:'play none none reverse',
-});
 
 // イベントの処理
 function tabSwitch(e) {
