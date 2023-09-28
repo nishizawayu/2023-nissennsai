@@ -282,16 +282,23 @@ a {
 }
 @media screen and (min-width: 801px) {
   .nav {
-    width: 90%;
+    width: 94%;
     position: fixed;
-    top: -100%;
+    top: 3%;
+    left: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #FFF3D2;
     border: 12px solid black;
     box-sizing: border-box;
-    transition: all 0.5s;
+    transition: all 0.6s ease-out;
+  }
+  .nav.hidden {
+    top: -30%;
   }
 }
 .nav-logo {
@@ -301,6 +308,7 @@ a {
 }
 .nav-logo img {
   width: 100%;
+  vertical-align: bottom;
 }
 .nav-menu {
   width: 90%;
@@ -339,19 +347,6 @@ a {
   width: 3%;
   top: 2%;
   right: 40%;
-}
-
-.fixed {
-  /* 必要に応じて */
-}
-@media screen and (min-width: 801px) {
-  .fixed {
-    width: 94%;
-    position: fixed;
-    top: 3%;
-    left: 3%;
-    z-index: 100;
-  }
 }
 
 .fv {
@@ -519,7 +514,7 @@ a {
   .fv-img3 {
     display: block;
     width: 15%;
-    top: 35%;
+    top: 30%;
     right: 10%;
     transform-origin: center;
     animation: yurayura 2s ease 0s infinite alternate;
@@ -874,6 +869,25 @@ a {
     top: 5%;
     left: 5%;
   }
+  .info-bgimg01 img {
+    width: 80%;
+  }
+  .info-bgimg01-a {
+    animation: anime2 1s ease infinite;
+    transform-origin: center;
+  }
+  .info-bgimg01-b {
+    margin-top: 20px;
+    animation: anime2 1s ease infinite;
+    animation-delay: 0.3s;
+    transform-origin: center;
+  }
+  .info-bgimg01-c {
+    margin-top: 20px;
+    animation: anime2 1s ease infinite;
+    animation-delay: 0.6s;
+    transform-origin: center;
+  }
 }
 .info-bgimg02 {
   display: none;
@@ -887,15 +901,17 @@ a {
     right: -15%;
   }
   .info-bgimg02-n1 {
-    animation: anime2 0.6s ease 0s infinite alternate;
+    animation: anime2 0.8s ease 0s infinite alternate;
     transform-origin: center;
   }
   .info-bgimg02-n2 {
     animation: anime2 0.8s ease 0s infinite alternate;
+    animation-delay: 0.3s;
     transform-origin: center;
   }
   .info-bgimg02-n3 {
-    animation: anime2 1s ease 0s infinite alternate;
+    animation: anime2 0.8s ease 0s infinite alternate;
+    animation-delay: 0.6s;
     transform-origin: center;
   }
 }
@@ -1047,6 +1063,8 @@ a {
     width: 30%;
     top: -5%;
     left: -20%;
+    animation: anime1 0.9s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .shop-bgimg02 {
@@ -1071,6 +1089,8 @@ a {
     width: 40%;
     bottom: -10%;
     left: -35%;
+    animation: anime2 0.9s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .shop-bgimg04 {
@@ -1079,11 +1099,20 @@ a {
 }
 @media screen and (min-width: 801px) {
   .shop-bgimg04 {
-    display: block;
+    display: flex;
     width: 20%;
-    right: 30%;
+    right: 35%;
     bottom: 3%;
   }
+}
+.shop-bgimg04 img {
+  width: 30%;
+}
+.shop-bgimg04-a {
+  margin-right: 10px;
+}
+.shop-bgimg04-b {
+  margin-right: 10px;
 }
 .shop-bgimg05 {
   display: none;
@@ -1457,20 +1486,30 @@ a {
 .messege-line {
   width: 30%;
   position: absolute;
-  top: -50px;
+  top: -6px;
   right: 0;
+}
+@media screen and (min-width: 801px) {
+  .messege-line {
+    top: -50px;
+  }
 }
 .messege-lineelse {
   width: 30%;
   position: absolute;
-  top: -50px;
+  top: -6px;
   left: 5%;
+}
+@media screen and (min-width: 801px) {
+  .messege-lineelse {
+    top: -50px;
+  }
 }
 .messege-line2 {
   display: none;
   position: absolute;
   bottom: -30px;
-  right: 200px;
+  right: 150px;
   z-index: 2;
 }
 @media screen and (min-width: 801px) {
@@ -1527,7 +1566,9 @@ a {
 .messege-text {
   position: relative;
   width: 90%;
-  padding: 3%;
+  padding: 6%;
+  font-size: 18px;
+  line-height: 36px;
   border: 5px solid black;
   z-index: 3;
   background-color: #BAF5FF;
@@ -1633,6 +1674,12 @@ a {
   left: -15%;
   top: 12%;
 }
+@media screen and (min-width: 801px) {
+  .poster-bgimg01 {
+    width: 55%;
+    top: 11%;
+  }
+}
 .poster-bgimg02 {
   display: none;
 }
@@ -1646,17 +1693,15 @@ a {
   }
 }
 .poster-bgimg03 {
-  width: 50%;
-  position: absolute;
-  right: -10%;
-  top: 20%;
+  display: none;
 }
-.poster-bgimg05 {
-  width: 50%;
-  position: absolute;
-  left: -20%;
-  bottom: -10%;
-  z-index: 1;
+@media screen and (min-width: 801px) {
+  .poster-bgimg03 {
+    width: 50%;
+    position: absolute;
+    right: -10%;
+    top: 20%;
+  }
 }
 .poster-flex {
   position: relative;
@@ -1712,24 +1757,40 @@ a {
   }
 }
 .poster-bgimg04 {
-  width: 10%;
-  position: absolute;
-  left: -5%;
-  top: 40%;
+  display: none;
   z-index: 1;
+}
+@media screen and (min-width: 801px) {
+  .poster-bgimg04 {
+    display: block;
+    width: 10%;
+    position: absolute;
+    left: -5%;
+    top: 40%;
+  }
 }
 .poster-bgimg05 {
-  width: 50%;
-  position: absolute;
-  left: -5%;
-  bottom: 20%;
-  z-index: 1;
+  display: none;
+}
+@media screen and (min-width: 801px) {
+  .poster-bgimg05 {
+    width: 50%;
+    position: absolute;
+    left: -5%;
+    bottom: 20%;
+    z-index: 1;
+  }
 }
 .poster-bgimg06 {
-  width: 60%;
+  width: 100%;
   position: absolute;
   left: -20%;
   bottom: -13%;
+}
+@media screen and (min-width: 801px) {
+  .poster-bgimg06 {
+    width: 60%;
+  }
 }
 .poster-bgimg07 {
   width: 20%;
@@ -1813,6 +1874,7 @@ a {
   background: #fff;
   border: 12px solid #000;
   display: inline-block;
+  margin: 0;
   margin-top: 60px;
 }
 .jumper-img img {
@@ -1824,12 +1886,33 @@ a {
     margin-left: 0;
   }
 }
+.jumper-name {
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 801px) {
+  .jumper-name {
+    width: auto;
+    margin: auto;
+    font-size: 28px;
+    margin-top: 30px;
+  }
+}
+.jumper-name-1 {
+  margin-top: 30px;
+}
+@media screen and (min-width: 801px) {
+  .jumper-name-1 {
+    margin-top: auto;
+  }
+}
 .jumper-text {
   position: relative;
   z-index: 2;
   width: 80%;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 @media screen and (min-width: 801px) {
   .jumper-text {
@@ -1842,8 +1925,8 @@ a {
 }
 .jumper-bgimg01 {
   width: 35%;
-  bottom: 10%;
-  left: -5%;
+  bottom: -17%;
+  left: -2%;
   position: absolute;
   z-index: 1;
 }
@@ -1851,11 +1934,12 @@ a {
   .jumper-bgimg01 {
     width: 20%;
     top: 0;
+    left: -5%;
     bottom: auto;
   }
 }
 .jumper-bgimg02 {
-  width: 35%;
+  width: 40%;
   position: absolute;
   right: 0;
   bottom: -10%;
@@ -1932,7 +2016,7 @@ a {
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 115%;
-  padding-bottom: 15%;
+  padding-bottom: 42%;
 }
 @media screen and (min-width: 801px) {
   .event-title {
@@ -1968,20 +2052,22 @@ a {
 .event-bgimg01 {
   width: 30%;
   position: absolute;
-  right: 0;
-  top: 30%;
+  right: 6%;
+  top: 14%;
 }
 @media screen and (min-width: 801px) {
   .event-bgimg01 {
     width: 25%;
     top: 10%;
     right: 3%;
+    animation: anime2 0.8s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 .event-bgimg02 {
-  width: 30%;
+  width: 54%;
   position: absolute;
-  top: 45%;
+  top: 28%;
   right: 0;
 }
 @media screen and (min-width: 801px) {
@@ -1997,7 +2083,7 @@ a {
   left: 5%;
 }
 .event-bgimg04 {
-  width: 50%;
+  width: 65%;
   position: absolute;
   bottom: -15%;
   right: 0;
@@ -2008,6 +2094,8 @@ a {
     width: 30%;
     bottom: -20%;
     right: -3%;
+    animation: anime3 1.2s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 
@@ -2085,8 +2173,8 @@ a {
 }
 .schoolplan .rule-bgimg02 {
   position: absolute;
-  width: 60%;
-  bottom: 0;
+  width: 55%;
+  bottom: -8%;
   right: 3%;
 }
 @media screen and (min-width: 801px) {
@@ -2140,11 +2228,14 @@ a {
 .schoolplan-logo {
   width: 90%;
   position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 @media screen and (min-width: 801px) {
   .schoolplan-logo {
     width: 80%;
     margin: 0 auto;
+    margin-top: auto;
   }
 }
 .schoolplan-logo img {
@@ -2261,6 +2352,7 @@ a {
   }
 }
 .caveat-text {
+  font-size: 18px;
   text-align: center;
 }
 @media screen and (min-width: 801px) {
@@ -2272,9 +2364,16 @@ a {
 }
 .caveat-list li {
   list-style-type: disc;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 36px;
+  line-height: 42px;
+}
+@media screen and (min-width: 801px) {
+  .caveat-list li {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 48px;
+  }
 }
 .caveat-bgimg01 {
   width: 60%;
@@ -2286,6 +2385,8 @@ a {
 @media screen and (min-width: 801px) {
   .caveat-bgimg01 {
     right: -25%;
+    animation: anime2 1.2s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 
@@ -2319,6 +2420,7 @@ a {
   }
 }
 .Infection-text {
+  font-size: 18px;
   text-align: center;
 }
 @media screen and (min-width: 801px) {
@@ -2344,9 +2446,16 @@ a {
 }
 .Infection-list li {
   list-style-type: disc;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 42px;
+}
+@media screen and (min-width: 801px) {
+  .Infection-list li {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 48px;
+  }
 }
 .Infection-bgimg01 {
   width: 60%;
@@ -2354,6 +2463,12 @@ a {
   left: -30%;
   top: 0;
   z-index: 1;
+}
+@media screen and (min-width: 801px) {
+  .Infection-bgimg01 {
+    animation: anime2 1.2s ease 0s infinite alternate;
+    transform-origin: center;
+  }
 }
 .Infection-bgimg02 {
   width: 50%;
@@ -2365,6 +2480,8 @@ a {
 @media screen and (min-width: 801px) {
   .Infection-bgimg02 {
     right: -25%;
+    animation: anime1 1.5s ease 0s infinite alternate;
+    transform-origin: center;
   }
 }
 
