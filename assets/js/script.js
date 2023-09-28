@@ -1,20 +1,19 @@
 'use strict'; /* 厳格にエラーをチェック */
 
 try{
-  window.onscroll = function () {
-    let gHeader = document.getElementsByClassName('header')[0]; //headerを任意のclass名に 
-    let gNav = document.getElementsByClassName('nav')[0]; // navを任意のclass名に
-    let gNavHeight = gNav.clientHeight;
-    let gMain =
-      document.getElementsByClassName('main')[0]; // mainを任意のclass名に 
-    if (window.pageYOffset >= gHeader.clientHeight) {
-      gNav.classList.add('fixed'); // fixedを任意のclass名に 
-      gMain.setAttribute('style', 'padding-top:' + gNavHeight + 'px');
-    } else {
-      gNav.classList.remove('fixed'); // fixedを任意のclass名に(上記と同じにする) 
-      gMain.setAttribute('style', 'padding-top:0;'); //padding-top:0;を任意の数値に
+  const header = document.querySelector('.nav');
+  let prevY = window.scrollY; // 前回のスクロール位置を初期化
+
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY; // 現在のスクロール位置を取得
+    if (currentY > prevY) { // 上にスクロールしている場合
+      header.classList.remove('hidden'); // hiddenクラスを削除して表示する
     }
-}
+    if(currentY < 80){
+      header.classList.add('hidden');
+    }
+    prevY = currentY; // 前回のスクロール位置を更新
+});
 }catch{
   console("no nav")
 }
@@ -41,6 +40,80 @@ console.log(tabMenus);
 tabMenus.forEach((tabMenu) => {
   tabMenu.addEventListener('click', tabSwitch);
 })
+
+try{
+  gsap.set('.js-scroll', {
+    opacity: 0,
+    y: 50,
+  });
+  
+  ScrollTrigger.batch('.js-scroll', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      y: 0, 
+      stagger: 0.1,
+      overwrite: true,
+    }),
+    start:'top 80%',
+    end:'bottom 20%',
+    toggleActions:'play none none reverse',
+  });
+}catch{
+  console.log("no scroll triger")
+}
+
+gsap.set(".js-spin", { autoAlpha: 0 });
+
+gsap.to(".js-spin", {
+  //アニメーションしたい要素を指定
+  autoAlpha: 1, //opacity: 1;とvisibility：visible;がつく
+  x: -50, //横に500px動かす
+  rotation: 360, //回転。rotationXとrotationYも指定できる
+  duration: 2,
+  scrollTrigger: {
+    trigger: ".js-spin", //アニメーションが始まるトリガーとなる要素
+    start:'top 80%',
+    end:'bottom 20%',//アニメーションが始まる位置
+  },
+  stagger: {
+    from: "start",
+    amount: 0.4,
+  },
+});
+
+gsap.set('.js-left', {
+  opacity: 0,
+  x: -50,
+});
+
+ScrollTrigger.batch('.js-left', {
+  onEnter: batch => gsap.to(batch, {
+    opacity: 1, 
+    x: 0, 
+    stagger: 0.1,
+    overwrite: true,
+  }),
+  start:'top 80%',
+  end:'bottom 20%',
+  toggleActions:'play none none reverse',
+});
+
+gsap.set('.js-right', {
+  opacity: 0,
+  x: 50,
+});
+
+ScrollTrigger.batch('.js-right', {
+  onEnter: batch => gsap.to(batch, {
+    opacity: 1, 
+    x: 0, 
+    stagger: 0.1,
+    overwrite: true,
+  }),
+  start:'top 80%',
+  end:'bottom 20%',
+  toggleActions:'play none none reverse',
+});
 
 // イベントの処理
 function tabSwitch(e) {
