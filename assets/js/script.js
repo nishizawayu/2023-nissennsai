@@ -30,23 +30,12 @@ catch{
   console.log("no ham");
 }
 
-{ /* ローカルスコープ */
-
-// DOM取得
-const tabMenus = document.querySelectorAll('.tab__menu-item');
-console.log(tabMenus);
-
-// イベント付加
-tabMenus.forEach((tabMenu) => {
-  tabMenu.addEventListener('click', tabSwitch);
-})
-
 try{
   gsap.set('.js-scroll', {
     opacity: 0,
     y: 50,
   });
-  
+
   ScrollTrigger.batch('.js-scroll', {
     onEnter: batch => gsap.to(batch, {
       opacity: 1, 
@@ -58,6 +47,7 @@ try{
     end:'bottom 20%',
     toggleActions:'play none none reverse',
   });
+
 }catch{
   console.log("no scroll triger")
 }
@@ -127,6 +117,16 @@ try{
   console.log("no gsap")
 }
 
+{ /* ローカルスコープ */
+
+// DOM取得
+const tabMenus = document.querySelectorAll('.tab__menu-item');
+console.log(tabMenus);
+
+// イベント付加
+tabMenus.forEach((tabMenu) => {
+  tabMenu.addEventListener('click', tabSwitch);
+})
 
 // イベントの処理
 function tabSwitch(e) {
