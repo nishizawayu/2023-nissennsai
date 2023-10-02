@@ -185,7 +185,9 @@ a{
 
 .ham{
     width: 100%;
-    display: block;
+    // display: block;
+    //一次公開用
+    display: none;
     overflow: hidden;
     transition: all .5s ease-in;
     @include mq(pc){
@@ -348,7 +350,9 @@ a{
 .grobalnav{
     display: none;
     @include mq(pc){
-        display: block;
+        // display: block;
+        ///一次公開用
+        display: none;
         &-list{
             width: 97%;
             display: flex;
@@ -2459,6 +2463,8 @@ a{
         }
     }
     &-text{
+        width: 90%;
+        margin: 0 auto;
         font-size: 18px;
         text-align: center;
         @include mq(pc){

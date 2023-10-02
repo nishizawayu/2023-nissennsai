@@ -104,7 +104,7 @@ a {
 }
 .ham {
   width: 100%;
-  display: block;
+  display: none;
   overflow: hidden;
   transition: all 0.5s ease-in;
 }
@@ -274,7 +274,7 @@ a {
 }
 @media screen and (min-width: 900px) {
   .grobalnav {
-    display: block;
+    display: none;
   }
   .grobalnav-list {
     width: 97%;
@@ -2550,6 +2550,8 @@ a {
   }
 }
 .Infection-text {
+  width: 90%;
+  margin: 0 auto;
   font-size: 18px;
   text-align: center;
 }
