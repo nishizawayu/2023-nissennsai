@@ -419,7 +419,7 @@ a {
     width: 100%;
     height: 0;
     background-image: url(../img/PC-Top-KVbg.svg);
-    padding-top: 65.6509799026%;
+    padding-top: 66.1902384222%;
     /*calc(画像の高さ / 画像の幅 * widthの値)*/
     background-position: center center;
     background-size: cover;
