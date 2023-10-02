@@ -731,6 +731,8 @@ a {
   }
 }
 .catch-text {
+  width: 70%;
+  margin: 0 auto;
   text-align: center;
 }
 @media screen and (min-width: 900px) {

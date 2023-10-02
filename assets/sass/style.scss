@@ -794,6 +794,8 @@ a{
         }
     }
     &-text{
+        width: 70%;
+        margin: 0 auto;
         text-align: center;
         @include mq(pc){
             margin-top: 60px;
