@@ -794,10 +794,10 @@ a{
         }
     }
     &-text{
-        width: 70%;
-        margin: 0 auto;
         text-align: center;
         @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
             margin-top: 60px;
             font-size: 24px;
         }
@@ -829,7 +829,7 @@ a{
         @include mq(pc){
             display: block;
             width: 15%;
-            right: 3%;
+            right: 1%;
         }
     }
     &-bgimg01{

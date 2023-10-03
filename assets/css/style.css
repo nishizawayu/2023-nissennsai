@@ -731,12 +731,12 @@ a {
   }
 }
 .catch-text {
-  width: 70%;
-  margin: 0 auto;
   text-align: center;
 }
 @media screen and (min-width: 900px) {
   .catch-text {
+    width: 70%;
+    margin: 0 auto;
     margin-top: 60px;
     font-size: 24px;
   }
@@ -774,7 +774,7 @@ a {
   .catch-img03 {
     display: block;
     width: 15%;
-    right: 3%;
+    right: 1%;
   }
 }
 .catch-bgimg01 {
