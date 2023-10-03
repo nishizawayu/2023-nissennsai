@@ -18,7 +18,7 @@ body {
 }
 @media screen and (min-width: 900px) {
   .conteiner {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
   }
 }
@@ -740,9 +740,6 @@ a {
   .catch-main-PHONE {
     display: none;
   }
-}
-.catch-text {
-  text-align: center;
 }
 @media screen and (min-width: 900px) {
   .catch-text {
@@ -2074,7 +2071,7 @@ a {
   .jumper-bgimg02 {
     width: 20%;
     top: -10%;
-    right: -6%;
+    right: -9%;
     z-index: 3;
   }
 }
