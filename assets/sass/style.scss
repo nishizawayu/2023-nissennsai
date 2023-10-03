@@ -745,6 +745,16 @@ a{
             box-shadow: none;
         }
     }
+    &-name{
+        font-size: 20px;
+        @include mq(pc){
+            width: 70%;
+            margin: 0 auto;
+            font-size: 28px;
+            margin-top: 30px;
+        }
+        
+    }
     &-title{
         position: relative;
         width: 100%;
@@ -2265,7 +2275,9 @@ a{
         background-image: url(../img/3-subtitle.svg);
         background-repeat: no-repeat;
         background-size: contain;
-        padding-left:5%;
+        padding-left:3%;
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
     &-title{
         width: 70%;
