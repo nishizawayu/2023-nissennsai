@@ -18,7 +18,7 @@ body {
 }
 @media screen and (min-width: 900px) {
   .conteiner {
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -2073,7 +2073,7 @@ a {
   .jumper-bgimg02 {
     width: 20%;
     top: -10%;
-    right: -3%;
+    right: -6%;
     z-index: 3;
   }
 }

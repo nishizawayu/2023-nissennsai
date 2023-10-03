@@ -89,7 +89,7 @@ body{
 .conteiner{
     position: relative;
     @include mq(pc){
-        width: 95%;
+        width: 90%;
         margin: 0 auto;
     }
 }
@@ -2036,7 +2036,7 @@ a{
         @include mq(pc){
             width: 20%;
             top: -10%;
-            right: -3%;
+            right: -6%;
             z-index: 3;
         }
         
