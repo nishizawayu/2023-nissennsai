@@ -1901,7 +1901,8 @@ a {
 }
 @media screen and (min-width: 900px) {
   .poster-bgimg06 {
-    width: 60%;
+    width: 65%;
+    z-index: 7;
   }
 }
 .poster-bgimg07 {
@@ -2052,7 +2053,7 @@ a {
 @media screen and (min-width: 900px) {
   .jumper-bgimg01 {
     width: 20%;
-    top: 0;
+    top: 5%;
     left: -5%;
     bottom: auto;
   }

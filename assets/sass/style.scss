@@ -1884,7 +1884,8 @@ a{
         left: -20%;
         bottom: -13%;
         @include mq(pc){
-            width: 60%;
+            width: 65%;
+            z-index: 7;
         }
     }
 
@@ -2019,7 +2020,7 @@ a{
         }
         @include mq(pc){
             width: 20%;
-            top: 0;
+            top: 5%;
             left: -5%;
             bottom: auto;
         }
