@@ -1611,7 +1611,7 @@ a{
         width: 30%;
         position: absolute;
         top: -6px;
-        right: 0;
+        right: -3%;
         @include mq(tab){
             top: -30px;
         }
@@ -1623,7 +1623,7 @@ a{
         width: 30%;
         position: absolute;
         top: -6px;
-        left: 5%;
+        left: 6%;
         @include mq(tab){
             top: -30px;
         }
@@ -1638,7 +1638,7 @@ a{
         }
         position: absolute;
         bottom: -30px;
-        right: 150px;
+        right: 130px;
         z-index: 2;
     }
     &-line2else{
@@ -1648,7 +1648,7 @@ a{
         }
         position: absolute;
         bottom: -30px;
-        right: -80px;
+        right: -70px;
         z-index: 2;
     }
     &-img{
@@ -2100,7 +2100,7 @@ a{
         background-position-y: 70%;
         padding-bottom: 42%;
         @include mq(pc){
-            width: 50%;
+            width: 60%;
             background-size: auto;
             margin-top: 90px;
             background-position-y: 105%;
@@ -2159,20 +2159,20 @@ a{
         left: 5%;
     }
     &-bgimg04{
-        width: 55%;
+        width: 40%;
         position: absolute;
-        bottom: -15%;
-        right: 0;
+        bottom: -5%;
+        right: 3%;
         z-index: 3;
         @include mq(tab){
             width: 32%;
-            bottom: -12%;
+            bottom: -8%;
         }
         @include mq(pc){
             width: 30%;
-            bottom: -20%;
+            bottom: -15%;
             right: -3%;
-            animation: anime3 1.2s ease 0s infinite alternate;
+            animation: anime1 1.2s ease 0s infinite alternate;
             transform-origin:center;
         }
     }
