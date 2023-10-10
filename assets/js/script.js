@@ -164,15 +164,15 @@ function tabSwitch(e) {
 
 }
 
-const hamBtn = document.querySelector('#js-hamburger');
-const nav = document.querySelector('#js-nav');
+// const hamBtn = document.querySelector('#js-hamburger');
+// const nav = document.querySelector('#js-nav');
 
-hamBtn.addEventListener('click', function () {
+// hamBtn.addEventListener('click', function () {
 
-  hamBtn.classList.toggle('active');
-  nav.classList.toggle('active');
+//   hamBtn.classList.toggle('active');
+//   nav.classList.toggle('active');
 
-});
+// });
 
 // タブの要素を取得
 const tab1 = document.getElementById('tab1');
@@ -222,10 +222,6 @@ const nestedTab18 = document.getElementById('subtab18');
 const nestedContent18 = document.getElementById('subcontent18');
 const nestedTab19 = document.getElementById('subtab19');
 const nestedContent19 = document.getElementById('subcontent19');
-const nestedTab20 = document.getElementById('subtab20');
-const nestedContent20 = document.getElementById('subcontent20');
-const nestedTab21 = document.getElementById('subtab21');
-const nestedContent21 = document.getElementById('subcontent21');
 
 
 // const buileImg1 = [".tab1-1.png",".tab2-1.png",".tab3-1.png",".tab4-1.png",".tab5-1.png"];
@@ -392,7 +388,6 @@ function resetNestedTabs() {
   nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
   nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -411,12 +406,6 @@ function resetNestedTabs() {
   nestedTab19.style.color = '#000000';
   nestedTab19.style.background = '#ffffff';
   nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
 }
 
 // ネストされたタブがクリックされたときの処理
@@ -578,7 +567,6 @@ document.getElementById('subcontent9').style.display = 'block';
 
 nestedTab10.addEventListener('click', () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-2.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -589,22 +577,8 @@ nestedTab10.addEventListener('click', () => {
 document.getElementById('subcontent10').style.display = 'block';
 });
 
-nestedTab11.addEventListener('click', () => {
-  nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-2.png";
-  nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
-  nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
-  nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
-  document.querySelectorAll('.nested-content').forEach(content => {
-    content.style.display = 'none';
-});
-
-document.getElementById('subcontent11').style.display = 'block';
-});
-
 nestedTab12.addEventListener('click', () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-2.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -617,7 +591,6 @@ document.getElementById('subcontent12').style.display = 'block';
 
 nestedTab13.addEventListener('click', () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-2.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -630,7 +603,6 @@ document.getElementById('subcontent13').style.display = 'block';
 
 nestedTab14.addEventListener('click', () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
-  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-2.png";
@@ -661,12 +633,6 @@ nestedTab15.addEventListener('click', (ev) => {
   nestedTab19.style.color = '#000000';
   nestedTab19.style.background = '#ffffff';
   nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
@@ -690,12 +656,6 @@ nestedTab16.addEventListener('click', () => {
   nestedTab19.style.color = '#000000';
   nestedTab19.style.background = '#ffffff';
   nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
@@ -719,12 +679,6 @@ nestedTab17.addEventListener('click', () => {
   nestedTab19.style.color = '#000000';
   nestedTab19.style.background = '#ffffff';
   nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
@@ -748,12 +702,6 @@ nestedTab18.addEventListener('click', () => {
   nestedTab19.style.color = '#000000';
   nestedTab19.style.background = '#ffffff';
   nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
@@ -777,73 +725,9 @@ nestedTab19.addEventListener('click', () => {
   nestedTab15.style.color = '#000000';
   nestedTab15.style.background = '#ffffff';
   nestedTab15.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
 
 document.getElementById('subcontent19').style.display = 'block';
-});
-
-nestedTab20.addEventListener('click', () => {
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#9CFFF9';
-  nestedTab20.style.borderColor = '#FDF150';
-  nestedTab16.style.color = '#000000';
-  nestedTab16.style.background = '#ffffff';
-  nestedTab16.style.borderColor = '#000000';
-  nestedTab17.style.color = '#000000';
-  nestedTab17.style.background = '#ffffff';
-  nestedTab17.style.borderColor = '#000000';
-  nestedTab18.style.color = '#000000';
-  nestedTab18.style.background = '#ffffff';
-  nestedTab18.style.borderColor = '#000000';
-  nestedTab19.style.color = '#000000';
-  nestedTab19.style.background = '#ffffff';
-  nestedTab19.style.borderColor = '#000000';
-  nestedTab15.style.color = '#000000';
-  nestedTab15.style.background = '#ffffff';
-  nestedTab15.style.borderColor = '#000000';
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#ffffff';
-  nestedTab21.style.borderColor = '#000000';
-  document.querySelectorAll('.nested-content').forEach(content => {
-    content.style.display = 'none';
-});
-
-document.getElementById('subcontent20').style.display = 'block';
-});
-
-nestedTab21.addEventListener('click', () => {
-  nestedTab21.style.color = '#000000';
-  nestedTab21.style.background = '#9CFFF9';
-  nestedTab21.style.borderColor = '#FDF150';
-  nestedTab16.style.color = '#000000';
-  nestedTab16.style.background = '#ffffff';
-  nestedTab16.style.borderColor = '#000000';
-  nestedTab17.style.color = '#000000';
-  nestedTab17.style.background = '#ffffff';
-  nestedTab17.style.borderColor = '#000000';
-  nestedTab18.style.color = '#000000';
-  nestedTab18.style.background = '#ffffff';
-  nestedTab18.style.borderColor = '#000000';
-  nestedTab19.style.color = '#000000';
-  nestedTab19.style.background = '#ffffff';
-  nestedTab19.style.borderColor = '#000000';
-  nestedTab20.style.color = '#000000';
-  nestedTab20.style.background = '#ffffff';
-  nestedTab20.style.borderColor = '#000000';
-  nestedTab15.style.color = '#000000';
-  nestedTab15.style.background = '#ffffff';
-  nestedTab15.style.borderColor = '#000000';
-  document.querySelectorAll('.nested-content').forEach(content => {
-    content.style.display = 'none';
-});
-
-document.getElementById('subcontent21').style.display = 'block';
 });
