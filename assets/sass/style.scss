@@ -185,9 +185,7 @@ a{
 
 .ham{
     width: 100%;
-    // display: block;
-    //一次公開用
-    display: none;
+    display: block;
     overflow: hidden;
     transition: all .5s ease-in;
     @include mq(pc){
@@ -350,9 +348,7 @@ a{
 .grobalnav{
     display: none;
     @include mq(pc){
-        // display: block;
-        ///一次公開用
-        display: none;
+        display: block;
         &-list{
             width: 97%;
             display: flex;
@@ -1077,20 +1073,20 @@ a{
         margin: 60px auto;
     }
 
-    .comingsoon{
-        &-img{
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 60px;
-            @include mq(pc){
-                margin-top: 60px;
-            }
-            img{
-                width: 100%;
-                border: 12px solid black;
-            }
-        }
-    }
+    // .comingsoon{
+    //     &-img{
+    //         width: 80%;
+    //         margin: 0 auto;
+    //         margin-top: 60px;
+    //         @include mq(pc){
+    //             margin-top: 60px;
+    //         }
+    //         img{
+    //             width: 100%;
+    //             border: 12px solid black;
+    //         }
+    //     }
+    // }
 
     &-phonimg01{
         // width: 40%;
@@ -1162,9 +1158,6 @@ a{
     }
 
     &-flexbox{
-        ///一次公開用非表示
-        display: none;
-        //---------------------
         position: relative;
         @include mq(pc){
             width: 70%;
@@ -1410,10 +1403,7 @@ a{
     }
     // 一覧を見るボタン 要相談
     .watch-btn{
-        //一次アップ用非表示
-        display: none;
-        //---------------------
-        background-color: #FF0000;
+        background-color: #FF2626;
         border: 4px solid black;
         position: absolute;
         bottom: -1%;
@@ -1422,46 +1412,25 @@ a{
         animation: anime1 0.7s ease 0s infinite alternate;
         transform-origin:center;
         @include mq(pc){
-            border: none;
-            background-color: #FFF3D2;
-            bottom: 0;
-            right: 0;
+            width: 30%;
+            border: 8px solid black;
         }
-        // background-image: url(../img/PC-exhibition-bg-btn.svg);
-        // background-repeat: no-repeat;
-        // background-size: cover;
         div{
             display: flex;
             @include mq(pc){
-                display: block;
-            }
-            .btnbg{
-                display: none;
-                @include mq(pc){
-                    display: block;
-                    position: relative;
-                    vertical-align:top;
-                }   
+                justify-content: space-around;
+                align-items: center;
             }
             .btnbg2{
                 width: 40%;
-                @include mq(pc){
-                    position: absolute;
-                    width: 50%;
-                    bottom: 5%;
-                    right: 20%;
-                }
-                
             }
             p{
+                width: 50%;
                 font-size: 24px;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 @include mq(pc){
-                    position: absolute;
-                    top: 40%;
-                    right: 5%;
-                    font-size: 40px;
+                    font-size: 28px;
                 }
             }
         }
@@ -1579,7 +1548,7 @@ a{
         span{
             @include mq(pc){
                 font-weight: 700;
-                margin-left: 120px;
+                margin-left: 70px;
             }
         }
     }
@@ -2080,8 +2049,12 @@ a{
         padding-bottom: 100px;
         margin-top: 60px;
         background-color: #5AF1DF;
+        @include mq(tab){
+            padding-bottom: 200px;
+        }
         @include mq(pc){
             width: auto;
+            padding-bottom: 100px;
         }
     }
     &-box2{
@@ -2114,18 +2087,79 @@ a{
         width: 80%;
         margin: 0 auto;
         margin-top: 60px;
+        border: 8px solid #000;
+        box-sizing: border-box;
         @include mq(pc){
             margin-top: 190px;
+            border: 12px solid #000;
         }
         img{
             width: 100%;
+            vertical-align: bottom;
         }
     }
     &-text{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 60px;
+        padding-bottom: 60px;
         @include mq(pc){
+            width: auto;
             margin-top: 40px;
             font-size: 24px;
             text-align: left;
+            padding-bottom: 60px;
+        }
+    }
+    &-btn{
+        position: relative;
+        font-weight: 700;
+        font-size: 24px;
+        color: #000;
+        @include mq(pc){
+            font-size: 32px;
+        }
+        &bg01{
+            width: 40%;
+            position: absolute;
+            bottom: 10%;
+            left: -20%;
+            @include mq(tab){
+                width: 30%;
+                left: -15%;
+            }
+            @include mq(pc){
+                width: 30%;
+                left: -15%;
+            }
+        }
+        &bg02{
+            width: 40%;
+            position: absolute;
+            top: 30%;
+            right: -20%;
+        }
+        div{
+            position: relative;
+            margin: 0 auto;
+            padding-left: 3%;
+            padding-right: 3%;
+            text-align: center;
+            background-color: #FFED00;
+            background-image: url(../img/event-btnbg03.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 8px solid #000;
+            width: 50%;
+            @include mq(pc){
+                width: 40%;
+                border: 12px solid #000;
+            }
+            p{
+                margin: 0;
+                margin-top: 4%;
+                margin-bottom: 4%;
+            }
         }
     }
     &-bgimg01{
