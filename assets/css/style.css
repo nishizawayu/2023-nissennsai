@@ -1050,8 +1050,7 @@ a {
 }
 .shop-phonimg01 {
   width: 40%;
-  top: -15%;
-  left: -2%;
+  top: -5%;
   position: absolute;
 }
 @media screen and (min-width: 541px) {

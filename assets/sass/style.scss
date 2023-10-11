@@ -1081,12 +1081,8 @@ a{
     }
 
     &-phonimg01{
-        // width: 40%;
-        // top: -5%;
-        //一次公開用
         width: 40%;
-        top: -15%;
-        left: -2%;
+        top: -5%;
         position: absolute;
         @include mq(tab){
             top: -25%;
