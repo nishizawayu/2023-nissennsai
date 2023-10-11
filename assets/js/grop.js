@@ -246,9 +246,16 @@ window.addEventListener('load', () => {
       const arr = [...param];
       console.log(arr)
       if(arr[1] == "a"){
-        console.log("in a")
-        nestedTab2fnc();
-      }
+        // 上のタブを切り替える処理
+        if(arr[2] == 2 ){
+          console.log("in a")
+          nestedTab2fnc();
+        }
+        else if(arr[2] == 3){
+          console.log("in a")
+          nestedTab3fnc();
+        }
+      }  
     }
 });
 
@@ -421,21 +428,25 @@ nestedTab2.addEventListener('click', () => {
   nestedTab2fnc();
 });
 
-nestedTab3.addEventListener('click', () => {
-nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "../assets/img/tabItem1/tab3-2.png";
-nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
-document.querySelectorAll('.nested-content').forEach(content => {
-  content.style.display = 'none';
-});
+const nestedTab3fnc = ()=>{
+  nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+  nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+  nestedTab3.src = "../assets/img/tabItem1/tab3-2.png";
+  nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+  nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+  nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+  nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+  nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+  nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+  });
 
-document.getElementById('subcontent3').style.display = 'block';
+  document.getElementById('subcontent3').style.display = 'block';
+}
+
+nestedTab3.addEventListener('click', () => {
+  nestedTab3fnc();
 });
 
 nestedTab4.addEventListener('click', () => {
