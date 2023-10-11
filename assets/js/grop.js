@@ -236,15 +236,15 @@ window.addEventListener('load', () => {
   tab3.style.backgroundColor = '#F39200';
 
   // 一つ目のサブタブを選択状態にし、それに応じた画像を表示
-  nestedTab1.src = "assets/img/tabItem1/tab1-2.png";
-  nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-  nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-  nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-  nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-  nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-  nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-  nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-  nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+  nestedTab1.src = "../assets/img/tabItem1/tab1-2.png";
+  nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+  nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+  nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+  nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+  nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+  nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+  nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+  nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 
   // タブコンテンツとサブタブコンテンツを非表示
   document.querySelectorAll('.tab-content').forEach(content => {
@@ -279,7 +279,7 @@ tab1.addEventListener('click', () => {
   resetNestedTabs();
 
   // 一つ目のサブタブをアクティブに
-  nestedTab1.src = "assets/img/tabItem1/tab1-2.png";
+  nestedTab1.src = "../assets/img/tabItem1/tab1-2.png";
 
   // サブコンテンツを非表示
   document.querySelectorAll('.nested-content').forEach(content => {
@@ -306,7 +306,7 @@ tab2.addEventListener('click', () => {
     resetNestedTabs();
 
     // 一つ目のサブタブをアクティブに
-    nestedTab10.src = "assets/img/tabItem2/tab1-2.png";
+    nestedTab10.src = "../assets/img/tabItem2/tab1-2.png";
 
     // サブコンテンツを非表示
     document.querySelectorAll('.nested-content').forEach(content => {
@@ -347,19 +347,19 @@ tab3.style.backgroundColor = '#FFD355';
 
 function resetNestedTabs() {
 // すべてのサブタブを初期画像に戻す
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
-nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
-nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
-nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
-nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
+nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
 nestedTab15.style.color = '#000000';
 nestedTab15.style.background = '#ffffff';
 nestedTab15.style.borderColor = '#000000';
@@ -381,15 +381,15 @@ nestedTab19.style.borderColor = '#000000';
 //　学科のサブタブ
 nestedTab1.addEventListener('click', () => {
   // ネストされたタブのクリック処理
-  nestedTab1.src = "assets/img/tabItem1/tab1-2.png";
-  nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-  nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-  nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-  nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-  nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-  nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-  nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-  nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+  nestedTab1.src = "../assets/img/tabItem1/tab1-2.png";
+  nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+  nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+  nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+  nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+  nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+  nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+  nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+  nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 
   document.querySelectorAll('.nested-content').forEach(content => {
       content.style.display = 'none';
@@ -399,15 +399,15 @@ nestedTab1.addEventListener('click', () => {
 });
 
 nestedTab2.addEventListener('click', () => {
-  nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-  nestedTab2.src = "assets/img/tabItem1/tab2-2.png";
-  nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-  nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-  nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-  nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-  nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-  nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-  nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+  nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+  nestedTab2.src = "../assets/img/tabItem1/tab2-2.png";
+  nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+  nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+  nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+  nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+  nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+  nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+  nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
   document.querySelectorAll('.nested-content').forEach(content => {
     content.style.display = 'none';
 });
@@ -416,15 +416,15 @@ document.getElementById('subcontent2').style.display = 'block';
 });
 
 nestedTab3.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-2.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-2.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -433,15 +433,15 @@ document.getElementById('subcontent3').style.display = 'block';
 });
 
 nestedTab4.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-2.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-2.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -450,15 +450,15 @@ document.getElementById('subcontent4').style.display = 'block';
 });
 
 nestedTab5.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-2.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-2.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -467,15 +467,15 @@ document.getElementById('subcontent5').style.display = 'block';
 });
 
 nestedTab6.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-2.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-2.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -484,15 +484,15 @@ document.getElementById('subcontent6').style.display = 'block';
 });
 
 nestedTab7.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-2.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-2.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -501,15 +501,15 @@ document.getElementById('subcontent7').style.display = 'block';
 });
 
 nestedTab8.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-2.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-2.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -518,15 +518,15 @@ document.getElementById('subcontent8').style.display = 'block';
 });
 
 nestedTab9.addEventListener('click', () => {
-nestedTab1.src = "assets/img/tabItem1/tab1-1.png";
-nestedTab2.src = "assets/img/tabItem1/tab2-1.png";
-nestedTab3.src = "assets/img/tabItem1/tab3-1.png";
-nestedTab4.src = "assets/img/tabItem1/tab4-1.png";
-nestedTab5.src = "assets/img/tabItem1/tab5-1.png";
-nestedTab6.src = "assets/img/tabItem1/tab6-1.png";
-nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
-nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
-nestedTab9.src = "assets/img/tabItem1/tab9-2.png";
+nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
+nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
+nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
+nestedTab4.src = "../assets/img/tabItem1/tab4-1.png";
+nestedTab5.src = "../assets/img/tabItem1/tab5-1.png";
+nestedTab6.src = "../assets/img/tabItem1/tab6-1.png";
+nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
+nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
+nestedTab9.src = "../assets/img/tabItem1/tab9-2.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -535,10 +535,10 @@ document.getElementById('subcontent9').style.display = 'block';
 });
 
 nestedTab10.addEventListener('click', () => {
-nestedTab10.src = "assets/img/tabItem2/tab1-2.png";
-nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
-nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
-nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
+nestedTab10.src = "../assets/img/tabItem2/tab1-2.png";
+nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -547,10 +547,10 @@ document.getElementById('subcontent10').style.display = 'block';
 });
 
 nestedTab12.addEventListener('click', () => {
-nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
-nestedTab12.src = "assets/img/tabItem2/tab3-2.png";
-nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
-nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
+nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+nestedTab12.src = "../assets/img/tabItem2/tab3-2.png";
+nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -559,10 +559,10 @@ document.getElementById('subcontent12').style.display = 'block';
 });
 
 nestedTab13.addEventListener('click', () => {
-nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
-nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
-nestedTab13.src = "assets/img/tabItem2/tab4-2.png";
-nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
+nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+nestedTab13.src = "../assets/img/tabItem2/tab4-2.png";
+nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
@@ -571,10 +571,10 @@ document.getElementById('subcontent13').style.display = 'block';
 });
 
 nestedTab14.addEventListener('click', () => {
-nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
-nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
-nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
-nestedTab14.src = "assets/img/tabItem2/tab5-2.png";
+nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+nestedTab14.src = "../assets/img/tabItem2/tab5-2.png";
 document.querySelectorAll('.nested-content').forEach(content => {
   content.style.display = 'none';
 });
