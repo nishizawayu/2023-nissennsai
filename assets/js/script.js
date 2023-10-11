@@ -178,7 +178,6 @@ try{
   console.log("no hambtn")
 }
 
-
 // タブの要素を取得
 const tab1 = document.getElementById('tab1');
 const tab2 = document.getElementById('tab2');

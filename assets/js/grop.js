@@ -1,23 +1,5 @@
 'use strict'; /* 厳格にエラーをチェック */
 
-try{
-  const header = document.querySelector('.nav');
-  let prevY = window.scrollY; // 前回のスクロール位置を初期化
-
-  window.addEventListener('scroll', () => {
-    const currentY = window.scrollY; // 現在のスクロール位置を取得
-    if (currentY > prevY) { // 上にスクロールしている場合
-      header.classList.remove('hidden'); // hiddenクラスを削除して表示する
-    }
-    if(currentY < 80){
-      header.classList.add('hidden');
-    }
-    prevY = currentY; // 前回のスクロール位置を更新
-});
-}catch{
-  console("no nav")
-}
-
 const hambtn = document.querySelector(".hambtn");
 const ham = document.querySelector(".hammenu");
 try{
@@ -178,7 +160,6 @@ try{
   console.log("no hambtn")
 }
 
-
 // タブの要素を取得
 const tab1 = document.getElementById('tab1');
 const tab2 = document.getElementById('tab2');
@@ -254,11 +235,24 @@ window.addEventListener('load', () => {
   document.querySelectorAll('.nested-content').forEach(content => {
       content.style.display = 'none';
   });
-
-  // 一つ目のタブコンテンツとサブタブコンテンツを表示
-  document.getElementById('content1').style.display = 'block';
-  document.getElementById('subcontent1').style.display = 'block';
+    const param = location.search
+    if(param == ""){
+      document.getElementById('content1').style.display = 'block';
+      document.getElementById('subcontent1').style.display = 'block';
+      console.log("hoge")
+    }else{
+      document.getElementById('content1').style.display = 'block';
+      document.getElementById('subcontent1').style.display = 'block';
+      const arr = [...param];
+      console.log(arr)
+      if(arr[1] == "a"){
+        console.log("in a")
+        nestedTab2fnc();
+      }
+    }
 });
+
+
 
 // タブがクリックされたときの処理
 tab1.addEventListener('click', () => {
@@ -288,10 +282,11 @@ tab1.addEventListener('click', () => {
 
   // 一つ目のサブコンテンツを表示
   document.getElementById('subcontent1').style.display = 'block';
+
 });
 
 // タブ2とタブ3のクリック処理も同様に設定
-tab2.addEventListener('click', () => {
+const tab2fanc = ()=>{
   tab1.style.backgroundColor = '#F39200';
   tab2.style.backgroundColor = '#FFD355';
   tab3.style.backgroundColor = '#F39200';
@@ -315,6 +310,10 @@ tab2.addEventListener('click', () => {
 
     // 一つ目のサブコンテンツを表示
     document.getElementById('subcontent10').style.display = 'block';
+}
+
+tab2.addEventListener('click', () => {
+  tab2fanc();
 });
 
 tab3.addEventListener('click', () => {
@@ -379,7 +378,7 @@ nestedTab19.style.borderColor = '#000000';
 
 // ネストされたタブがクリックされたときの処理
 //　学科のサブタブ
-nestedTab1.addEventListener('click', () => {
+const nestedTab1fnc = () =>{
   // ネストされたタブのクリック処理
   nestedTab1.src = "../assets/img/tabItem1/tab1-2.png";
   nestedTab2.src = "../assets/img/tabItem1/tab2-1.png";
@@ -390,15 +389,18 @@ nestedTab1.addEventListener('click', () => {
   nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
   nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
   nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
-
   document.querySelectorAll('.nested-content').forEach(content => {
       content.style.display = 'none';
   });
-
+  document.getElementById('content1').style.display = 'block';
   document.getElementById('subcontent1').style.display = 'block';
+}
+
+nestedTab1.addEventListener('click', () => {
+  nestedTab1fnc();
 });
 
-nestedTab2.addEventListener('click', () => {
+const nestedTab2fnc = ()=>{
   nestedTab1.src = "../assets/img/tabItem1/tab1-1.png";
   nestedTab2.src = "../assets/img/tabItem1/tab2-2.png";
   nestedTab3.src = "../assets/img/tabItem1/tab3-1.png";
@@ -413,6 +415,10 @@ nestedTab2.addEventListener('click', () => {
 });
 
 document.getElementById('subcontent2').style.display = 'block';
+}
+
+nestedTab2.addEventListener('click', () => {
+  nestedTab2fnc();
 });
 
 nestedTab3.addEventListener('click', () => {
