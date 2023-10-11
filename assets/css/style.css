@@ -107,6 +107,7 @@ a {
   display: block;
   overflow: hidden;
   transition: all 0.5s ease-in;
+  display: none;
 }
 @media screen and (min-width: 900px) {
   .ham {
@@ -275,6 +276,7 @@ a {
 @media screen and (min-width: 900px) {
   .grobalnav {
     display: block;
+    display: none;
   }
   .grobalnav-list {
     width: 97%;
@@ -1055,7 +1057,7 @@ a {
 }
 @media screen and (min-width: 541px) {
   .shop-phonimg01 {
-    top: -25%;
+    top: -18%;
   }
 }
 @media screen and (min-width: 900px) {
@@ -1213,6 +1215,15 @@ a {
     right: -1%;
     bottom: 15%;
   }
+}
+.shop .comingsoon {
+  margin-top: 30px;
+  border: 12px solid #000;
+  box-sizing: border-box;
+}
+.shop .comingsoon img {
+  width: 100%;
+  vertical-align: bottom;
 }
 @media screen and (min-width: 900px) {
   .shop .Department-flex {

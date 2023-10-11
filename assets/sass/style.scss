@@ -195,6 +195,7 @@ a{
     display: block;
     overflow: hidden;
     transition: all .5s ease-in;
+    display: none;
     @include mq(pc){
         display: none;
     }
@@ -356,6 +357,7 @@ a{
     display: none;
     @include mq(pc){
         display: block;
+        display: none;
         &-list{
             width: 97%;
             display: flex;
@@ -1085,7 +1087,7 @@ a{
         top: -5%;
         position: absolute;
         @include mq(tab){
-            top: -25%;
+            top: -18%;
         }
         @include mq(pc){
             display: none;
@@ -1107,18 +1109,7 @@ a{
             position: relative;
             padding-bottom: 180px;
             box-shadow: none;
-            // background-image: url(../img/PC-exhibition-bg.svg);
-            // background-position: center center;
-            // padding-top: calc(472.017 / 848.783 * 95%);
-            // background-size: cover;
-            // background-repeat: no-repeat;
-            // height: 0;
         }
-        // &-bg{
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        // }
     }
 
     &-title{
@@ -1219,9 +1210,6 @@ a{
         &-b{
             margin-right: 10px;
         }
-        &-c{
-
-        }
     }
 
     &-bgimg05{
@@ -1243,6 +1231,15 @@ a{
             width: 20%;
             right: -1%;
             bottom: 15%;
+        }
+    }
+    .comingsoon{
+        margin-top: 30px;
+        border: 12px solid #000;
+        box-sizing: border-box;
+        img{
+            width: 100%;
+            vertical-align: bottom;
         }
     }
 
