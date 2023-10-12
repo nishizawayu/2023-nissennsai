@@ -313,7 +313,10 @@ a{
     align-items: center;
     box-shadow: -15px 12px 0px #00FFE4;
     z-index: 999;   /*重ね順*/
-
+    @include pc1 {
+        top: 8%;
+        right: 9%;
+    }
     span{
         position: absolute;
         left: 0;
@@ -360,6 +363,11 @@ a{
 
 .grobalnav{
     display: none;
+    @include pc1 {
+        position: absolute;
+        top: 18%;
+        right: 1%;
+    }
     @include mq(pc){
         display: block;
         &-list{
@@ -382,12 +390,24 @@ a{
             background-size: contain;
             background-repeat: no-repeat;
             padding: 30px 102px;
+            @include pc1 {
+                padding: 25px 82px;
+            }
+            @include pc2 {
+                padding: 30px 102px;;
+            }
         }
         .ncon2{
             background-image: url(../img/nav-img02.svg);
             background-size: contain;
             background-repeat: no-repeat;
             padding: 30px 90px;
+            @include pc1 {
+                padding: 25px 60px;
+            }
+            @include pc2 {
+                padding: 30px 90px;
+            }
         }
     }
 }
@@ -1224,9 +1244,6 @@ a{
         }
         &-b{
             margin-right: 10px;
-        }
-        &-c{
-
         }
     }
 
@@ -2651,6 +2668,10 @@ a{
         margin: 0 auto;
         padding-left: 0;
         line-height: 32px;
+        padding-top: 30px;
+        @include pc1 {
+            padding-top: 50px;
+        }
         @include mq(pc){
             text-align: left;
             display: flex;
@@ -2667,6 +2688,9 @@ a{
             }
             a{
                 color: #000;
+                @include sp5 {
+                    font-size: 24px;
+                }
             }
         }
     }
@@ -2966,7 +2990,7 @@ a{
   .main h1 {
       padding-top: 30px;
       img {
-          width: 60%;
+          width: 40%;
       }
   }
   
@@ -3452,6 +3476,10 @@ a{
     width: 25%;
     bottom: -6%;
     left: -9%;
+    @include pc3 {
+        bottom: -8%;
+    left: -13%;
+    }
         @include pc1-2 {
             display: none;
         }
@@ -3498,6 +3526,9 @@ a{
         padding: 20px 0 50px 0;
         @include sp3-2 {
             width: 40%;
+        }
+        @include pc2 {
+            width: 30%;
         }
         #link {
             display: contents;

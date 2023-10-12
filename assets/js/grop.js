@@ -246,6 +246,7 @@ window.addEventListener('load', () => {
       const arr = [...param];
       console.log(arr)
       if(arr[1] == "a"){
+        tab1fnc();
         // 上のタブを切り替える処理
         if(arr[2] == 2 ){
           console.log("in a")
@@ -381,7 +382,7 @@ const tab1fnc = () => {
     });
   
     // 一つ目のサブコンテンツを表示
-    document.getElementById('subcontent10').style.display = 'block';
+    document.getElementById('subcontent1').style.display = 'block';
 }
 tab1.addEventListener('click' , () => {
   tab1fnc();

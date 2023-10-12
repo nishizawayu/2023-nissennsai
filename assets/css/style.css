@@ -230,6 +230,12 @@ a {
   box-shadow: -15px 12px 0px #00FFE4;
   z-index: 999; /*重ね順*/
 }
+@media screen and (min-width: 800px) {
+  .hambtn {
+    top: 8%;
+    right: 9%;
+  }
+}
 .hambtn span {
   position: absolute;
   left: 0;
@@ -272,6 +278,13 @@ a {
 .grobalnav {
   display: none;
 }
+@media screen and (min-width: 800px) {
+  .grobalnav {
+    position: absolute;
+    top: 18%;
+    right: 1%;
+  }
+}
 @media screen and (min-width: 900px) {
   .grobalnav {
     display: block;
@@ -293,10 +306,32 @@ a {
     background-repeat: no-repeat;
     padding: 30px 102px;
   }
+}
+@media screen and (min-width: 900px) and (min-width: 800px) {
+  .grobalnav .ncon1 {
+    padding: 25px 82px;
+  }
+}
+@media screen and (min-width: 900px) and (min-width: 950px) {
+  .grobalnav .ncon1 {
+    padding: 30px 102px;
+  }
+}
+@media screen and (min-width: 900px) {
   .grobalnav .ncon2 {
     background-image: url(../img/nav-img02.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    padding: 30px 90px;
+  }
+}
+@media screen and (min-width: 900px) and (min-width: 800px) {
+  .grobalnav .ncon2 {
+    padding: 25px 60px;
+  }
+}
+@media screen and (min-width: 900px) and (min-width: 950px) {
+  .grobalnav .ncon2 {
     padding: 30px 90px;
   }
 }
@@ -2764,6 +2799,12 @@ a {
   margin: 0 auto;
   padding-left: 0;
   line-height: 32px;
+  padding-top: 30px;
+}
+@media screen and (min-width: 800px) {
+  .footer-list {
+    padding-top: 50px;
+  }
 }
 @media screen and (min-width: 900px) {
   .footer-list {
@@ -2782,6 +2823,11 @@ a {
 }
 .footer ul li a {
   color: #000;
+}
+@media screen and (min-width: 650px) {
+  .footer ul li a {
+    font-size: 24px;
+  }
 }
 .footer-bgimg01 {
   position: absolute;
@@ -3114,7 +3160,7 @@ a {
   padding-top: 30px;
 }
 .main h1 img {
-  width: 60%;
+  width: 40%;
 }
 
 .header {
@@ -3632,6 +3678,12 @@ a {
   bottom: -6%;
   left: -9%;
 }
+@media screen and (min-width: 1200px) {
+  .main__pcImg15 {
+    bottom: -8%;
+    left: -13%;
+  }
+}
 @media screen and (max-width: 799px) {
   .main__pcImg15 {
     display: none;
@@ -3685,6 +3737,11 @@ a {
 @media screen and (min-width: 650px) {
   #header #header__logo {
     width: 40%;
+  }
+}
+@media screen and (min-width: 950px) {
+  #header #header__logo {
+    width: 30%;
   }
 }
 #header #header__logo #link {
