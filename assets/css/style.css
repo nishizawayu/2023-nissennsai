@@ -2894,9 +2894,7 @@ a {
   border: solid 4px;
   padding: 15px 0px 10px 0px;
   border-radius: 0px 0px 15px 15px;
-}
-.nested-tabs .tab-building {
-  width: 30%;
+  text-align: center;
 }
 @media screen and (min-width: 500px) {
   .nested-tabs {
@@ -2948,6 +2946,14 @@ a {
   color: #000;
   background: #9CFFF9;
   border-color: #FDF150;
+}
+.nested-tabs .tab-building {
+  width: 30%;
+}
+@media screen and (min-width: 800px) {
+  .nested-tabs .tab-building {
+    width: 32%;
+  }
 }
 
 .nested-tabs img {
@@ -3667,4 +3673,25 @@ a {
 
 .relative {
   position: relative;
+}
+
+#header {
+  display: block;
+}
+#header #header__logo {
+  width: 50%;
+  padding: 20px 0 50px 0;
+}
+@media screen and (min-width: 650px) {
+  #header #header__logo {
+    width: 40%;
+  }
+}
+#header #header__logo #link {
+  display: contents;
+  padding: 0;
+}
+#header #header__logo #link #linkLogo {
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

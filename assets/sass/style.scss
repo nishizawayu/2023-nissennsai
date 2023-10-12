@@ -7,6 +7,7 @@ $breakpoint: (
 $sp1 : 390px;
 $sp2 : 500px;
 $sp3 : 650px;
+$sp3-2 : 650px;
 $sp4 : 750px;
 $sp5 : 650px;
 $pc1-2 : 799px;
@@ -33,6 +34,11 @@ $pc5 : 1600px;
 @mixin sp3 {
     @media screen and (max-width : ($sp3)) {
         @content;   
+    }
+}
+@mixin sp3-2 {
+    @media screen and (min-width : ($sp3-2)) {
+        @content;
     }
 }
 @mixin sp4 {
@@ -2765,9 +2771,7 @@ a{
       border: solid 4px;
       padding: 15px 0px 10px 0px;
       border-radius: 0px 0px 15px 15px;
-      .tab-building {
-        width: 30%;
-      }
+      text-align: center;
       @include sp2 {
         width: 326px;
       }
@@ -2808,6 +2812,12 @@ a{
               background: #9CFFF9;
               border-color: #FDF150;
           }
+      }
+      .tab-building {
+        width: 30%;
+        @include pc1 {
+            width: 32%;
+        }
       }
   }
   
@@ -3479,4 +3489,23 @@ a{
 }
 .relative{
     position: relative;
+}
+
+#header {
+    display: block;
+    #header__logo {
+        width: 50%;
+        padding: 20px 0 50px 0;
+        @include sp3-2 {
+            width: 40%;
+        }
+        #link {
+            display: contents;
+            padding: 0;
+            #linkLogo {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
 }
