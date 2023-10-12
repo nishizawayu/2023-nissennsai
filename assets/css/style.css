@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 body {
@@ -192,6 +193,7 @@ a {
 }
 .hammenu.act {
   left: 0;
+  top: 0;
 }
 .ham-text {
   width: 80%;

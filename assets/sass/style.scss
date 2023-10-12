@@ -86,6 +86,7 @@ $pc5 : 1600px;
 
 html{
     scroll-behavior: smooth;
+    background-color: #000000;
 }
 
 body{
@@ -272,6 +273,7 @@ a{
         }
         &.act{
             left: 0;
+            top: 0;
         }
     }
     &-text{
@@ -1140,11 +1142,6 @@ a{
             // background-repeat: no-repeat;
             // height: 0;
         }
-        // &-bg{
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        // }
     }
 
     &-title{
