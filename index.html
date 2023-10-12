@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2023日専祭</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </head>
 <body>
     <!-- ヘッダー -->
     <header class="header">
         <!-- グローバルナビゲーション -->
-        <div class="nav">
+        <div class="nav hidden">
             <h1 class="nav-logo"><a href="#"><img src="assets/img/PC-header-LOGO-v01.png" alt="日専祭"></a></h1>
             <img src="assets/img/nav-bgimg01.svg" alt="" class="nav-bgimg01">
             <img src="assets/img/PC-header-deco-05.svg" alt="" class="nav-bgimg04">
@@ -109,12 +112,13 @@
                     <!-- キャッチコピー -->
                     <section class="catch">
                         <div class="catch-box">
-                            <h2 class="catch-title"><img src="assets/img/PC-catchTITLE.svg" alt="キャチコピー"></h2>
+                            <h2 class="catch-title js-scroll"><img src="assets/img/PC-catchTITLE.svg" alt="キャチコピー"></h2>
                             <img src="assets/img/catch-img-01.svg" alt="" class="catch-img01">
                             <img src="assets/img/PC-line-chatch.svg" alt="" class="catch-img02">
                             <img src="assets/img/PC-3-Catch.svg" alt="" class="catch-img03">
-                            <p class="catch-main"><img src="assets/img/PC-ChatchPhrase.svg" alt="TAKE ACTION!!" class="catch-main-PC"><img src="assets/img/PHONE-catchphrase.svg" alt="TAKE ACTION!!" class="catch-main-PHONE"></p>
-                            <p class="catch-text">学生、来場者が心ゆくまで楽しみ、学園祭ならではの体験をしてほしい。</p>
+                            <p class="catch-main js-scroll"><img src="assets/img/PC-ChatchPhrase.svg" alt="TAKE ACTION!!" class="catch-main-PC"><img src="assets/img/PHONE-catchphrase.svg" alt="TAKE ACTION!!" class="catch-main-PHONE"></p>
+                            <p class="catch-name jumper-name-1 js-scroll">高度情報処理科　工藤 明日香</p>
+                            <p class="catch-text js-scroll">学生、来場者が心ゆくまで楽しみ、学園祭ならではの体験をしてほしい。</p>
                         </div>
                         <!-- <img src="assets/img/PC-alert-bg-03.svg" alt="" class="catch-bgimg01"> -->
                     </section>
@@ -122,19 +126,23 @@
                     <!-- 開催情報 -->
                     <section class="info" id="info">
                         <div class="info-border">
-                            <h2 class="info-title"><img src="assets/img/PC-informationTITLE.svg" alt="開催情報"></h2>
-                            <img src="assets/img/info-bgimg01.svg" alt="" class="info-bgimg01">
+                            <h2 class="info-title js-scroll"><img src="assets/img/PC-informationTITLE.svg" alt="開催情報"></h2>
+                            <div class="info-bgimg01">
+                                <img src="assets/img/info-bgimg01a.svg" alt="" class="info-bgimg01-a js-scroll">
+                                <img src="assets/img/info-bgimg01b.svg" alt="" class="info-bgimg01-b js-scroll">
+                                <img src="assets/img/info-bgimg01c.svg" alt="" class="info-bgimg01-c js-scroll">
+                            </div>
                             <!-- 日時 -->
                             <section class="info-box">
-                                <h3 class="info-h3">日時</h3>
+                                <h3 class="info-h3 js-scroll">日時</h3>
                                 <img src="assets/img/PHONE-infor-deco-01.svg" alt="" class="info-phonbg1">
                                 <img src="assets/img/PC-catch-arrow01.svg" alt="" class="info-bgimg02 info-bgimg02-n1">
                                 <div class="info-flex">
-                                    <p class="info-text info-text-bold">
+                                    <p class="info-text info-text-bold js-scroll">
                                         10/28（土）<br>
                                         <span class="info-text--span1">10:00~16:00</span>
                                     </p>
-                                    <p class="info-text info-text-bold">
+                                    <p class="info-text info-text-bold js-scroll">
                                         10/29（日）<br>
                                         <span>10:00~15:30</span>
                                     </p>
@@ -144,9 +152,9 @@
             
                             <!-- 会場 -->
                             <section class="info-box">
-                                <h3 class="info-h3">会場</h3>
+                                <h3 class="info-h3 js-scroll">会場</h3>
                                 <img src="assets/img/PC-catch-arrow02.svg" alt="" class="info-bgimg02 info-bgimg02-n2">
-                                <p class="info-text info-text--center">
+                                <p class="info-text info-text--center js-scroll">
                                     日本電子専門学校<br>
                                     本館・4号館・5号館・7号館・9号館
                                 </p>
@@ -155,9 +163,9 @@
                             <img src="assets/img/PHONE-infor-deco-02.svg" alt="" class="info-phonimg02">
                             <!-- アクセス -->
                             <section class="info-box">
-                                <h3 class="info-h3">アクセス</h3>
+                                <h3 class="info-h3 js-scroll">アクセス</h3>
                                 <img src="assets/img/PC-catch-arrow03.svg" alt="" class="info-bgimg02 info-bgimg02-n3">
-                                <div class="info-map">
+                                <div class="info-map js-scroll">
                                     <!-- バグこれが入るとrelativeがなくなる　森先生に相談 -->
                                     <iframe src="https://www.google.com/maps/d/embed?mid=19OeCHW528Ffh5-5GJXyDHL4eouF-VeQ&hl=ja&ehbc=2E312F" width="auto" height="480" class="info-map-size"></iframe>
                                     <img src="assets/img/PC-Group 22.svg" alt="" class="info-bgimg04">
@@ -173,120 +181,580 @@
                     <section class="shop" id="shop">
                         <div class="shop-box">
                             <div class="shop-box-bg">
-                                <h2 class="shop-title"><img src="assets/img/PC-exhibitionTITTLE.svg" alt="展示・出展"></h2>
-                            <img src="assets/img/PC-exhib-shocked-02.svg" alt="" class="shop-phonimg01">
+                                <h2 class="shop-title js-scroll"><img src="assets/img/PC-exhibitionTITTLE.svg" alt="展示・出展"></h2>
+                            <img src="assets/img/exhib-shocked-02.svg" alt="" class="shop-phonimg01">
                             <div class="shop-flexbox">
-                                <img src="assets/img/PC-exhib-shocked-02.svg" alt="" class="shop-bgimg01">
+                                <img src="assets/img/exhib-shocked-02.svg" alt="" class="shop-bgimg01">
                                 <img src="assets/img/PC-line-chatch.svg" alt="" class="shop-bgimg02">
-                                <p class="shop-text">日専祭では、本館、4号館、5号館、7号館、9号館にわかれ、展示や体験型のワークショップ等を行っています。
-                                    <br>是非、お楽しみください！</p>
-                                <div class="tab">
-                                    <img src="assets/img/PC-exhib-question.svg" alt="" class="shop-bgimg03">
-                                    <ul class="tab__menu shop-tab">
-                                        <li class="tab__menu-item is-active" data-tab="01">学科・団体から探す</li>
-                                        <li class="tab__menu-item" data-tab="02">建物から探す</li>
-                                        <li class="tab__menu-item" data-tab="03">ハッシュタグから探す</li>
+                                <p class="shop-text js-scroll">日専祭では、本館、4号館、5号館、7号館、9号館にわかれ、展示や体験型のワークショップ等を行っています。
+                                    <br>是非、お楽しみください！
+                                </p>
+
+                                <div class="tabs">
+                                    <ul class="tabs__ul">
+                                        <li id="tab1" class="tabs__ul__li">学科・団体から探す</li>
+                                        <li id="tab2" class="tabs__ul__li">建物から探す</li>
+                                        <li id="tab3" class="tabs__ul__li">＃タグから探す</li>
                                     </ul>
-                        
-                                    <div class="tab__panel">
-                                        <!-- 学科・団体から探す -->
-                                        <div class="tab__panel-box tab__panel-box001 is-show" data-panel="01">
-                                            <ul class="Department-flex tab__panel-text">
-                                                <li class="Department-item"><img src="assets/img/cg-video.svg" alt="CG・映像科"><br>CG・映像</li>
-                                                <li class="Department-item"><img src="assets/img/game.svg" alt="ゲーム"><br>ゲーム</li>
-                                                <li class="Department-item"><img src="assets/img/anime.svg" alt="アニメ"><br>アニメ</li>
-                                                <li class="Department-item"><img src="assets/img/Web-mobile.svg" alt="Webモバイル"><br>Web・モバイル</li>
-                                                <li class="Department-item"><img src="assets/img/IP.svg" alt="情報処理"><br>情報処理</li>
-                                                <li class="Department-item"><img src="assets/img/AI.svg" alt="AI"><br>AI</li>
-                                                <li class="Department-item"><img src="assets/img/design.svg" alt="デザイン"><br>デザイン</li>
-                                                <li class="Department-item"><img src="assets/img/NS.svg" alt="ネットワークセキュリティ"><br>ネットワークセキュリティ</li>
-                                                <li class="Department-item"><img src="assets/img/electronic.svg" alt="電気電子"><br>電気電子</li>
-                                            </ul>
+                                </div>
+                                <div class="tab-content" id="content1">
+                                    <img src="assets/img/PC-exhib-question.svg" alt="" class="shop-bgimg03">
+                                    <div class="nested-tabs cen">
+                                        <img src="assets/img/tabItem1/tab1-2.png" alt="サブタブ1" id="subtab1">
+                                        <img src="assets/img/tabItem1/tab2-1.png" alt="サブタブ2" id="subtab2">
+                                        <img src="assets/img/tabItem1/tab3-1.png" alt="サブタブ3" id="subtab3">
+                                        <img src="assets/img/tabItem1/tab4-1.png" alt="サブタブ4" id="subtab4">
+                                        <img src="assets/img/tabItem1/tab5-1.png" alt="サブタブ5" id="subtab5">
+                                        <img src="assets/img/tabItem1/tab6-1.png" alt="サブタブ6" id="subtab6">
+                                        <img src="assets/img/tabItem1/tab7-1.png" alt="サブタブ7" id="subtab7">
+                                        <img src="assets/img/tabItem1/tab8-1.png" alt="サブタブ8" id="subtab8">
+                                        <img src="assets/img/tabItem1/tab9-1.png" alt="サブタブ9" id="subtab9">
+                                    </div>
+                                    <div class="nested-content" id="subcontent1">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea contentArea-first">
+                                                <a href="./grop/index.html#subcontent1">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cgkenkyu.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <a href="./grop/index.html#subcontent1">
+                                                    <img src="assets/img/sp-img/sp-1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cg.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <!-- 建物から探す -->
-                                        <div class="tab__panel-box tab__panel-box002" data-panel="02">
-                                            <ul class="Department-flex tab__panel-text">
-                                                <li class="Department-item"><img src="assets/img/school.svg" alt="本館"><br>本館</li>
-                                                <li class="Department-item"><img src="assets/img/school.svg" alt="4号館"><br>4号館</li>
-                                                <li class="Department-item"><img src="assets/img/school.svg" alt="5号館"><br>5号館</li>
-                                                <li class="Department-item"><img src="assets/img/school.svg" alt="7号館"><br>7号館</li>
-                                                <li class="Department-item"><img src="assets/img/school.svg" alt="9号館"><br>9号館</li>
-                                            </ul>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html#subcontent1">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cgeizou.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img5">
+                                                <img src="assets/img/sp-img/sp-4.png" alt="">
+                                            </div>
                                         </div>
-                                        <!-- ハッシュタグから探す -->
-                                        <div class="tab__panel-box tab__panel-box003" data-panel="03">
-                                            <ul class="tab__panel-text">
-                                                <li class="Department-item"></li>
-                                            </ul>
+                                    </div>
+                                    <!-- コンテンツ2 -->
+                                    <div class="nested-content" id="subcontent2">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a2#subcontent2">
+                                                     <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/gamekenkyu.png" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a2#subcontent2">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/gamekikaku.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a2#game">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/game.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img5">
+                                                <img src="assets/img/sp-img/sp-4.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="nested-content" id="subcontent3">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a3#subcontent3">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/anime.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="nested-content__flex">
+                                            <div class="nested-content__flex__img3">
+                                                <img src="assets/img/sp-img/sp-6.png" alt="">
+                                            </div>
+                                            <div class="nested-content__flex__img4">
+                                                <img src="assets/img/sp-img/sp-7.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent4">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a4#subcontent4">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/aw.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a4#subcontent4">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/app.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent5">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a5#subcontent5">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/ip.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a5#subcontent5">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/dx.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent6">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a6#subcontent6">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/ai.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent7">
+                                        <div class="nested-content__flex">
+                                             <div class="contentArea">
+                                                <a href="./grop/index.html?a7#subcontent7">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/design.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent8">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a8#subcontent8">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/net.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent9">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a9#subcontent9">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/eo.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?a9#subcontent9">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/kj.png" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 他のサブコンテンツをここに追加 -->
+                                </div>
+                    
+                                <!-- 建物から探す -->
+                                <div class="tab-content" id="content2">
+                                    <div class="nested-tabs">
+                                        <img src="assets/img/tabItem2/tab1-1.png" alt="" class="tab-building" id="subtab10">
+                                        <img src="assets/img/tabItem2/tab3-1.png" alt="" class="tab-building" id="subtab12">
+                                        <img src="assets/img/tabItem2/tab4-1.png" alt="" class="tab-building" id="subtab13">
+                                        <img src="assets/img/tabItem2/tab5-1.png" alt="" class="tab-building" id="subtab14">
+                                    </div>
+                                    <div class="nested-content" id="subcontent10">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b1#subcontent10">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/e-sport.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b1#subcontent10">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/wataame.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b1#subcontent10">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/cracker.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img5">
+                                                <img src="assets/img/sp-img/sp-4.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b1#subcontent10">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/niku.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent12">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b2#subcontent12">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cgeizou.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent13">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b3#subcontent13">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/7/nissennsai_graphic.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b3#subcontent13">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/7/ProjectVR.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b3#subcontent13">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/7/web_mente.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img5">
+                                                <img src="assets/img/sp-img/sp-4.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b3#subcontent13">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/7/retrogame.jpeg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b3#subcontent13">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/7/rakugo.JPG" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent14">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/CulturalFestival.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img1">
+                                                <img src="assets/img/sp-img/sp-1.png" alt="">
+                                            </div>
+                                            <div class="nested-content__flex__img2">
+                                                <img src="assets/img/sp-img/sp-2.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/oden.jpeg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/okonomiyaki.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="nested-content__flex__img5">
+                                                <img src="assets/img/sp-img/sp-4.png" alt="">
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/animeshokudou.png" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/gyu.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?b4#subcontent14">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/yakitori.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- 各団体ポスター -->
-                                <div class="groupposter">
-                                    <ul class="groupposter-box">
-                                        <li class="groupposter-img"><img src="assets/img/poster-deta/cg.jpg" alt=""></li>
-                                        <li class="groupposter-img"><img src="assets/img/poster-deta/cgeizou.jpg" alt=""></li>
-                                        <li class="groupposter-img"><img src="assets/img/poster-deta/cgkenkyu.jpg" alt=""></li>
-                                    </ul>
-                                </div>
+                                    <!-- 二つ目のタブのコンテンツとサブタブを追加 -->
+                                    <div class="tab-content" id="content3">
+                                        <div class="nested-tabs" id="textBtn">
+                                            <div class="nested-tabs__layout">
+                                                <p class="tab-btn" id="subtab15">＃全力で遊びたい</p>
+                                                <p class="tab-btn" id="subtab16">＃飲食</p>
+                                            </div>
+                                            <p class="nested-tabs__text tab-btn" id="subtab17">＃日専祭といったらこれ</p>
+                                            <div class="nested-tabs__layout">
+                                                <p class="tab-btn" id="subtab18">＃体験</p>
+                                                <p class="tab-btn" id="subtab19">＃学校を知りたい</p>
+                                            </div>
+                                        </div>
+                                    <div class="nested-content" id="subcontent15">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c1#subcontent15">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/game.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c1#subcontent15">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cgkenkyu.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c1#subcontent15">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/gamekenkyu.png" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c1#subcontent15">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/app.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent16">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c2#subcontent16">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/gyu.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c2#subcontent16">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/oden.jpeg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c2#subcontent16">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/wataame.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c2#subcontent16">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/9/yakitori.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent17">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c3#subcontent17">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/aw.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c3#subcontent17">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/ip.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c3#subcontent17">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/game.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c3#subcontent17">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/net.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent18">
+                                        <div class="nested-content__flex">                        
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c4#subcontent18">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/pamphlet/other/honkan/e-sport.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c4#subcontent18">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/eo.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nested-content" id="subcontent19">
+                                        <div class="nested-content__flex">
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c5#subcontent19">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/design.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="contentArea">
+                                                <a href="./grop/index.html?c5#subcontent19">
+                                                    <div class="contentArea__imgArea">
+                                                        <img src="assets/img/poster-deta/cgkenkyu.jpg" alt="" class="contentArea__imgArea__img">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                     
+                                    
+                                <img src="assets/img/exhib-wave-01.svg" alt="" class="shop-bgimg06">
                             </div>
-                            <img src="assets/img/exhib-wave-01.svg" alt="" class="shop-bgimg06">
-                            <!-- 一覧を見る -->
+                            
+
                             <a href="grop/index.html" class="watch-btn">
                                 <div>
-                                    <img src="assets/img/PC-exhibition-bg-btn.svg" alt="" class="btnbg">
                                     <img src="assets/img/grop-bg.svg" alt="" class="btnbg2">
-                                    <p>一覧を<br class="PC-br">見る</p>
+                                    <p>一覧を見る</p>
                                 </div>
                             </a>
-                            <img src="assets/img/PC-exhib-deco-03.svg" alt="" class="shop-bgimg04">
+                            <div class="shop-bgimg04">
+                                <img src="assets/img/PC-exhib-deco-03-a.svg" alt="" class="shop-bgimg04-a js-spin">
+                                <img src="assets/img/PC-exhib-deco-03-b.svg" alt="" class="shop-bgimg04-b js-spin">
+                                <img src="assets/img/PC-exhib-deco-03-c.svg" alt="" class="shop-bgimg04-c js-spin">
+                            </div>
                             <img src="assets/img/PC-exhib-wave-02.svg" alt="" class="shop-bgimg05">
                             </div>
                         </div>
                          
-                            <!-- 建物から探す -->
-                            <!-- <div> -->
-                                <!-- 各団体ポスター -->
-                                <!-- <div>
-                                    <ul>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                    </ul>
-                                </div> -->
-                                <!-- 一覧を見る -->
-                                <!-- <a href="grop/index.html">
-                                    <div class="watch-btn">
-                                        <p>一覧を見る</p>
-                                    </div>
-                                </a>
-                            </div> -->
-                
-                            <!-- ハッシュタグから探す -->
-                            <!-- <div> -->
-                                <!-- 各団体ポスター -->
-                                <!-- <div>
-                                    <ul>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                        <li><img src="" alt=""></li>
-                                    </ul>
-                                </div> -->
-                                <!-- 一覧を見る -->
-                                <!-- <a href="grop/index.html">
-                                    <div class="watch-btn">
-                                        <p>一覧を見る</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div> -->
-            
                     </section>
                     
                     <figure class="wavyline">
@@ -296,65 +764,65 @@
                     <!-- ご挨拶 -->
                     <section class="messege" id="messege">
                         <div class="messege-box">
-                            <h2 class="messege-title"><img src="assets/img/PC-aisatuTITTLE.svg" alt="あいさつ"></h2>
+                            <h2 class="messege-title js-scroll"><img src="assets/img/PC-aisatuTITTLE.svg" alt="あいさつ"></h2>
                             <!-- 理事長 -->
                             <section class="messege-box2">
                                 <div class="messege-flex">
-                                    <h3 class="messege-h3">理事長 <br><span>多 忠貴</span></h3>
-                                    <img src="assets/img/line.svg" alt="" class="messege-line">
-                                    <figure class="messege-img">
+                                    <h3 class="messege-h3 js-scroll">理事長 <br><span>多 忠貴</span></h3>
+                                    <img src="assets/img/line.svg" alt="" class="messege-line js-scroll">
+                                    <figure class="messege-img js-scroll">
                                         <img src="assets/img/chairman.jpg" alt="理事長の写真">
                                     </figure>
                                 </div>
-                                <p class="messege-text">
+                                <p class="messege-text js-scroll">
                                     日本電子専門学校の秋の風物詩「日専祭」がいよいよ始まります。<br>
-                                    先ず以て、今年で54回目となる本校の一大イベントの開催にあたり、勉学との両立に努めながら準備に注力していただいた107名の学生実行委員の皆さん、またそれを支えていただいた教職員・クラスメートの皆さんに心から感謝申し上げます。<br>
-                                    今年の日専祭のキャッチフレーズは『take action !』。「学生や来場者が心ゆくまで楽しみ、学園祭でしか味わえない体験によって、笑顔と活気で満ち溢れる前途洋々な日専祭とする」というコンセプトのもと、「一人ひとりが、思い想いに動き、楽しめるように」という思いが込められていると聞いております。<br>
+                                    先ず以て、今年で54回目となる本校の一大イベントの開催にあたり、勉学との両立に努めながら準備に注力していただいた104名の学生実行委員の皆さん、またそれを支えていただいた教職員・クラスメートの皆さんに心から感謝申し上げます。<br>
+                                    今年の日専祭のキャッチフレーズは『TAKE ACTION !』。「学生や来場者が心ゆくまで楽しみ、学園祭でしか味わえない体験によって、笑顔と活気で満ち溢れる前途洋々な日専祭とする」というコンセプトのもと、「一人ひとりが、思い想いに動き、楽しめるように」という思いが込められていると聞いております。<br>
                                     本校で学ぶ約3,000名の学生一人ひとりの主体性や創造性を活かし、学友やご来校いただく方々とともに、ポストコロナ時代の日専祭を大いに楽しみながら、本校での学生生活の想い出に残る2日間となることを祈念いたします。<br>
                                     末筆ながら、日専祭の開催にあたり、ご理解とご支援をいただいた全ての皆様のご厚誼に衷心より厚く御礼を申し上げます。
                                 </p>
-                                <img src="assets/img/line2.svg" alt="" class="messege-line2">
+                                <img src="assets/img/line2.svg" alt="" class="messege-line2 js-scroll">
                                 <img src="assets/img/PC-messege-dot.svg" alt="" class="messege-bgimg01">
                             </section>
                             <!-- 校長 -->
                             <section class="messege-box2">
                                 <div class="messege-flex messege-flex--else">
-                                    <h3 class="messege-h3--else">校長<br><span>船山世界</span> </h3>
-                                    <img src="assets/img/line.svg" alt="" class="messege-lineelse">
-                                    <figure class="messege-img messege-img--else">
+                                    <h3 class="messege-h3--else js-scroll">校長<br><span>船山 世界</span> </h3>
+                                    <img src="assets/img/line.svg" alt="" class="messege-lineelse js-scroll">
+                                    <figure class="messege-img messege-img--else js-scroll">
                                         <img src="assets/img/principal.jpg" alt="校長の写真">
                                     </figure>
                                 </div>
-                                <p class="messege-text messege-text--else">
+                                <p class="messege-text messege-text--else js-scroll">
                                     令和5年度、第54回日専祭開催にあたり、一言ご挨拶させて頂きます。<br>
-                                    日専祭は、各学科が学修成果を発表し、任意団体がユニークな出し物を展開し、さらに屋台がおいしい料理をふるまうなど、楽しみな催しが満載です。これらを日専祭実行委員会が中心となり、学生主体で運営します。学生の皆さんには、キャッチフレーズ『take action !』に込められた思いを最大限に発揮して、ご来校いただいた方々に素晴らしい体験を提供して頂きたいと思います。<br>
+                                    日専祭は、各学科が学修成果を発表し、任意団体がユニークな出し物を展開し、さらに屋台がおいしい料理をふるまうなど、楽しみな催しが満載です。これらを日専祭実行委員会が中心となり、学生主体で運営します。学生の皆さんには、キャッチフレーズ『TAKE ACTION !』に込められた思いを最大限に発揮して、ご来校いただいた方々に素晴らしい体験を提供して頂きたいと思います。<br>
                                     日専祭の開催にあたりまして、休日にも関わらずご来校いただきました皆様に、心より感謝申し上げます。また、長い間準備にご尽力いただいた実行委員会の皆さん、学修成果発表を準備して下さった学生の皆さんやご指導頂いた先生方、そして、ご支援いただきました全ての方々に感謝申し上げます。<br>
                                     最後に、新型コロナ・ウイルス感染症の法的な位置づけが変更になり、様々な制約から解放されつつありますが、感染は無くなっておりませんので、適切な注意を怠らぬようお願い申し上げます。<br>
-                                    Take action !　日専祭を素晴らしい体験に！　みんなで成功させましょう！
+                                    TAKE ACTION !　日専祭を素晴らしい体験に！　みんなで成功させましょう！
                                 </p>
-                                <img src="assets/img/line2.svg" alt="" class="messege-line2else">
+                                <img src="assets/img/line2.svg" alt="" class="messege-line2else js-scroll">
                                 <img src="assets/img/PC-messege-dot2.svg" alt="" class="messege-bgimg02">
                             </section>
                             <!-- 実行委員長 -->
                             <section class="messege-box2">
                                 <div class="messege-flex">
-                                    <h3 class="messege-h3 messege-h3--sp">実行委員長 <br><span>木村和馬</span></h3>
-                                    <img src="assets/img/line.svg" alt="" class="messege-line">
-                                    <figure class="messege-img">
+                                    <h3 class="messege-h3 messege-h3--sp js-scroll">実行委員長 <br><span>木村 和馬</span></h3>
+                                    <img src="assets/img/line.svg" alt="" class="messege-line js-scroll">
+                                    <figure class="messege-img js-scroll">
                                         <img src="assets/img/iintyou.jpg" alt="実行委員長の写真">
                                     </figure>
                                 </div>
                                 
-                                <p class="messege-text">
+                                <p class="messege-text js-scroll">
                                     この度は、第54回日本電子専門学校「日専祭」にお越しいただき誠にありがとうございます。
                                     今年度も実行委員の方々、教職員の方々の協力を得て、無事に開催まで至れることができ大変嬉しく感じております。
-                                    今年度の日専祭キャッチフレーズである「take action !」には、コロナウイルスによる行動制限がなくなった今、学生や来場者が思い想いに学園祭ならではの体験を楽しんでほしいという思いが込められております。
+                                    今年度の日専祭キャッチフレーズである「TAKE ACTION !」には、コロナウイルスによる行動制限がなくなった今、学生や来場者が思い想いに学園祭ならではの体験を楽しんでほしいという思いが込められております。
                                     学生や来場者の皆様には、少しでも気になる出展がありましたら、是非その出展に足を運んで見て下さい。
                                     また、その出展ならではの体験や本校学生との交流を通して、この日本電子専門学校の「今」を知っていただけると幸いです。
                                     最後に、今回の開催にあたりご協力いただきました多くの企業様、教職員・学生の方々、近隣住民の皆様、そして日専祭開催に向けて共に尽力してくれた実行委員の皆様、日専祭開催にあたり、全ての方々へこの場をお借りして感謝と御礼を申し上げます。年に一度のお祭りです。思う存分楽しみましょう！
 
                                 </p>
-                                <img src="assets/img/line2.svg" alt="" class="messege-line2">
+                                <img src="assets/img/line2.svg" alt="" class="messege-line2 js-scroll">
                             </section>    
                         </div>
                         <img src="assets/img/decoration-aisatu-poster.svg" alt="" class="messege-bgimg03">
@@ -364,16 +832,16 @@
                     <section class="poster" id="poster">
                         <div class="poster-box">
                             <div class="poster-box2">
-                                <h2 class="poster-title"><img src="assets/img/PC-posterTITTLE.svg" alt="学園祭ポスター"></h2>
-                                <img src="assets/img/poster-deco-01.svg" alt="" class="poster-bgimg01">
+                                <h2 class="poster-title js-scroll"><img src="assets/img/PC-posterTITTLE.svg" alt="学園祭ポスター"></h2>
+                                <img src="assets/img/poster-deco-01.svg" alt="" class="poster-bgimg01 js-left">
                                 <div class="poster-flex">
                                     <!-- 一番目のポスター -->
                                     <div class="poster-No1">
-                                        <img src="assets/img/poater-deco-02.svg" alt="" class="poster-bgimg02">
-                                        <img src="assets/img/poster-wave-01.svg" alt="" class="poster-bgimg03">
-                                        <figure class="poster-img"><img src="assets/img/No 1.png" alt="学園祭ポスターA"></figure>
+                                        <img src="assets/img/poater-deco-02.svg" alt="" class="poster-bgimg02 js-scroll">
+                                        <img src="assets/img/poster-wave-01.svg" alt="" class="poster-bgimg03 js-scroll">
+                                        <figure class="poster-img js-scroll"><img src="assets/img/No 1.png" alt="学園祭ポスターA"></figure>
                                         <img src="assets/img/poster-deco-03.svg" alt="" class="poster-bgimg04">
-                                        <div class="poster-textbox">
+                                        <div class="poster-textbox js-scroll">
                                             <p class="poster-name">グラフィックデザイン科</p>
                                             <p class="poster-name">北村　匠</p>
                                             <p class="poster-name">川島　碧泉</p>
@@ -386,15 +854,15 @@
                                     </div>
                                     <!-- 二番目のポスター -->
                                     <div class="poster-No2">
-                                        <figure class="poster-img"><img src="assets/img/No 2.png" alt="学園祭ポスターB"></figure>
-                                        <div class="poster-textbox">
+                                        <figure class="poster-img js-scroll"><img src="assets/img/No 2.png" alt="学園祭ポスターB"></figure>
+                                        <div class="poster-textbox js-scroll">
                                             <p class="poster-name">グラフィックデザイン科</p>
                                             <p class="poster-name">北村　匠</p>
                                             <p class="poster-name">川島　碧泉</p>
                                             <p class="poster-text">
                                                 月が沈み、太陽が登る、日常の朝の風景をイメージにデザインしました。空を地球に見立てた時の世界の美しさや月の儚さ、太陽の力強さをグラデーションで表現しました。
                                             </p>
-                                            <img src="assets/img/poster-deco-04.svg" alt="" class="poster-bgimg07">
+                                            <img src="assets/img/poster-deco-04.svg" alt="" class="poster-bgimg07 js-scroll">
                                         </div>
                                     </div>
                                 </div>
@@ -408,11 +876,12 @@
                         <div class="jumper-box">
                             <img src="assets/img/jumper-deco-01.svg" alt="" class="jumper-bgimg01">
                             <div class="jumper-box2">
-                                <h2 class="jumper-title"><img src="assets/img/PC-jumperTITTLE.svg" alt="日専祭ジャンバー"></h2>
-                                <figure class="jumper-img">
+                                <h2 class="jumper-title js-scroll"><img src="assets/img/PC-jumperTITTLE.svg" alt="日専祭ジャンバー"></h2>
+                                <figure class="jumper-img js-scroll">
                                     <img src="assets/img/jumper.png" alt="ジャンバーの写真">
                                 </figure>
-                                <p class="jumper-text">take action !というキャッチフレーズをもとに行動を起こす、今にも歩み出しそうな雰囲気を靴と滑らかな線で表現しました。</p>
+                                <p class="jumper-name jumper-name-1 js-scroll">ゲーム企画科　長谷川 結香</p>
+                                <p class="jumper-text js-scroll">TAKE ACTION !というキャッチフレーズをもとに行動を起こす、今にも歩み出しそうな雰囲気を靴と滑らかな線で表現しました。</p>
                             </div>
                             <img src="assets/img/poster-dots.svg" alt="" class="jumper-bgimg04">
                         </div>
@@ -422,19 +891,28 @@
                     <!-- 声優イベント -->
                     <section class="event">
                         <div class="event-box">
-                            <img src="assets/img/joke-deco-02.svg" alt="" class="event-bgimg01">
+                            <img src="assets/img/joke-deco-02.svg" alt="" class="event-bgimg01 js-scroll">
                             <img src="assets/img/joke-deco-03.svg" alt="" class="event-bgimg02">
-                            <img src="assets/img/joke-deco-05.svg" alt="" class="event-bgimg04">
+                            <img src="assets/img/mike.svg" alt="" class="event-bgimg04 js-scroll">
                             <div class="event-box2">
-                                <h2 class="event-title"><img src="assets/img/PC-liveTITLE.svg" alt="声優ライブ"></h2>
-                                <figure class="event-img">
-                                    <img src="assets/img/event-poster1.jpg" alt="声優ライブのポスターの写真">
+                                <h2 class="event-title js-scroll"><img src="assets/img/PC-liveTITLE.svg" alt="声優ライブ"></h2>
+                                <figure class="event-img js-scroll">
+                                    <img src="assets/img/event-poster1.png" alt="声優ライブのポスターの写真">
                                 </figure>
-                                <p class="event-text">
+                                <p class="event-text js-scroll">
                                     今年度は事前予約制です。予告なく出演者や内容が変更となる可能性があります。
                                     近隣にご迷惑がかからないように列のご案内は10時ごろからとなりますので、事前にお並びいただかないようご配慮願います。
-                                    会場内のご飲食及びカメラやスマートフォンなどでの撮影は禁止とさせていただきます。
+                                    会場内のご飲食及びカメラやスマートフォンなどでの撮影や録画、音声の録音は禁止とさせていただきます。
                                 </p>
+                                <a href="https://forms.gle/LGoMH5FDKckv6KKg6" class="event-btn js-scroll">
+                                    <div>
+                                        <img src="./assets/img/event-btnbg01.svg" alt="" class="event-btnbg01">
+                                        <img src="./assets/img/event-btnbg02.svg" alt="" class="event-btnbg02">
+                                        <p>
+                                            応募する!
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -443,18 +921,18 @@
                     <section class="schoolplan" id="shoolplan">
                         <div class="schoolplan-box">
                             <div class="schoolplan-box2">
-                                <h2 class="schoolplan-title"><img src="assets/img/PC-planTITTLE.svg" alt="実行委員企画"></h2>
-                                <img src="assets/img/plan-deco-01.svg" alt="" class="schoolplan-bgimg01">
+                                <h2 class="schoolplan-title js-scroll"><img src="assets/img/PC-planTITTLE.svg" alt="実行委員企画"></h2>
+                                <img src="assets/img/plan-deco-01.svg" alt="" class="schoolplan-bgimg01 js-left">
                                 <img src="assets/img/plan-deco-02.svg" alt="" class="schoolplan-bgimg02">
-                                <div class="schoolplan-imgbox">
-                                    <figure class="schoolplan-logo">
+                                <div class="schoolplan-imgbox js-scroll">
+                                    <figure class="schoolplan-logo js-scroll">
                                         <img src="assets/img/crossword-logo.svg" alt="実行委員企画のポスターの写真">
                                     </figure>
                                     <img src="assets/img/PC-plan-arrow.svg" alt="" class="schoolplan-arrow">
                                 </div>
                                 
                                     <!-- ゲーム内容 -->
-                                    <section class="schoolplan-textbox">
+                                    <section class="schoolplan-textbox js-scroll">
                                         <div class="schoolplan-flex">
                                             <h3 class="schoolplan-h3">
                                                 ゲーム内容
@@ -463,7 +941,7 @@
                                         
                                         <p>
                                             校内各所に設置されている問題、<br>
-                                            ヒントを参考に回答。<br>
+                                            ヒントを参考に解答。<br>
                                             パンフレット内の解答用紙の枠を埋めていき、合言葉を導き出そう。
                                         </p>
                                     </section>
@@ -471,14 +949,14 @@
                                     <!-- ルール -->
                                     <section class="schoolplan-textbox rule">
                                         <div class="schoolplan-flex">
-                                            <h3 class="schoolplan-h3">
+                                            <h3 class="schoolplan-h3 js-scroll">
                                                 ルール
                                             </h3>
                                         </div>
                                         <img src="assets/img/PC-plan-loading.svg" alt="" class="rule-bgimg01">
-                                        <img src="assets/img/PC-plan-window.svg" alt="" class="rule-bgimg02">
+                                        <img src="assets/img/PC-plan-window.svg" alt="" class="rule-bgimg02 js-scroll">
                                         <img src="assets/img/PC-plan-hand.png" alt="" class="rule-bgimg03">
-                                        <div class="schoolplan-flex">
+                                        <div class="schoolplan-flex js-scroll">
                                             <ol type="1">
                                                 <li>解答用紙はパンフレットに記載されています。</li>
                                                 <li>パンフレットにヒントがある場所が載っているので要チェック！</li>
@@ -489,7 +967,7 @@
                                     </section>
                                     
                                     <!-- 景品 -->
-                                    <section class="schoolplan-textbox">
+                                    <section class="schoolplan-textbox js-scroll">
                                         <div class="schoolplan-flex">
                                             <h3 class="schoolplan-h3">
                                                 景品
@@ -503,7 +981,7 @@
                                     </section>
                 
                                     <!-- お困りの際は -->
-                                    <section class="schoolplan-textbox">
+                                    <section class="schoolplan-textbox js-scroll">
                                         <div class="schoolplan-flex">
                                             <h3 class="schoolplan-h3">
                                                 お困りの際は
@@ -524,18 +1002,18 @@
             
                     <!-- ご来場の皆様へ -->
                     <section class="caveat" id="caveat">
-                        <h2 class="caveat-title"><img src="assets/img/PC-sirase01TITLE.svg" alt="ご来場の皆様へ"></h2>
+                        <h2 class="caveat-title js-scroll"><img src="assets/img/PC-sirase01TITLE.svg" alt="ご来場の皆様へ"></h2>
                         <div class="caveat-box">
                             
-                            <p class="caveat-text">
+                            <p class="caveat-text js-scroll">
                                 皆様に快適にお過ごしいただくためにいくつかお願いがございます。<br>
                                 ご協力のほどお願い申し上げます。
                             </p>
-                            <ul class="caveat-list">
+                            <ul class="caveat-list js-scroll">
                                 <li>喫煙は灰皿が置いてある所定の場所でお願いいたします。(7号館3階バルコニー・10号館外休憩所）</li>
                                 <li>実習室での飲食はご遠慮ください。</li>
                                 <li>怪我をされた場合や体調を悪くされた方は、本館の保健室をご利用ください。</li>
-                                <li>校舎の備品、壁、展示物を彼損された場合は、日専祭実行委員にお知らせください。（実行本部 4号館1階1番教室）</li>
+                                <li>校舎の備品、壁、展示物を破損された場合は、日専祭実行委員にお知らせください。（実行本部 4号館1階1番教室）</li>
                                 <li>災害時、緊急の事態が発生した場合は、日本電子専門学校教職員の指示に従ってください。</li>
                                 <li>ポイ捨ては厳禁です。ゴミは分別して専用のゴミ箱へ捨ててください。また食べ歩きはご遠慮ください。</li>
                                 <li>校内外の環境美化にご協力ください。</li>
@@ -547,21 +1025,18 @@
             
                     <!-- 感染症対策 -->
                     <section class="Infection" id="Infection">
-                        <h2 class="Infection-title"><img src="assets/img/PC-sirase02TITLE.svg" alt="感染症対策"></h2>
+                        <h2 class="Infection-title js-scroll"><img src="assets/img/PC-sirase02TITLE.svg" alt="感染症対策"></h2>
                         <div class="Infection-box">
-                            <p class="Infection-text">
-                                皆様に快適にお過ごしいただくためにいくつかお願いがございます。<br>
-                                ご協力のほどお願い申し上げます。
+                            <p class="Infection-text js-scroll">
+                                新型コロナウイルスは本年より第5類感染症に移行し、政府より新型コロナウイルス感染防止対策が緩和されました。<br>
+                                しかし、日専祭実行委員会としては、以下の内容をご理解頂き、順守して頂けますようお願い申し上げます。
+
                             </p>
-                            <ul class="Infection-list">
-                                <li>喫煙は灰皿が置いてある所定の場所でお願いいたします。(7号館3階バルコニー・10号館外休憩所）</li>
-                                <li>実習室での飲食はご遠慮ください。</li>
-                                <li>怪我をされた場合や体調を悪くされた方は、本館の保健室をご利用ください。</li>
-                                <li>校舎の備品、壁、展示物を彼損された場合は、日専祭実行委員にお知らせください。（実行本部 4号館1階1番教室）</li>
-                                <li>災害時、緊急の事態が発生した場合は、日本電子専門学校教職員の指示に従ってください。</li>
-                                <li>ポイ捨ては厳禁です。ゴミは分別して専用のゴミ箱へ捨ててください。また食べ歩きはご遠慮ください。</li>
-                                <li>校内外の環境美化にご協力ください。</li>
-                                <li>東京都新宿区内全域で路上喫煙は禁止されています。ご注意ください。</li>
+                            <ul class="Infection-list js-scroll">
+                                <li>新型コロナウイルス感染症の感染疑い、または可能性がありPCR検査を実施後、まだ検査結果が出ていない方のご入館はお断りさせて頂きます。</li>
+                                <li>ご来場中はこまめな手指消毒などの基本的な感染予防対策にご協力お願い致します。</li>
+                                <li>日専祭スタッフから指示があった場合は指示に従ってください。</li>
+                                <li>各号館の入口でのアルコール手指消毒をお願いします。</li>
                             </ul>
                         </div>
                         <img src="assets/img/PC-alert-bg-02.svg" alt="" class="Infection-bgimg01">
