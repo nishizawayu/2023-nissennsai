@@ -137,6 +137,7 @@ li{
 
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 
 // アニメーション
@@ -2769,6 +2770,7 @@ a{
         border-radius: 15px 15px 0px 0px;
         font-size: 12px;
         line-height: 18px;
+        cursor: pointer;
         @include sp2 {
             width: 98px;
         }
@@ -2806,6 +2808,7 @@ a{
           border: 4px solid #000;
           border-radius: 9px;
           background: #fff;
+          cursor: pointer;
           @include pc1 {
               padding: 10px 20px;
           }
@@ -2877,10 +2880,11 @@ a{
       background-color: #D9D9D9;
       position: relative;
       z-index: 10;
+      max-width: 400px;
       @include pc1 {
           margin: 0;
           margin-top: 60px;
-          width: 42%;
+          width: 400px;
       }
       @include sp2 {
           margin-bottom: 100px;
@@ -2891,12 +2895,16 @@ a{
           }
       }
       &__imgArea {
+        display: flex;
+        align-items: center;
+        max-height: 260px;
+        justify-content: center;
         &__img {
           width: 100%;
           border-bottom: solid 4px;
           display: block;
-          object-fit: cover;
-          height: 220px;
+          object-fit: contain;
+          max-height: 220px;
         }
       }
       &__textArea {
@@ -2977,7 +2985,8 @@ a{
       }
       @include pc1 {
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
+          gap: 40px;
       }
     }
   }
