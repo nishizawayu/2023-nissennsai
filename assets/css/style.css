@@ -2998,11 +2998,11 @@ a {
   border-color: #FDF150;
 }
 .nested-tabs .tab-building {
-  width: 30%;
+  width: 28%;
 }
 @media screen and (min-width: 800px) {
   .nested-tabs .tab-building {
-    width: 32%;
+    width: 30%;
   }
 }
 
@@ -3759,4 +3759,10 @@ a {
 #header #header__logo #link #linkLogo {
   display: block;
   width: 100%;
+}
+
+#e-sport {
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

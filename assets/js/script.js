@@ -207,7 +207,9 @@ const nestedContent9 = document.getElementById('subcontent9');
 const nestedTab10 = document.getElementById('subtab10');
 const nestedContent10 = document.getElementById('subcontent10');
 const nestedTab11 = document.getElementById('subtab11');
+console.log(nestedTab11);
 const nestedContent11 = document.getElementById('subcontent11');
+console.log(nestedContent11)
 const nestedTab12 = document.getElementById('subtab12');
 const nestedContent12 = document.getElementById('subcontent12');
 const nestedTab13 = document.getElementById('subtab13');
@@ -356,6 +358,7 @@ nestedTab7.src = "assets/img/tabItem1/tab7-1.png";
 nestedTab8.src = "assets/img/tabItem1/tab8-1.png";
 nestedTab9.src = "assets/img/tabItem1/tab9-1.png";
 nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
+nestedTab11.src = "assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
 nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
 nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
@@ -535,6 +538,7 @@ document.getElementById('subcontent9').style.display = 'block';
 
 nestedTab10.addEventListener('click', () => {
 nestedTab10.src = "assets/img/tabItem2/tab1-2.png";
+nestedTab11.src = "assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
 nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
 nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
@@ -545,8 +549,22 @@ document.querySelectorAll('.nested-content').forEach(content => {
 document.getElementById('subcontent10').style.display = 'block';
 });
 
+nestedTab11.addEventListener('click', () => {
+  nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "assets/img/tabItem2/tab2-2.png";
+  nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
+  nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
+  nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
+  document.querySelectorAll('.nested-content').forEach(content => {
+    content.style.display = 'none';
+  });
+  
+  document.getElementById('subcontent11').style.display = 'block';
+  });
+
 nestedTab12.addEventListener('click', () => {
 nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
+nestedTab11.src = "assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "assets/img/tabItem2/tab3-2.png";
 nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
 nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
@@ -559,6 +577,7 @@ document.getElementById('subcontent12').style.display = 'block';
 
 nestedTab13.addEventListener('click', () => {
 nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
+nestedTab11.src = "assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
 nestedTab13.src = "assets/img/tabItem2/tab4-2.png";
 nestedTab14.src = "assets/img/tabItem2/tab5-1.png";
@@ -571,6 +590,7 @@ document.getElementById('subcontent13').style.display = 'block';
 
 nestedTab14.addEventListener('click', () => {
 nestedTab10.src = "assets/img/tabItem2/tab1-1.png";
+nestedTab11.src = "assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "assets/img/tabItem2/tab3-1.png";
 nestedTab13.src = "assets/img/tabItem2/tab4-1.png";
 nestedTab14.src = "assets/img/tabItem2/tab5-2.png";
@@ -583,9 +603,7 @@ document.getElementById('subcontent14').style.display = 'block';
 
 
 
-nestedTab15.addEventListener('click', (ev) => {
-console.log(ev.target.id);
-console.log(nestedTab15.id);
+nestedTab15.addEventListener('click', () => {
 nestedTab15.style.color = '#000000';
 nestedTab15.style.background = '#9CFFF9';
 nestedTab15.style.borderColor = '#FDF150';
