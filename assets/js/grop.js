@@ -288,9 +288,13 @@ window.addEventListener('load', () => {
         }
         else if(arr[2] == 2){
           console.log("in b")
+          nestedTab11fnc();
+        }
+        else if(arr[2] == 3){
+          console.log("in b")
           nestedTab12fnc();
         }
-        else if(arr[2] == 3) {
+        else if(arr[2] == 4) {
           console.log("in b")
           nestedTab13fnc();
         }
@@ -464,6 +468,7 @@ nestedTab7.src = "../assets/img/tabItem1/tab7-1.png";
 nestedTab8.src = "../assets/img/tabItem1/tab8-1.png";
 nestedTab9.src = "../assets/img/tabItem1/tab9-1.png";
 nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
 nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
 nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
 nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -673,6 +678,7 @@ nestedTab9.addEventListener('click' , () => {
 
 const nestedTab10fnc = () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-2.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -685,9 +691,25 @@ nestedTab10.addEventListener('click' , () => {
   nestedTab10fnc();
 })
 
+const nestedTab11fnc = () => {
+  nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-2.png";
+  nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
+  nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
+  nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
+  document.querySelectorAll('.nested-content').forEach(content => {
+  content.style.display = 'none';
+});
+document.getElementById('subcontent11').style.display = 'block';
+}
+nestedTab11.addEventListener('click' , () => {
+  nestedTab11fnc();
+})
+
 
 const nestedTab12fnc = () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-2.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -703,6 +725,7 @@ nestedTab12.addEventListener('click' , () => {
 
 const nestedTab13fnc = () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-2.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-1.png";
@@ -718,6 +741,7 @@ nestedTab13.addEventListener('click' , () => {
 
 const nestedTab14fnc = () => {
   nestedTab10.src = "../assets/img/tabItem2/tab1-1.png";
+  nestedTab11.src = "../assets/img/tabItem2/tab2-1.png";
   nestedTab12.src = "../assets/img/tabItem2/tab3-1.png";
   nestedTab13.src = "../assets/img/tabItem2/tab4-1.png";
   nestedTab14.src = "../assets/img/tabItem2/tab5-2.png";
@@ -733,8 +757,6 @@ nestedTab14.addEventListener('click' , () => {
 
 
 const nestedTab15fnc = () => {
-  console.log(ev.target.id);
-  console.log(nestedTab15.id);
   nestedTab15.style.color = '#000000';
   nestedTab15.style.background = '#9CFFF9';
   nestedTab15.style.borderColor = '#FDF150';
